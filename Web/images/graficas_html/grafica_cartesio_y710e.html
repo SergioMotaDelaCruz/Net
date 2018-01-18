@@ -1,0 +1,291 @@
+<script src="/Scripts/grafica/jquery-1.11.0.min.js"></script>
+<script src="/Scripts/grafica/jquery-ui.min.js"></script>
+<link href="/Scripts/grafica/datepicker.css" rel="stylesheet" />
+<link href="/Content/grafica_income.css" rel="stylesheet" />
+<script type="text/javascript">
+  function iframeLoaded() {
+      var iFrameID = document.getElementById('idIframe');
+      if(iFrameID) {
+            // here you can make the height, I delete it first, then I make it again
+            iFrameID.height = "";
+            iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
+      }   
+  }
+</script> 
+
+
+<script type="text/javascript">
+var inicio;
+var fin;
+
+function carga(){
+	
+	var temp_1 = document.getElementById("desde_selector").value;
+	var temp_2 = document.getElementById("hasta_selector").value;
+	
+	inicio = temp_1.substring(6,10) + temp_1.substring(3,5)+temp_1.substring(0,2)  ; 
+	fin = temp_2.substring(6,10) + temp_2.substring(3,5)+temp_2.substring(0,2); 
+	
+	
+	
+}
+
+function check(){
+
+	if (document.getElementById("desde_selector").value == "" || document.getElementById("hasta_selector").value == ""){
+	
+	alert("Se debe introducir ambas fechas.");
+	return false;
+	}else {
+		document.getElementById('ir').href = "grafica_cartesio_y8c6a.html?inicio="+inicio+"&fin="+fin;
+	return true;
+	}
+
+
+
+
+}
+</script>
+<script type="text/javascript" >
+
+$(function() {
+
+if (20051231 != ""){
+	var temp_3 = "20051231";
+	inicio = temp_3.substring(6,10) + "-" +  temp_3.substring(4,6) + "-" +temp_3.substring(0,4);
+	$('#desde_selector').val(inicio);
+	
+	
+}else{
+	$('#desde_selector').attr("placeholder", "31-12-2004");
+}
+
+if (20061231 != ""){
+	var temp_4 = "20061231";
+	fin = temp_4.substring(6,10) + "-" +  temp_4.substring(4,6)+ "-" +  temp_4.substring(0,4);
+	$('#hasta_selector').val(fin);
+}else{
+	$('#hasta_selector').attr("placeholder", "31-12-2015");
+}
+
+       Highcharts.setOptions({
+	    chart: {
+			
+		
+	        style: {
+				fontFamily: '"Open Sans", sans-serif', 
+				fontSize: '12px'
+			}
+	    },
+			lang: {	rangeSelectorFrom: 'Desde',
+					rangeSelectorTo: 'hasta',
+					months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+					shortMonths: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun',  'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+					weekdays: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
+				}
+		});
+		/*var ejemplo = [
+[Date.UTC(2003,8,24),0.8709],
+[Date.UTC(2003,8,25),0.872],
+[Date.UTC(2003,8,26),0.8714],
+[Date.UTC(2003,8,29),0.8638],
+[Date.UTC(2003,8,30),0.8567],
+[Date.UTC(2003,9,1),0.8536],
+[Date.UTC(2003,9,2),0.8564],
+[Date.UTC(2003,9,3),0.8639],
+[Date.UTC(2003,9,6),0.8538],
+[Date.UTC(2003,9,7),0.8489]
+
+];*/
+		
+		
+        $('#chart').highcharts('StockChart', {
+			navigator: {
+			outlineColor:'#d65f00',
+			series: {
+	    	color: '#d65f00',
+				lineWidth: 1,
+			lineColor: '#d65f00',
+				marker: {
+					enabled: false
+					}
+				}	
+	    		
+			},
+		
+			navigation: {
+            buttonOptions: {
+              symbolStroke: '#d65f00'
+            }
+        },
+			colors: [
+			     '#d65f00', 
+			   '#0d233a', 
+			   '#8bbc21' 
+			   
+			],
+            rangeSelector : {
+				enabled:false,
+                buttonTheme: {
+	    		fill: 'none',
+	    		stroke: 'none',
+	    		'stroke-width': 0,
+	    		r: 8,
+	    		style: {
+					
+	    			color: '#d65f00',
+	    			fontWeight: 'bold'
+	    		},
+	    		states: {
+	    			hover: {
+	    			},
+	    			select: {
+	    		fill: '#d65f00',
+	    				style: {
+	    					color: 'white'
+	    				}
+	    			}
+	    		}
+	    	},
+			
+	    	
+			
+			states: {
+	    			hover: {
+	    			},
+	    			select: {
+	    				fill: '#000',
+	    				style: {
+	    					color: 'white'
+	    				}
+	    			}
+	    		},
+	    	labelStyle: {
+				display: 'none',
+				fontSize: '16px',
+	    		color: '#545454'
+	    		
+				
+	    	},
+	    	selected: 5
+            },
+
+			
+			
+			
+            title : {
+                text : ''
+            },
+            tooltip: {
+			useHTML: true,
+            headerFormat: '<small style="color: #FFF; font-family: "Open Sans", sans-serif text-align:center;">{point.key}</small><table>',
+            pointFormat: '<tr><td style="color: #FFF;"></td>' +
+            '<td style="text-align: center; color: #FFF; font-size:19px; font-family: "Open Sans", sans-serif">{point.y} %</td></tr>',
+            footerFormat: '</table>',
+            backgroundColor: {
+				
+                linearGradient: [0, 0, 0, 60],
+                stops: [
+                    [0, '#474747'],
+                    [1, '#6C6C6C']
+                ]
+            },
+            borderWidth: 0,
+            borderColor: '#CCC'
+        },
+           series : [{
+			//data : ejemplo,
+				//data : usdeur,
+				data: [[Date.UTC(2005,11,31),0],[Date.UTC(2006,0,1),2.54046385256259E-04],[Date.UTC(2006,0,2),0.411079831536089],[Date.UTC(2006,0,3),0.92874441425753],[Date.UTC(2006,0,4),1.49839016542188],[Date.UTC(2006,0,5),1.35521453971383],[Date.UTC(2006,0,6),1.62244675187763],[Date.UTC(2006,0,7),1.62505277608778],[Date.UTC(2006,0,8),1.62592964586916],[Date.UTC(2006,0,9),1.65939820836654],[Date.UTC(2006,0,10),1.559525198779],[Date.UTC(2006,0,11),2.20399990297066],[Date.UTC(2006,0,12),2.36668793007595],[Date.UTC(2006,0,13),2.06836371837368],[Date.UTC(2006,0,14),2.06687222024084],[Date.UTC(2006,0,15),2.06740489814543],[Date.UTC(2006,0,16),2.19738650190911],[Date.UTC(2006,0,17),1.65520234548735],[Date.UTC(2006,0,18),1.09017040448118],[Date.UTC(2006,0,19),1.58609353365082],[Date.UTC(2006,0,20),1.18190573469559],[Date.UTC(2006,0,21),1.17930790553014],[Date.UTC(2006,0,22),1.17962751227289],[Date.UTC(2006,0,23),1.09714438750891],[Date.UTC(2006,0,24),1.0655033199765],[Date.UTC(2006,0,25),1.60917897453111],[Date.UTC(2006,0,26),2.09045755884696],[Date.UTC(2006,0,27),2.68806480247975],[Date.UTC(2006,0,28),2.69131004017538],[Date.UTC(2006,0,29),2.69087570280703],[Date.UTC(2006,0,30),2.5626068633827],[Date.UTC(2006,0,31),2.32365575043007],[Date.UTC(2006,1,1),2.85692369823354],[Date.UTC(2006,1,2),2.69830041329249],[Date.UTC(2006,1,3),2.74904412998782],[Date.UTC(2006,1,6),3.03464143729282],[Date.UTC(2006,1,7),2.93674343347458],[Date.UTC(2006,1,8),3.08984325829732],[Date.UTC(2006,1,9),3.68741772175135],[Date.UTC(2006,1,10),3.32867144557965],[Date.UTC(2006,1,11),3.32609000650358],[Date.UTC(2006,1,12),3.32617195695043],[Date.UTC(2006,1,13),3.43752622414298],[Date.UTC(2006,1,14),3.77146610005034],[Date.UTC(2006,1,15),3.57032692327863],[Date.UTC(2006,1,16),3.859620195737],[Date.UTC(2006,1,17),3.9181983751521],[Date.UTC(2006,1,18),3.91808364452648],[Date.UTC(2006,1,19),3.91780501300716],[Date.UTC(2006,1,20),3.47474811710653],[Date.UTC(2006,1,21),4.01796484915872],[Date.UTC(2006,1,22),4.38566830917214],[Date.UTC(2006,1,23),4.19345353606343],[Date.UTC(2006,1,24),4.70325907093106],[Date.UTC(2006,1,25),4.70628304242017],[Date.UTC(2006,1,26),4.70593065549867],[Date.UTC(2006,1,27),5.10754521042251],[Date.UTC(2006,1,28),4.53913691100574],[Date.UTC(2006,2,1),4.89142549196492],[Date.UTC(2006,2,2),4.6339945532455],[Date.UTC(2006,2,3),4.85344145984558],[Date.UTC(2006,2,4),4.85496573815716],[Date.UTC(2006,2,5),4.85490017779969],[Date.UTC(2006,2,6),5.07727271535265],[Date.UTC(2006,2,7),4.56232888746694],[Date.UTC(2006,2,8),4.22085776549321],[Date.UTC(2006,2,9),4.77126155173498],[Date.UTC(2006,2,10),5.12369764349851],[Date.UTC(2006,2,11),5.12592669565308],[Date.UTC(2006,2,12),5.12592669565308],[Date.UTC(2006,2,13),5.91719923530397],[Date.UTC(2006,2,14),5.83456859973565],[Date.UTC(2006,2,15),5.91105295178953],[Date.UTC(2006,2,16),6.26342348319557],[Date.UTC(2006,2,17),6.68750885064826],[Date.UTC(2006,2,18),6.69013126494775],[Date.UTC(2006,2,19),6.69024599557336],[Date.UTC(2006,2,20),6.98880786357152],[Date.UTC(2006,2,21),7.05081976671001],[Date.UTC(2006,2,22),7.22221912631644],[Date.UTC(2006,2,23),7.1483899687408],[Date.UTC(2006,2,24),7.18468582165483],[Date.UTC(2006,2,25),7.18530864505097],[Date.UTC(2006,2,26),7.18564464188309],[Date.UTC(2006,2,27),7.05465504762304],[Date.UTC(2006,2,28),6.67475736111693],[Date.UTC(2006,2,29),6.57075404900767],[Date.UTC(2006,2,30),6.9872426100365],[Date.UTC(2006,2,31),6.8210716889397],[Date.UTC(2006,3,1),6.81925238901941],[Date.UTC(2006,3,2),6.81983423719211],[Date.UTC(2006,3,3),7.21814618910753],[Date.UTC(2006,3,4),7.07167615543573],[Date.UTC(2006,3,5),7.28753363246338],[Date.UTC(2006,3,6),7.50065396456593],[Date.UTC(2006,3,7),7.26370244251667],[Date.UTC(2006,3,8),7.26285015786932],[Date.UTC(2006,3,9),7.2636286871145],[Date.UTC(2006,3,10),7.37077889638315],[Date.UTC(2006,3,11),6.71351992248142],[Date.UTC(2006,3,12),6.3942491765619],[Date.UTC(2006,3,13),6.49022134487894],[Date.UTC(2006,3,14),6.49182757363739],[Date.UTC(2006,3,15),6.49255693261443],[Date.UTC(2006,3,16),6.49335185194897],[Date.UTC(2006,3,17),6.53645778699702],[Date.UTC(2006,3,18),6.54103881697646],[Date.UTC(2006,3,19),7.05884271545755],[Date.UTC(2006,3,20),7.54221103616833],[Date.UTC(2006,3,21),8.1457105169303],[Date.UTC(2006,3,22),8.1457105169303],[Date.UTC(2006,3,23),8.14643987590735],[Date.UTC(2006,3,24),8.40373149886711],[Date.UTC(2006,3,25),8.43754425324129],[Date.UTC(2006,3,26),8.62732509807829],[Date.UTC(2006,3,27),8.45549959614818],[Date.UTC(2006,3,28),8.43537256639952],[Date.UTC(2006,3,29),8.43570036818697],[Date.UTC(2006,3,30),8.43606095015313],[Date.UTC(2006,4,1),8.42367004258799],[Date.UTC(2006,4,2),8.83080805763016],[Date.UTC(2006,4,3),8.6597201097218],[Date.UTC(2006,4,4),8.98947231779465],[Date.UTC(2006,4,5),9.65124676131834],[Date.UTC(2006,4,6),9.65507384718666],[Date.UTC(2006,4,7),9.65475424044391],[Date.UTC(2006,4,8),10.190144704821],[Date.UTC(2006,4,9),10.2742996187009],[Date.UTC(2006,4,10),10.1542504090966],[Date.UTC(2006,4,11),9.97988444331388],[Date.UTC(2006,4,12),9.07221768398857],[Date.UTC(2006,4,13),9.06651393288717],[Date.UTC(2006,4,14),9.06653851802122],[Date.UTC(2006,4,15),8.37472923572356],[Date.UTC(2006,4,16),8.23597073910124],[Date.UTC(2006,4,17),7.46094897306255],[Date.UTC(2006,4,18),7.09200806130155],[Date.UTC(2006,4,19),6.8814609732304],[Date.UTC(2006,4,20),6.88025630166155],[Date.UTC(2006,4,21),6.88025630166155],[Date.UTC(2006,4,22),5.80909840085175],[Date.UTC(2006,4,23),6.38211231538203],[Date.UTC(2006,4,24),5.93876859291737],[Date.UTC(2006,4,25),6.16980329270338],[Date.UTC(2006,4,26),6.87346260961691],[Date.UTC(2006,4,27),6.87841241660721],[Date.UTC(2006,4,28),6.87891231433306],[Date.UTC(2006,4,29),6.83697007563042],[Date.UTC(2006,4,30),6.16465680464061],[Date.UTC(2006,4,31),6.64709908530188],[Date.UTC(2006,5,1),6.68321464723282],[Date.UTC(2006,5,2),6.98610349882515],[Date.UTC(2006,5,3),6.98865215772248],[Date.UTC(2006,5,4),6.98917664058238],[Date.UTC(2006,5,5),6.66624270968823],[Date.UTC(2006,5,6),6.07172499790206],[Date.UTC(2006,5,7),6.27937923519909],[Date.UTC(2006,5,8),5.23015946901354],[Date.UTC(2006,5,9),5.65510531615827],[Date.UTC(2006,5,10),5.34416893068434],[Date.UTC(2006,5,11),5.65866196555197],[Date.UTC(2006,5,12),5.34416893068434],[Date.UTC(2006,5,13),4.33847304682583],[Date.UTC(2006,5,14),4.67069196334913],[Date.UTC(2006,5,15),5.43587967576468],[Date.UTC(2006,5,16),5.0705445836655],[Date.UTC(2006,5,17),5.06841387204715],[Date.UTC(2006,5,18),5.06906947562203],[Date.UTC(2006,5,19),5.37049141421557],[Date.UTC(2006,5,20),5.3573055873159],[Date.UTC(2006,5,21),5.61079470954139],[Date.UTC(2006,5,22),5.7948472181429],[Date.UTC(2006,5,23),5.79851859816221],[Date.UTC(2006,5,24),5.79884639994964],[Date.UTC(2006,5,25),5.79923156704988],[Date.UTC(2006,5,26),5.70926636648763],[Date.UTC(2006,5,27),5.58361994136281],[Date.UTC(2006,5,28),5.65186827350731],[Date.UTC(2006,5,29),6.62463646781773],[Date.UTC(2006,5,30),7.35720790238325],[Date.UTC(2006,6,1),7.36109235356438],[Date.UTC(2006,6,2),7.36069899141946],[Date.UTC(2006,6,3),7.82570221698904],[Date.UTC(2006,6,4),7.99200425880081],[Date.UTC(2006,6,5),7.449377569966],[Date.UTC(2006,6,6),7.89510605043426],[Date.UTC(2006,6,7),7.79448729178029],[Date.UTC(2006,6,10),7.96546870410775],[Date.UTC(2006,6,11),7.30133408771451],[Date.UTC(2006,6,12),7.31423308805018],[Date.UTC(2006,6,13),6.71795344165652],[Date.UTC(2006,6,14),5.94316113686904],[Date.UTC(2006,6,15),5.93871942264925],[Date.UTC(2006,6,16),5.93900624921326],[Date.UTC(2006,6,17),5.5068651528343],[Date.UTC(2006,6,18),5.40103434576007],[Date.UTC(2006,6,19),6.16625483835438],[Date.UTC(2006,6,20),6.35115143655854],[Date.UTC(2006,6,21),5.85263047822347],[Date.UTC(2006,6,22),5.84944260584064],[Date.UTC(2006,6,23),5.84959011664499],[Date.UTC(2006,6,24),6.54554609155372],[Date.UTC(2006,6,25),6.577269109533],[Date.UTC(2006,6,26),6.81142612134434],[Date.UTC(2006,6,27),7.33463055427347],[Date.UTC(2006,6,28),7.73243441341835],[Date.UTC(2006,6,29),7.73409800748961],[Date.UTC(2006,6,30),7.73343420887005],[Date.UTC(2006,6,31),7.5503896907649],[Date.UTC(2006,7,1),7.24226420561825],[Date.UTC(2006,7,2),7.57041837997734],[Date.UTC(2006,7,3),7.31782251762261],[Date.UTC(2006,7,4),7.9256243968447],[Date.UTC(2006,7,5),7.92943509262366],[Date.UTC(2006,7,6),7.9291236809256],[Date.UTC(2006,7,7),7.41740050560146],[Date.UTC(2006,7,8),7.61499122802415],[Date.UTC(2006,7,9),7.98244883669702],[Date.UTC(2006,7,10),7.36341974625518],[Date.UTC(2006,7,11),7.40067441939746],[Date.UTC(2006,7,12),7.40133002297234],[Date.UTC(2006,7,13),7.40139558332983],[Date.UTC(2006,7,14),7.68600129022783],[Date.UTC(2006,7,15),7.95854389134813],[Date.UTC(2006,7,16),8.28498530136784],[Date.UTC(2006,7,17),8.40757497482482],[Date.UTC(2006,7,18),8.45874483384382],[Date.UTC(2006,7,19),8.45857273790542],[Date.UTC(2006,7,20),8.45810562035831],[Date.UTC(2006,7,21),8.36020761654009],[Date.UTC(2006,7,22),8.45634368575085],[Date.UTC(2006,7,23),8.37345080875256],[Date.UTC(2006,7,24),8.75909322158351],[Date.UTC(2006,7,25),8.92262533829143],[Date.UTC(2006,7,26),8.92443644316704],[Date.UTC(2006,7,27),8.92538706835059],[Date.UTC(2006,7,28),9.1484971599253],[Date.UTC(2006,7,29),9.15853608966558],[Date.UTC(2006,7,30),9.50376054210547],[Date.UTC(2006,7,31),9.37147613078504],[Date.UTC(2006,8,1),9.7923736258549],[Date.UTC(2006,8,2),9.79600403065077],[Date.UTC(2006,8,3),9.79683992520873],[Date.UTC(2006,8,4),9.99598770612175],[Date.UTC(2006,8,5),9.83564346179666],[Date.UTC(2006,8,7),9.38748105305669],[Date.UTC(2006,8,8),9.54244115302311],[Date.UTC(2006,8,11),9.61613918988377],[Date.UTC(2006,8,12),10.0151968908656],[Date.UTC(2006,8,13),10.0490588155079],[Date.UTC(2006,8,14),10.0219823878656],[Date.UTC(2006,8,15),10.2769056429111],[Date.UTC(2006,8,18),10.2677189978181],[Date.UTC(2006,8,19),10.0860758323543],[Date.UTC(2006,8,20),10.5719411831809],[Date.UTC(2006,8,21),10.7529803738514],[Date.UTC(2006,8,22),10.5041788171862],[Date.UTC(2006,8,23),10.5034576532539],[Date.UTC(2006,8,24),10.5044492536609],[Date.UTC(2006,8,25),10.4268667656191],[Date.UTC(2006,8,26),10.997332021252],[Date.UTC(2006,8,27),11.3312227268913],[Date.UTC(2006,8,28),11.3073997319893],[Date.UTC(2006,8,29),11.2535828735367],[Date.UTC(2006,8,30),11.2539844307263],[Date.UTC(2006,9,1),11.2547301797927],[Date.UTC(2006,9,2),11.1025809801536],[Date.UTC(2006,9,3),11.027497980741],[Date.UTC(2006,9,4),11.2458959216213],[Date.UTC(2006,9,5),11.3683298892292],[Date.UTC(2006,9,6),11.4528617751647],[Date.UTC(2006,9,7),11.4544106386103],[Date.UTC(2006,9,8),11.4554841894642],[Date.UTC(2006,9,9),11.5793604849369],[Date.UTC(2006,9,10),12.1311410386858],[Date.UTC(2006,9,11),12.2469288250535],[Date.UTC(2006,9,12),12.6916411199807],[Date.UTC(2006,9,13),12.7605532507448],[Date.UTC(2006,9,14),12.7620119686989],[Date.UTC(2006,9,15),12.7632658105358],[Date.UTC(2006,9,16),13.0703751101414],[Date.UTC(2006,9,17),12.4842163439349],[Date.UTC(2006,9,18),12.7671174815382],[Date.UTC(2006,9,19),12.8079369991189],[Date.UTC(2006,9,20),12.9665111137918],[Date.UTC(2006,9,21),12.9688385064826],[Date.UTC(2006,9,22),12.9699858127386],[Date.UTC(2006,9,23),13.0380046836319],[Date.UTC(2006,9,24),13.0010778122771],[Date.UTC(2006,9,25),13.2128541570511],[Date.UTC(2006,9,26),13.3890394227542],[Date.UTC(2006,9,27),13.3524485482314],[Date.UTC(2006,9,28),13.3537597553812],[Date.UTC(2006,9,29),13.3551529129778],[Date.UTC(2006,9,30),13.3495393073679],[Date.UTC(2006,9,31),13.2682690492175],[Date.UTC(2006,10,1),13.3230201427642],[Date.UTC(2006,10,2),13.2044706263374],[Date.UTC(2006,10,3),13.3053926016448],[Date.UTC(2006,10,4),13.3086378393404],[Date.UTC(2006,10,5),13.3086378393404],[Date.UTC(2006,10,6),13.8284823039483],[Date.UTC(2006,10,7),14.0798816897789],[Date.UTC(2006,10,8),14.0143213322913],[Date.UTC(2006,10,9),14.0683020916376],[Date.UTC(2006,10,10),14.1513506744849],[Date.UTC(2006,10,11),14.1530060735115],[Date.UTC(2006,10,12),14.1541533797675],[Date.UTC(2006,10,13),14.2858723330046],[Date.UTC(2006,10,14),14.2673597270591],[Date.UTC(2006,10,15),14.6520842948852],[Date.UTC(2006,10,16),14.7654791282046],[Date.UTC(2006,10,17),14.6912484134393],[Date.UTC(2006,10,18),14.6921416733101],[Date.UTC(2006,10,19),14.6935594160408],[Date.UTC(2006,10,20),14.7794844595728],[Date.UTC(2006,10,21),14.8422912820459],[Date.UTC(2006,10,22),14.8479622529686],[Date.UTC(2006,10,23),14.6654094375446],[Date.UTC(2006,10,24),14.4626640320144],[Date.UTC(2006,10,25),14.4625493013888],[Date.UTC(2006,10,26),14.4636720225108],[Date.UTC(2006,10,27),14.0189187523602],[Date.UTC(2006,10,28),13.7312071235262],[Date.UTC(2006,10,29),14.1242742468426],[Date.UTC(2006,10,30),14.0297607964797],[Date.UTC(2006,11,1),14.0238931444845],[Date.UTC(2006,11,2),14.0246880638191],[Date.UTC(2006,11,3),14.0246388935509],[Date.UTC(2006,11,4),14.0399472370243],[Date.UTC(2006,11,5),14.1773207710947],[Date.UTC(2006,11,6),14.6153131293794],[Date.UTC(2006,11,7),14.8049792435908],[Date.UTC(2006,11,8),14.884872734234],[Date.UTC(2006,11,9),14.8850776103512],[Date.UTC(2006,11,10),14.8866510589309],[Date.UTC(2006,11,11),14.9478516526455],[Date.UTC(2006,11,12),15.0232050885327],[Date.UTC(2006,11,13),15.4069134708178],[Date.UTC(2006,11,14),15.4938137246675],[Date.UTC(2006,11,15),15.8552315854068],[Date.UTC(2006,11,16),15.8597962252969],[Date.UTC(2006,11,17),15.8620334724961],[Date.UTC(2006,11,18),15.8980015236227],[Date.UTC(2006,11,19),15.7608902309822],[Date.UTC(2006,11,20),15.9672086759955],[Date.UTC(2006,11,21),16.0174197147862],[Date.UTC(2006,11,22),15.5536375508748],[Date.UTC(2006,11,23),15.5528918018084],[Date.UTC(2006,11,24),15.5552028044098],[Date.UTC(2006,11,25),15.5431642837662],[Date.UTC(2006,11,26),15.5356576228339],[Date.UTC(2006,11,27),16.1094336765199],[Date.UTC(2006,11,28),16.0951661037217],[Date.UTC(2006,11,29),16.1353791879956],[Date.UTC(2006,11,30),16.1377639459992],[Date.UTC(2006,11,31),16.1398864625729]],
+				marker : {
+					enabled : false,
+					radius : 3
+				},
+				shadow : true,
+				tooltip : {
+					valueDecimals : 4
+				}
+			}]
+            
+        });
+       
+  
+    
+    
+	
+    
+
+});
+
+
+
+		</script>
+
+
+<div id="chart" style="width:100%;" >
+					
+</div>
+<div style="width:100%; text-align:center;">
+<div id="selector_fechas">
+
+Desde 	<input type="text" id="desde_selector" name="desde" onchange="carga();" /> hasta 	<input type="text" onchange="carga();" id="hasta_selector" name="31-12-2013" /> <div class="boton"/><a id="ir"  onclick="return check();" href="grafica_cartesio_y8c6a.html?inicio="+inicio+"&fin="+fin+">Ver</a></div>
+
+
+
+
+
+</div>
+<div class="selector_anos_y">
+	<div class="btn_2014"><a href="grafica_cartesio_ye05e.html?inicio=20031231&amp;fin=20041231">2004</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_y92b3.html?inicio=20041231&amp;fin=20051231">2005</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_y710e.html?inicio=20051231&amp;fin=20061231">2006</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_yc1f2.html?inicio=20061231&amp;fin=20071231">2007</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_y18d3.html?inicio=20071231&amp;fin=20081231">2008</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_ya6ab.html?inicio=20081231&amp;fin=20091231">2009</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_y507e.html?inicio=20091231&amp;fin=20101231">2010</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_y466a.html?inicio=20101231&amp;fin=20111231">2011</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_y073d.html?inicio=20111231&amp;fin=20121231">2012</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_yd479.html?inicio=20121231&amp;fin=20131231">2013</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_y7382.html?inicio=20131231&amp;fin=20141231">2014</a></div>
+	<!--<input type="button" value="V.Liquidativo Diario" class="btn_liquidativo" name="btn_liquidativo"/>-->
+</div>
+<div class="selector_anos_y">
+	<div class="btn_2014"><a href="grafica_cartesio_y1ab6.html?inicio=20141231&amp;fin=20151231">2015</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_yc9fd.html?inicio=20151231&amp;fin=20161231">2016</a></div>
+	<div class="btn_2014"><a href="grafica_cartesio_ye575.html?inicio=20161231&amp;fin=20171231">2017</a></div>
+</div>
+
+</div>
+</form>
+<script>
+$( "#desde_selector" ).datepicker();
+$( "#hasta_selector" ).datepicker();
+
+
+
+$(function($){
+    $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '<Ant',
+        nextText: 'Sig>',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd-mm-yy',
+	    firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+		changeYear: true,
+		yearRange: '2004:' + new Date().getFullYear(),
+        yearSuffix: ''
+    };
+	 $.datepicker.setDefaults($.datepicker.regional['es']);
+});
+</script>
+
+<script src="/Scripts/grafica/exporting.js"></script>
+<script src="/Scripts/grafica/highstock.js"></script>

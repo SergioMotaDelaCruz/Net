@@ -1,0 +1,278 @@
+﻿@model CartersioLibreria.cartesio_web_cabecera
+
+@{
+    ViewBag.Title = "SeleccionUsuarios";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Gestión de grupos y claves</h1>
+
+
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+
+
+    <form id="Cartesiodatos" onsubmit="return false;">
+
+
+        <div class="row-grupo">
+            <h4>@Model.nombre @Model.apellidos</h4>
+
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="form-group col-md-6">ID de usuario:</label>
+                    <label class="form-group col-md-6"> @Html.DisplayTextFor(model => model.nif)</label>
+                    @*@Html.EditorFor(model => model.cx_fecha_calculo.Value.ToShortDateString() , new { htmlAttributes = new { @class = "form-control datepicker" , @placeholder = "dd/mm/yyyy" } })*@
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="form-group col-md-6" >Clave actual:</label>
+                    <label class="form-group col-md-6" id="pass">
+                        @ViewBag.pass
+                    </label>
+                    @*@Html.EditorFor(model => model.cx_fecha_calculo.Value.ToShortDateString() , new { htmlAttributes = new { @class = "form-control datepicker" , @placeholder = "dd/mm/yyyy" } })*@
+                </div>
+                <div class="form-group col-md-4">
+                   
+                    <button type="submit" class="btn btn-primary" id="btngenerarclave" onclick="generarClave()">Generar nueva clave </button>
+                    <button type="submit" class="btn btn-primary" id="btnguardarclave" style="display:none"  onclick="GuardarClave()">Guardar clave </button>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+
+
+    <form id="Cartesiogrupos" onsubmit="return false;">
+
+
+        <div class="row-grupo">
+            <h4>Localizar grupos de titularidad en los que aparezca la siguiente persona</h4>
+
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="form-group col-md-6">  Apellidos:</label>
+
+                    <input type="text" id="txtapellidos" name="txtapellidos" class="form-control" />
+
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="form-group col-md-6">NIF:</label>
+                    <input type="text" id="txtdni" name="txtdni" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="form-group col-md-6"> </label>
+                    <button  onclick="tablaizquierda();" class="btn btn-primary  col-md-6">Buscar </button>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+    <div class="row-grupo">
+        <ul>
+            <li>Para agregar al grupo arrastre a la derecha y pulse en guardar grupo</li>
+            <li>Para eliminar del grupo arrastre a la izquierda y pulse en guardar grupo</li>
+        </ul>
+        <div class="row">
+
+            <div class="form-group col-md-6">
+                <h5 class="form-group "> <span id="numencontrados"></span> Encontrados </h5>
+
+            </div>
+            <div class="form-group col-md-6">
+                <h5 class="form-group ">Grupos a los que se le concede permiso </h5>
+            </div>
+
+
+        </div>
+          <div class="form-group">
+            <div class="row">
+
+                <ul id="sortable1" class="connectedSortable"></ul>
+
+                <ul id="sortable2" class="connectedSortable"></ul>
+            </div>
+
+        </div>
+            <div class="row">
+
+                <div class="form-group col-md-6">
+                    <button onclick="limpiar();" class="btn btn-primary form-control col-md-10">Reiniciar </button>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <button onclick="guardar();" class="btn btn-primary form-control col-md-10">Guardar grupo </button>
+                </div>
+
+
+            </div>
+        </div>
+
+
+</div>
+@section scripts
+    {
+<script>
+
+
+
+    function generarClave() {
+
+        var a = Math.floor(Math.random() * 10);
+        var b = Math.floor(Math.random() * 10);
+        var c = Math.floor(Math.random() * 10);
+        var d = Math.floor(Math.random() * 10);
+        var e = Math.floor(Math.random() * 10);
+
+
+      
+        $("#pass").text(a + "" + b + "" + c + "" + d + "" + e);
+       // $("#btngenerarclave").hide();
+        $("#btnguardarclave").show();
+        
+       // alert(a);
+    }
+
+    function GuardarClave()
+    {
+        var nif = '@Model.nif';
+        var clave = $("#pass").text();
+        $.ajax({
+            type: "POST",
+            url: "/Admin/GuardarClave",
+            data: '{ nif:"' + nif + '" , clave:"' + clave + '"}',
+            contentType: "application/json; charset=utf-8",
+
+            success: function (data) {
+                alert(data);
+                // alert(data);
+                if (data) {
+                    alert("ok");
+                    $('#pass').addClass("pass");//;//.css("font-weight", "bold").css("background", "#f78686!important") ;
+                    $("#btnguardarclave").hide();
+                }
+                else {
+                    alert("Vuelva a intentarlo");
+                }
+                   
+            },
+            failure: function (response) {
+                alert(response.d);
+            }
+        }).done(function () {
+        });
+
+
+    }
+  $( function() {
+    $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  });
+
+  function limpiar()
+  {
+      $("#txtapellidos").val("");
+      $("#txtdni").val("");
+      tablaizquierda();
+      tabladerecha();
+  }
+  function guardar() {
+      var tab = $("#sortable2");
+      var cod = "";
+      $('#sortable2 .li').each(function () {
+
+          cod = $(this).attr("id") + "$" + cod;
+      });
+    
+
+      var nif = '@Model.nif';
+      $.ajax({
+          type: "POST",
+          url: "/Admin/datostablaGruposTitularidadderechaInsertar",
+          data: '{ nif:"' + nif + '" , codigos_cliente:"' + cod + '"}',
+          contentType: "application/json; charset=utf-8",
+
+          success: function (data) {
+             // alert(data);
+              if(data)
+                  tabladerecha();
+          },
+          failure: function (response) {
+              alert(response.d);
+          }
+      }).done(function () {
+      });
+
+
+
+
+
+
+  }
+  function tablaizquierda() {
+
+      var txtapellidos = $("#txtapellidos").val();
+      var txtdni = $("#txtdni").val();
+      $.ajax({
+          type: "POST",
+          url: "/Admin/datostablaGruposTitularidadizquierda",
+          data: '{txtapellidos:"' + txtapellidos + '",txtdni:"' + txtdni + '"}',
+          contentType: "application/json; charset=utf-8",
+
+          success: function (data) {
+              $("#sortable1 ").html("");            
+              var availableCuentas = JSON.parse(data);
+              var num = 0;
+              $.each(availableCuentas, function (i, item) {              
+                  $("#sortable1").append(" <li class='ui-state-default li' id=" + item.Value + " >" + item.Text + "</li>");
+                  num++;
+              });
+            
+              $("#numencontrados").text(num);
+              
+          },
+          failure: function (response) {
+              alert(response.d);
+          }
+      }).done(function () {
+      });
+  }
+
+
+  tabladerecha();
+  function tabladerecha() {
+
+      
+      var nif = '@Model.nif';
+      $.ajax({
+          type: "POST",
+          url: "/Admin/datostablaGruposTitularidadderecha",
+          data: '{ txtdni:"' + nif + '"}',
+          contentType: "application/json; charset=utf-8",
+
+          success: function (data) {
+              $("#sortable2 ").html("");
+              var availableCuentas = JSON.parse(data);
+
+              $.each(availableCuentas, function (i, item) {
+                  $("#sortable2").append(" <li class='ui-state-highlight li' id=" + item.Value + " >" + item.Text + "</li>");
+              });
+          },
+          failure: function (response) {
+              alert(response.d);
+          }
+      }).done(function () {
+      });
+  }
+</script>
+    
+    }
+             

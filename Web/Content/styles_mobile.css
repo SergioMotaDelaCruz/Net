@@ -1,0 +1,1209 @@
+
+
+/*----IPAD----*/
+@media screen and (max-width: 1130px) {
+
+
+#menu li.boton_ingles {top:430px; text-align:center; padding:7px; -webkit-border-top-left-radius: 7px; 
+-webkit-border-bottom-left-radius: 7px;
+-moz-border-radius-topleft: 7px;
+-moz-border-radius-bottomleft: 7px;
+border-top-left-radius: 7px;
+border-bottom-left-radius: 7px;}
+
+}
+@media screen and (max-width: 1024px) {
+	.center, #los_fondos {
+		min-width:1%;
+		width:96%;
+		margin:0 2%;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+		box-sizing:border-box;
+	}
+	.box_pestanas, #suscripciones_reembolsos .box_pestanas, #suscripciones_reembolsos.sec_pest, #contacto{
+		min-width:1px;
+		width:100%;
+				-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+		box-sizing:border-box;
+		height:auto;
+	}
+	
+	#suscripciones_reembolsos.sec_pest{
+		padding-bottom:0;
+	}
+	#contacto{
+		margin-bottom:30px;
+		overflow:hidden;
+	}
+	
+	.ui-tabs-panel{
+		overflow:hidden;
+	}
+	#presentacion .left{
+		width:59%;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+		box-sizing:border-box;
+		margin-right:1%;
+	}
+	#presentacion .right{
+		width:39%;
+				-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+		box-sizing:border-box;
+		margin-left:1%;
+	}
+	
+	#presentacion .clear, #rasgos_diferenciales .clear, #estilo_inversion .clear, #socios_gestores .clear, #suscripciones .clear, #nuevos_clientes .clear, #reembolsos .clear,	 #traspasos .clear
+	{
+		width:100%;
+		float:left;
+						-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+		box-sizing:border-box;
+		position:relative;
+		bottom:0;
+		margin-top: 30px;
+	}
+
+	#presentacion .boton{
+		
+		width:48%;
+		margin-right:2%;
+	}
+	.sec1_01{
+		width:25% !important;
+	}
+	
+	.box_pestanas li{
+		width:25%;
+								-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+		box-sizing:border-box;
+		height:50px;
+	}
+
+	 #rasgos_diferenciales .left, #estilo_inversion .left, #los_fondos .left, #los_fondos .fondos_premios .left, #nuevos_clientes .left{
+		width:49%;
+		margin-right:1%;
+	}
+	
+	
+	 #rasgos_diferenciales .right, #estilo_inversion .right, #los_fondos .right, #los_fondos .fondos_premios .right, #nuevos_clientes .right{
+		width:49%;
+		margin-left:1%;
+	}
+	img.premio{
+		max-width:185px;
+		height:auto;
+	}
+	
+	#contacto  .left{
+		width:39%;
+		margin-right:1%;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+		box-sizing:border-box;
+	}
+	
+	#contacto  .right{
+		width:59%;
+		margin-left:1%;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+		box-sizing:border-box;
+	}
+	
+	#formulario_contacto textarea{
+		width:100%;
+			-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+		box-sizing:border-box;
+		min-height:200px;
+	}
+	
+	.box_pestanas ul.menuEquipo{
+		margin-bottom:26px;
+	}
+.box_pestanas .worker_modal li{
+		width:100%;
+		display:block;
+		font-family: 'Roboto Slab';
+		font-size: 14px;
+		line-height:17px;
+		letter-spacing: -0.5px;
+		color: #666666;
+		border-width:0;
+		background-color:#FFF;
+		text-align:left;
+		padding:0;
+		padding-left:20px;
+		margin-bottom:15px;
+		cursor: auto;
+		float: none;
+		height: auto;
+	}
+	
+	.worker_modal img {
+		width: 100%;
+		height: auto;
+	}
+	
+	
+}
+
+
+@media screen and (max-width: 960px) {
+#menu_mobile img{
+	width:25px;
+	height:auto;
+}
+
+
+	#menu_mobile{display:block; font-family: 'Roboto Slab', serif;	font-weight: 400; margin:15px; cursor:pointer; } #menu li a.en_menu {display:none;}
+#boton_aniversario { margin-left:400px; right:2%; z-index:999999999; position:absolute; }
+.logo{position:absolute; left:10px; bottom:10px;}
+#menu {background:#F4F4F4; width:100%; height:50px; position:fixed; top:0; z-index:9999999999;  -webkit-backface-visibility:hidden; /*Most Important*/ } #menu li {display:block; float:left; padding:55px 15px 15px 15px;  } 
+#menu ul{
+	display:none;
+	width:60%;
+	height:100%;
+	background-color:#FFF;
+	position:fixed;
+	right:0;
+	top:0;
+	z-index: 99999999999999;
+	padding:100px 6% 160px 3%;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;		
+	box-sizing:border-box;
+}
+.menu_overlay{
+	display:none;
+	z-index: 999999998;
+	position:fixed;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.7);
+}
+
+#menu li a{
+	width: 198px;
+  height: 39px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  text-align: right;
+  color: #08446a;
+}
+
+
+#menu li, #menu li.mclientes, #menu li.english_mobile {
+	display:block; width:100%;   
+  height: auto;
+  font-family: 'Roboto Slab', serif;
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  text-align: right;
+  color: #878787;
+ padding:8px 0 8px 0px; border-width:0; margin:0; float:none;
+	background-color:#FFF !important;
+ 
+ 
+ }
+ 
+ #menu li a.active{
+	background-color:#FFF !important; 
+	font-family: 'Roboto Slab', serif;
+	color: #878787;
+	  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  text-align: right;
+}
+
+ #menu li.mclientes a, li.mclientes{
+	 font-weight:300;
+ }
+ 
+ 
+ .close_menu{
+	 display:block;
+	 position:fixed;
+	 top:20px;
+	 right:6%;
+	 cursor:pointer;
+ }
+ 
+ #menu li.english_mobile{
+	 margin-top:100px;
+	 
+ }
+ 
+#menu li.english_mobile a {color:#878787;  border-top:1px solid #878787; width:140px; display:inline-block;}
+#menu li.mcontacto{border-width:0;}
+
+
+#menu li a.en_menu{position:absolute; color:#878787; font-size:1.0625em; margin-left:35px; bottom:60px; font-family: 'Roboto Slab', serif;	font-weight: 400;}
+#menu li.boton_ingles {display:none;}
+
+#menu .center{
+	width:100%;
+	margin:0;
+}
+  
+
+#nav_container .nivo-controlNav{
+	width:100%;
+}
+#valores {
+  
+    /* margin-left: 0; */  
+    right: 10px;
+}
+
+
+.box_pestanas .worker_modal li{
+		width:100%;
+		display:block;
+		font-family: 'Roboto Slab';
+		font-size: 14px;
+		line-height:17px;
+		letter-spacing: -0.5px;
+		color: #666666;
+		border-width:0;
+		background-color:#FFF;
+		text-align:left;
+		padding:0;
+		padding-left:20px;
+		margin-bottom:15px;
+		cursor: auto;
+		float: none;
+		height: auto;
+	}
+
+
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+
+.outter-left, .outter-right{
+	width:100%;
+	margin-bottom:30px;
+	display:block;
+	float:left;
+}
+
+ img.orden-img{
+	max-width:400px;
+	height:auto;
+}
+.outter-right{
+	text-align:center;
+}
+
+#suscripciones_reembolsos.sec_pest{
+		padding-bottom:130px;
+}
+
+.blue_box {
+
+	margin-left:40px;
+
+}
+
+
+
+.blue_box h3{color:#FFF; font-size:30px !important; font-family: 'Roboto Slab', serif; font-weight:300; line-height:35px !important;}
+.blue_box h4{color:#FFF; font-size:14px !important; font-family: 'Roboto Slab', serif; font-weight:400;  margin-top:15px; line-height:18px;}
+#menu ul{
+	width:80%;
+}
+#nav_container .nivo-controlNav {
+    text-align: right;
+    padding: 15px 0;
+    position: absolute;
+    left: auto!important; 
+    margin-top: -37px !important;
+    z-index: 9999999999;
+    width: 100% !important;
+   margin-left: 0px!important;
+   padding-right:40px !important;
+   	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+   }
+
+.columna_02 img, .columna_03 img{width:20px !important; max-width:20px !important; }
+
+
+#flecha_01 {background:url('../images/flecha01.png')no-repeat center bottom; width:100%; margin:auto; cursor:pointer; position:absolute; margin-top:128px; left:auto;  z-index:9999999;}
+#flecha_02 {background:url('../images/flecha01.png')no-repeat center bottom; width:100%; height:43px;   display:block; position:absolute; bottom:0; }
+#flecha_03 {background:url('../images/flecha02.png')no-repeat bottom; width:86px;   margin-top:60px; }
+#flecha_04 {background:url('../images/flecha01.png')no-repeat center bottom; width:100%; margin:auto; bottom:0;  position:absolute;}
+#flecha_05 {background:url('../images/flecha04.png')no-repeat bottom; width:86px;   margin-top:-30px; margin-bottom:30px;  }
+#flecha_06 {background:url('../images/flecha03.png')no-repeat bottom; width:86px;   margin-top:-163px; margin-bottom:130px;  }
+#flecha_07{background:url('../images/flecha04.png')no-repeat bottom; width:86px;   margin-top:-80px; margin-bottom:9px;  }
+#flecha_08{background:url('../images/flecha03.png')no-repeat bottom; width:86px;   margin-top:-165px; margin-bottom:122px;  }
+
+.center ,.content, .seccion {width:100%; min-width:100%; margin-right:0;
+margin-left:0;}
+	
+#presentacion .bloque_estrategia{
+	overflow:visible;
+	width:100%;
+	float:left;
+}
+	
+.sec_pest {
+    height: auto;
+    padding-bottom: 160px;
+}
+.box_pestanas{min-width:96%; height:auto; overflow:hidden; padding:2%;}
+.box_pestanas ul {display:block; overflow:hidden; margin-bottom:0px;}
+.box_pestanas li.ui-state-active {position:static; background:#FFF; border-bottom:0px solid; font-weight:400;} 
+
+#carrusel {width:100%;padding-top: 50px;} 
+
+/*-------------------INICIO VALORES---------------------*/
+#valores {width:94%; height:100px; float:none; position:relative; margin:0px; padding:10px 3% 60px 3%;  right:0px; background:#000;}
+.valores_num{min-width:270px; width:auto; margin-top:10px; border-top:1px solid #FFF; padding:20px 0px; border-bottom:1px solid #FFF; overflow:hidden;}
+.valor_txt {width:auto; margin-top:3px; min-width:135px; }.valor_num {width:auto; min-width:135px; font-size:25px; line-height:23px;}
+#valores .left{float:left;}
+
+
+/*-------------------FIN VALORES---------------------*/
+	#presentacion .clear , #rasgos_diferenciales .clear, #estilo_inversion .clear, #socios_gestores .clear{position:relative; bottom:0;}
+	/*-------------------INICIO PRESENTACION----------------------------*/
+	#presentacion .left{width:55%; margin-top:40px; } #presentacion .right{width:42%; margin-top:40px;} #presentacion .selector_fondos{width:150px; margin-top:35px; padding-right:25px; border-right:1px solid #ccc;} 
+	#presentacion .boton{width:47%; height:90px; float:left; margin-right:3%;} #presentacion .final{margin:0px;} #presentacion .boton img {width:100%; max-width:89px; height:auto;}
+	/*-------------------FIN PRESENTACION-------------------------------*/
+	 /*-------------------INICIO Pestaña Rasgos Diferenciales ---------------------*/
+	#rasgos_diferenciales .right, #rasgos_diferenciales .left, #estilo_inversion .right, #estilo_inversion .left{width:48%; margin-top:40px;}
+	/*-------------------FIN Pestaña Rasgos Diferenciales ---------------------*/
+	/*-------------------INICIO Pestaña Socios Gestores ---------------------*/
+	#foto_gestores, #alvaro, #cayetano, #juan {width:94%; padding:0px 3%; background-size:100%; height:220px; padding-top:10px; display:block; margin-top:0px;} 
+	#socios_gestores  ul {width:480px; float:right;}
+	#socios_gestores li {width:150px; margin-right:0; margin-left:10px; text-align:right; margin-right:0 !important;}
+	#socios_gestores li.inicio {width:0px; margin:0; }
+	#socios_gestores a.cruz_cierre {position:absolute; top:125px; right:60px; width:24px; height:25px; background:url('../images/cruz_cierre.png')no-repeat;}
+	#socios_gestores .ui-tabs-active  a.cruz_cierre{display: none;}
+	/*-------------------FIN Pestaña Socios Gestores---------------------*/
+/*-------------------FIN SOBRE CARTESIO ---------------------*/
+
+/*-------------------INICIO LOS FONDOS ---------------------*/
+#los_fondos {overflow:hidden; display:block; height:auto; padding-top:80px; } 
+
+
+
+#los_fondos .left, #los_fondos .right, #rasgos_diferenciales .right, #estilo_inversion .right, #los_fondos .right, #los_fondos .fondos_premios .right{float:none; width:96%; padding:0px 2%; clear:both; margin-right:0;
+margin-left:0;}
+
+
+
+#los_fondos .fondos_premios  {display:block; }
+#los_fondos h2 {width:100%; text-align:center; font-size:2.5em; color:#666;} 
+.min_height{min-height:220px;}
+#los_fondos .fondos_premios .left {width:74%; padding:0; float:left; margin:40px 2% 0px 4%; margin-bottom:90px; clear:none;} #los_fondos .fondos_premios .final{margin-right:0;}
+
+
+
+/*-------------------FIN LOS FONDOS ---------------------*/
+
+/*-------------------INICIO SUBSCRIPCIONES Y REEMBOLSOS ---------------------*/
+#suscripciones_reembolsos .box_pestanas {height:auto;}
+#suscripciones_reembolsos.sec_pest {height:auto;} #suscripciones_reembolsos .left, #suscripciones_reembolsos .right {margin-bottom:70px;}
+#traspasos .clear ,#reembolsos .clear, #suscripciones .clear, #nuevos_clientes .clear{width:100%; padding:5%; position:relative; } #traspasos .clear p, #reembolsos .clear p, #suscripciones .clear p,#nuevos_clientes .clear p {width:100%; }
+	#nuevos_clientes .right{width:59%; margin-left:5%;} #nuevos_clientes .left{width:35%; margin-top:40px;} 
+	#suscripciones .right{width:40%; margin-left:10%;} #suscripciones .left{width:50%; margin-top:40px;} 
+	#suscripciones .downloads {width:90%;}
+	#suscripciones .downloads .pdf_descarga{margin-bottom:15px;}
+	#traspasos .left{background:transparent;}
+	#reembolsos .left, #subscripciones .left {float:none; margin-bottom:0; margin-top:90px; background:transparent;}
+	#reembolsos .clear_top, #traspasos .clear_top{ bottom:auto; position:relative; overflow:hidden; display:block; } #reembolsos .clear{} #reembolsos .clear, #traspasos .clear{bottom:20px;}
+/*-------------------FIN SUBSCRIPCIONES Y REEMBOLSOS ---------------------*/
+
+/*------------------- INICIO CONTACTO ---------------------*/
+#contacto {padding:30px 0px 90px 0px;}
+#contacto h2 {width:100%; text-align:center; font-size:2.5em; color:#666;}
+#contacto  .left{padding-left:3%; width:34%; margin-top:50px;} #contacto  .right{width:58%; margin-left:2%; margin-top:50px; padding-right:3%;}
+	/*------------------- INICIO FORMULARIO DE CONTACTO ---------------------*/
+			#formulario_contacto input {width:90%; height:35px; padding-left:15px; border:1px solid #CCC; margin-right:20px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; margin-bottom:15px;}
+			#formulario_contacto textarea {width:90%; height: 50px; padding:10px 0px 10px 15px;  border:1px solid #CCC; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; margin-bottom:15px; resize: none; text-align:left;}
+	/*------------------- FIN FORMULARIO DE CONTACTO ---------------------*/
+
+/*------------------- FIN DE CONTACTO ---------------------*/
+#footer .left {margin-left:10px;width:300px;} 
+
+
+
+
+
+
+
+/*------------------------INICIO DE FONDO-----------------------------------*/
+#color_cartesioy, #color_cartesiox{background:#EEE; width:100%; min-height:100%; padding:125px 0px;}
+
+
+
+.content {min-height:750px; width:94%; margin:0px 3%; background:#FFF; padding:30px 0px; 
+} 
+
+#color_cartesiox .content, #color_cartesioy .content {margin-bottom:150px;}
+	
+#header {width:94%; margin:0px 3% 50px 3%;}	
+#header h1 {width:100%; text-align:center; color:#666; height:50px;} #header h1 img {width:250px;}	.date_fondo {position:absolute; bottom:0; right:0; margin-top:0; font-size:13px; color:#666; font-family: 'Open Sans', sans-serif; font-weight:400;}
+
+h2.tit_sec_fondo {font-size: 1.25em;  font-size: 20px;font-weight:400; color:#666; padding:5px 0px 0px 35px; min-height:33px; margin-bottom:23px;} 
+.content h3 {line-height:15px; margin-bottom:5px;} .content p {margin-bottom:15px;}
+
+
+	/*--------------------INICIO INFORMACION FONDO-------------------*/
+	
+	#informacion_fondo {width:94%; margin:0px 3%; }
+	#informacion_fondo .col_otro_fondo{float:none; width:100%; margin-bottom:50px; margin-right:0px;} 
+	
+	#informacion_fondo .centro{width:40%; float:left; margin:0;} #informacion_fondo .final{width:45%; float:left; margin:23px 0px 50px 10%; }
+	
+
+	#informacion_fondo .top {margin-bottom:55px;}
+	#informacion_fondo .centro h3{border-bottom:1px dotted #CCC; padding-bottom:10px; margin-bottom:5px;}
+	
+	#informacion_fondo .pdf_descarga {margin-bottom:20px;}
+	
+		/*----------------INICIO INFORMES ANTERIORES----------------*/
+		#historico {font-weight:800; font-size:0.875em; cursor:pointer; color:#00577d; font-family: 'Open Sans', sans-serif;	font-weight:600;}
+		
+		#informes_anteriores {width:338px; height:120px; background:url('../images/informes_anteriores.png')no-repeat left; position:absolute; margin-top:-172px; margin-left:-30px; padding:20px 30px; display:none;}
+		#informes_anteriores p{font-size:0.875em; color:#666; font-weight:600;}
+		
+		#informes_anteriores select{background:#F9F9F9; width:75px; padding:6px; -webkit-border-radius: 3px;	-moz-border-radius: 3px; border-radius: 3px;}
+		
+		#informes_anteriores input[type=button]{background: #0085b2; /* Old browsers */
+			background: -moz-linear-gradient(top, #0085b2 0%, #004c66 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0085b2), color-stop(100%,#004c66)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #0085b2 0%,#004c66 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #0085b2 0%,#004c66 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, #0085b2 0%,#004c66 100%); /* IE10+ */
+			background: linear-gradient(to bottom, #0085b2 0%,#004c66 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0085b2', endColorstr='#004c66',GradientType=0 ); /* IE6-9 */
+		
+			font-size:0.875em; text-align:center; font-family: 'Roboto Slab', serif;	font-weight: 300;
+		
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		
+			border:0px; width:100px; height:30px; padding:0; margin-left:20px;
+		}
+		
+		
+		
+		/*----------------FIN INFORMES ANTERIORES------------------*/
+	
+	/*--------------------FIN INFORMACION FONDO--------------------*/
+
+	/*--------------------INICIO GRAFICA------------------------*/
+	#grafica {padding:0px 3% 20px 3%; width:94%; margin:auto; border-bottom:1px dotted #CCC; margin-bottom:30px;  overflow: auto; -webkit-overflow-scrolling:touch;}
+	
+	#grafica iframe {width:100% !important; min-height:530px; height:auto; margin:0px;}
+	
+	
+		/*--------------------CHART-----------------------------*/
+		
+		
+		
+		/*-------------------FIN CHART-------------------------*/
+		
+	/*--------------------FIN GRAFICA--------------------------*/
+	
+	/*--------------------INICIO RENTABILIDAD Y RIESGO--------------------------*/
+	#rentabilidad_riesgo{padding:0px 30px;}
+	#rentabilidad_riesgo h2{margin-bottom:0;}
+	
+	.tabla_fondo{padding-bottom:20px; border-bottom:1px dotted #CCC;}
+	.tabla_fondo li {display:block; float:left; min-width:12%; font-size:14px; text-align:center; margin-right:5%; padding-bottom:20px; min-height:28px; margin-top:10px; margin-bottom:3px;}.tabla_fondo li .ultima_fila {width:10%;}
+	.tabla_fondo li.primera_fila {width:21%; padding-left:2%; text-align:left; margin-right:5%;}
+	.tabla_fondo ul {clear:both; overflow:hidden; border-bottom:1px solid #CCC;} .tabla_fondo ul.cabecera {width:100%; background:#E4EBF3; border-bottom:0px; padding:0; height:45px;}	.tabla_fondo ul.cabecera li{margin-bottom:12px;  margin-top:5px;padding-bottom:3px; padding-top:18px; height:30px; font-family: 'Open Sans', sans-serif; color:#777777;	font-weight:600; font-size:13px; line-height:0;}
+	.tabla_fondo ul li.ultima_fila {width:16%; margin-right:0px;} 
+	.tabla_fondo ul.cabecera li.ultima_fila {width:16%; margin-right:0px;} 
+
+	.tabla_fondo ul.no_border {border-bottom:0px;}
+	/*--------------------FIN RENTABILIDAD Y RIESGO--------------------------*/
+	
+	/*--------------------INICIO VALORES LIQUIDATIVOS------------------------*/
+	#valores_liquidativos {margin-top:35px; padding:0px 30px;}
+	
+	/*--------------------FIN VALORES LIQUIDATIVOS------------------------*/
+	
+	/*--------------------INICIO OTROS FONDOS-----------------------------*/
+	
+
+	
+	#otros_fondos h2{width:100%; text-align:center; margin-top:35px; margin-bottom:50px; font-family: 'Roboto Slab', serif;	font-weight: 300; font-size:1.875em; color:#666;} #otros_fondos p{font-size:0.9375em; min-height:175px;} 
+	#otros_fondos h4{margin-top:10px; font-family: 'Open Sans', sans-serif;	font-weight:600; margin-bottom:5px;	font-size: 14px; }	
+	#otros_fondos h5{display:none;}
+	#otros_fondos .col_otro_fondo, #otros_fondos .inicio, #otros_fondos .centro, #otros_fondos .final {width:90%; padding:0; float:auto; border:0px; margin:0px 5%;} #otros_fondos .col_otro_fondo p { width:55%; float:left;}
+
+	
+	#otros_fondos .premio{float:left; margin-left:10%; width:35%;} #otros_fondos .premio img {width:100%; margin-top:-65px; max-width:180px;}
+	
+	.ver_mas{margin-top:30px; display:block;}
+	#otros_fondos .ver_mas{margin-top:175px; position:absolute; display:block; clear:both;  }
+		.ver_mas a{background: #0085b2; 
+		background: -moz-linear-gradient(top, #0085b2 0%, #004c66 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0085b2), color-stop(100%,#004c66)); 
+		background: -webkit-linear-gradient(top, #0085b2 0%,#004c66 100%); 
+		background: -o-linear-gradient(top, #0085b2 0%,#004c66 100%); 
+		background: -ms-linear-gradient(top, #0085b2 0%,#004c66 100%); 
+		background: linear-gradient(to bottom, #0085b2 0%,#004c66 100%); 
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0085b2', endColorstr='#004c66',GradientType=0 ); 
+		
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		
+		
+		min-width:60px; padding:3px 20px; cursor:pointer; color:#FFF; font-size:0.875em; text-align:center; font-family: 'Roboto Slab', serif;	font-weight: 300;}
+		
+	
+	/*--------------------FIN OTROS FONDOS--------------------------------*/
+
+
+
+	/*------------------------LONGIN CLIENTES--------------------------------*/
+	
+		#login_clientes h1{color:#666; font-family: 'Roboto Slab', serif; width:100%; text-align:center;font-weight: 300; font-size:3.125em; line-height:46px; display:block; margin-bottom:50px; }
+		#login_clientes .content {width:94%; margin:0px 3%; min-height:160px; padding:0px 0px 20px 0px; height:auto; overflow:hidden; }
+		#login_clientes .left, #login_clientes .right{width:44%; padding:0px 3%;}
+		#login_clientes .right {margin-top:20px;}
+		#login_clientes li {float:none; margin-left:0px; }
+		#login_clientes input {width:94%; padding:3px 3%; margin:20px 0px 0px 0px;}
+		
+	
+		
+		
+	/* FOOTER */	
+	ul.col_footer{
+		margin-bottom:30px;
+		
+		
+	}	
+	ul.col_footer.col1{
+		width:49%;
+		margin-right:1%;
+		margin-left:0;
+	}	
+	
+	ul.col_footer.col2{
+		width:49%;
+		margin-left:1%;
+		margin-right:0;
+		clear:right;
+	}	
+
+	ul.col_footer.col3{
+		width:49%;
+		margin-right:1%;
+		margin-left:0;
+	}	
+	
+	ul.col_footer.col4{
+		width:49%;
+		margin-left:1%;
+		margin-right:0;
+	}	
+
+	
+	.redes_sociales{
+		width:100%;
+		margin:0 0 30px 0;
+		float:left;
+	}
+	
+	
+	
+.box_pestanas .worker_modal li{
+		width:100%;
+		display:block;
+		font-family: 'Roboto Slab';
+		font-size: 14px;
+		line-height:17px;
+		letter-spacing: -0.5px;
+		color: #666666;
+		border-width:0;
+		background-color:#FFF;
+		text-align:left;
+		padding:0;
+		padding-left:20px;
+		margin-bottom:15px;
+		cursor: auto;
+		float: none;
+		height: auto;
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----MOBILE---*/
+
+
+
+@media screen and (max-width: 960px) and (max-height: 600px) {
+	#menu ul{
+		padding:80px 3%;
+		width:90%;
+	}
+	#menu li, #menu li.mclientes, #menu li.english_mobile{
+		padding:4px 0;
+		line-height:34px;
+	}
+}
+
+
+
+
+@media screen and (max-width: 598px) {
+.worker_modal{
+	min-height:900px;
+}
+#suscripciones .left, #traspasos .left, #reembolsos .left, #suscripciones .right, #traspasos .right, #reembolsos .right, #presentacion .left, #presentacion .right, #rasgos_diferenciales .right, #rasgos_diferenciales .left, #estilo_inversion .right, #estilo_inversion .left, #suscripciones .clear_top{
+	width:92%;
+	padding:0px 4%;
+	display:block;
+	float:left;
+	margin-bottom:30px;
+	margin-right:0;
+	margin-left:0;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+#suscripciones .right, #traspasos .right, #reembolsos .right{
+	text-align:center;
+}
+
+
+.mobile{display:block;} .hide_mobile {display:none;}
+
+.center ,.content, .seccion {width:100%; min-width:100%; }
+#carrusel {padding-top:50px;}
+#cabecera-responsive{ display:block;}
+#cabecera-responsive img{ width:100%; height:auto;}
+#boton_aniversario { margin-top:0; margin-left:0px; right:20px; top:70px; z-index:999999999; position:absolute;}
+#boton_aniversario img{width:50px; height:auto;}
+
+#cabecera-responsive  .blue_box {
+	padding: 10px;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+
+}
+#cabecera-responsive  .blue_box h3{color:#FFF; font-size:19px !important; font-family: 'Roboto Slab', serif; font-weight:300; line-height:19px !important;}
+#cabecera-responsive  .blue_box h4{color:#FFF; font-size:14px; font-family: 'Roboto Slab', serif; font-weight:400;  margin-top:15px; line-height:18px;}
+
+#cabecera-responsive  .blue_box h3 br {display:none;}
+
+.nivo-caption {width:100%; height:100%; bottom:auto; left:0px; top:0px;}
+#link_slider {position:relative; width:100%; top:0px; left:0px; right:auto; bottom:auto;}
+
+
+#cabecera-responsive .acceso_fondos{color:#FFF; font-size:14px; line-height:14px; margin-top:5px; font-family: 'Roboto Slab', serif; font-weight:300;}
+.acceso_fondos .fila {overflow:hidden; margin-bottom:5px;}
+.acceso_fondos .fila_cabecera {margin-bottom:0px !important;}
+.acceso_fondos .fila_cabecera .columna_01,.acceso_fondos .fila_cabecera .columna_02,.acceso_fondos .fila_cabecera .columna_03{height:21px;}
+
+.helper {height:100%; vertical-align:middle; display: inline-block;}
+.acceso_fondos .columna {float:left;}
+#cabecera-responsive .columna_01 {width:90px; height:25px;}
+#cabecera-responsive .columna_02 {width:85px; height:25px; margin:0px 15px; text-align:center;}
+#cabecera-responsive .columna_03 {width:55px;  height:25px; margin:0px 15px;  margin-right:0px; text-align:center;}
+
+#cabecera-responsive .columna_02 img, #cabecera-responsive .columna_03 img{position:relative; top:auto; left:auto; width:20px; max-height:auto; vertical-align: middle; }
+#cabecera-responsive .columna_01 img{width:85px; height:auto; position:relative;}
+.fila_dos_lineas .columna_01 img{width:63px !important; height:auto; position:relative;}
+
+#cabecera-responsive .acceso_fondos a {line-height:0px;}
+#nav_container .nivo-controlNav {display:none;}
+#nav_slider_container .nivo-controlNav {display:block;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    left: auto;
+    margin-top: 0px;
+    z-index: 999;
+    width: 100%;
+    margin-left: 0px;
+
+}
+	
+.nivo-caption .center {height:100%;}	
+
+.logo .mobile img {width:120px; margin-top:5px;}
+
+/*-------------------INICIO VALORES---------------------*/
+#valores {width:94%; height:100px; float:none; position:relative; margin:0px; padding:10px 3% 0px 3%;  right:0px; background:#000;}
+.valores_num{min-width:270px; width:auto; margin-top:10px; border-top:1px solid #FFF; padding:20px 0px; border-bottom:1px solid #FFF; overflow:hidden;}
+.valor_txt {width:auto; margin-top:3px; min-width:135px; }.valor_num {width:auto; min-width:135px; font-size:25px; line-height:23px;}
+#valores .left{float:left;}
+
+
+#boton_aniversario {display:none;}
+
+
+
+
+/*-------------------FIN VALORES---------------------*/
+
+/*-------------------INICIO FLECHAS DE NAVEGACIÓN ---------------------*/
+#flecha_01 {display:none;}
+#flecha_02 {background:url('../images/flecha01.png')no-repeat center bottom; width:100%; height:43px;   display:block; position:absolute; bottom:0; }
+#flecha_03 {background:url('../images/flecha02.png')no-repeat bottom; width:86px;   margin-top:60px; }
+#flecha_04 {background:url('../images/flecha01.png')no-repeat center bottom; width:100%; margin:auto; bottom:0;  position:absolute;}
+#flecha_05 {background:url('../images/flecha04.png')no-repeat bottom; width:86px;   margin-top:-30px; margin-bottom:30px;  }
+#flecha_06 {background:url('../images/flecha03.png')no-repeat bottom; width:86px;   margin-top:-127px; margin-bottom:130px;  }
+#flecha_07{background:url('../images/flecha04.png')no-repeat bottom; width:86px;   margin-top:-80px; margin-bottom:9px;  }
+#flecha_08{background:url('../images/flecha03.png')no-repeat bottom; width:86px;   margin-top:-85px; margin-bottom:82px;  }
+
+
+/*-------------------FIN FLECHAS DE NAVEGACIÓN---------------------*/
+
+
+.sec_pest{ height:auto; padding:65px 0px 100px 0px;} .sec1_01 {border-left:0px !important; width:100% !important;} 
+.sec_pest h2 {line-height:40px; margin-bottom:0px; margin-top:-20px;}
+ #suscripciones_reembolsos .box_pestanas,#sobre_cartesio .box_pestanas{min-width:94%; width:94%; margin:0px 3%; padding:0; height:auto; overflow:hidden;}
+.box_pestanas ul{margin-bottom:0px; display:block; position:relative; } 
+.box_pestanas .box_pestanas ul {
+	margin-left:15px;
+}
+
+
+
+.box_pestanas ul:first-child{ display:none;}
+.box_pestanas ul.menuEquipo:first-child{ display:block; margin-bottom:30px;}
+
+
+ul.menuEquipo li{
+	width:100%;
+}
+
+.worker_modal .left, .worker_modal .right{
+	width:100%;
+	margin-left:0;
+	margin-right:0;
+}
+
+ .worker_modal .right{
+	 padding:0 15px;
+	 -moz-box-sizing:border-box;
+	 -webkit-box-sizing:border-box;
+	 -o-box-sizing:border-box;
+	 box-sizing:border-box;
+	 margin-bottom:30px;
+	 
+ }
+
+	.worker_modal img{
+		width:100%;
+		height:auto;
+	}
+
+	.close_worker{
+		width:100%;
+		position:relative;
+		margin-bottom:10px;
+		 -moz-box-sizing:border-box;
+		 -webkit-box-sizing:border-box;
+		 -o-box-sizing:border-box;
+		 box-sizing:border-box;
+		 padding:0 15px;
+		 text-align:right;
+	}
+	
+	.close_worker img{
+		width:auto;
+		height:auto;
+	}
+	
+
+
+
+.box_pestanas li {display:block; float:none; text-align:center; width:100%; height:auto; padding:0px;}
+.box_pestanas li a {display:block; height:auto; padding: 5px 0px; margin-top:0px;}
+
+#sobre_cartesio h4 { display:block; float:none; text-align:center; width:100%; padding:15px 0px; background:#F4F4F4; border:1px solid #CCC; border-right:0px solid #CCC; cursor:pointer;}
+
+	#presentacion .clear, #rasgos_diferenciales .clear, #estilo_inversion .clear, #socios_gestores .clear, #suscripciones .downloads  {position:relative; bottom:auto; display:block; width:96%; margin-left:2%; margin-right:2%; margin-top:20px; margin-bottom:20px;}
+
+
+	#presentacion .selector_fondos{width:40%; margin-top:35px; padding-right:25px; border-right:1px solid #ccc;} 
+	.btn_fondo {width:150px; height:115px; background:#F2F2F2; display:block; position:relative; } #presentacion .selector_fondos h4{margin-bottom:35px;}
+
+	#presentacion .bloque_estrategia{margin-bottom:40px; overflow:hidden; min-height:115px;} .bloque_estrategia h3{color:#999999; line-height:15px; padding-bottom:8px; border-bottom:1px dotted #CCC;}
+	#presentacion .boton{width:38%; margin:0px 10% 0px 6%; height:110px; float:left;} #presentacion .final{ margin-right:0; }
+
+
+	
+	#socios_gestores ul.right{position:relative; display:block; float:none; overflow:hidden; width:100%;}
+	#socios_gestores li {width:96%; padding:0px 2%; text-align:center;} 
+
+	#socios_gestores a.cruz_cierre {display:none;}
+
+	#foto_gestores, #alvaro, #cayetano, #juan {width:94%; padding:0px 3%; background-size:100%; height:180px; margin-top:0px;}
+
+	
+#los_fondos {overflow:hidden; display:block; height:auto; padding-top:80px; } 
+#los_fondos .fondos_premios  {display:block; } #los_fondos .fondos_premios img {height:auto;}
+
+#los_fondos h2 {width:100%; text-align:center; font-size:2.5em; color:#666;} 
+
+#los_fondos .fondos_premios .left {width:74%; padding:0; float:left; margin:40px 0px 0px 0px; margin-bottom:20px; clear:none;} #los_fondos .fondos_premios .final{margin-right:0;}
+#los_fondos .fondos_premios .left .ver_mas {margin-left:10px;}
+
+h4.hide_mobile {display:none;}
+
+#los_fondos .fondos_premios .left h4.mobile {width:100%; height:auto; max-width:175px; margin-left:10px;} #los_fondos .fondos_premios .final{margin-right:0;}
+#los_fondos .fondos_premios .left h4.mobile a{width:100%; height:auto; max-width:175px;} #los_fondos .fondos_premios .final{margin-right:0;}
+#los_fondos .fondos_premios .left h4.mobile a img{width:100%; height:auto; max-width:175px;} #los_fondos .fondos_premios .final{margin-right:0;}
+#los_fondos .fondos_premios .left h4.mobile a img.logo_mob_peq{max-width:150px;}
+
+.mobile_bottom {overflow:hidden; margin-bottom:80px;}
+
+
+	
+#nuevos_clientes .clear, #suscripciones .clear, #reembolsos .clear, #traspasos .clear{width:92%; margin:0px 4%; padding:20px 0px; position:relative; margin-top:60px; display:block; float:left; margin-bottom:30px;}  #nuevos_clientes .clear p, #suscripciones .clear p, #reembolsos .clear p, #traspasos .clear p {width:92%;padding:0px 4%; text-align:center;}
+#reembolsos .clear_top, #traspasos .clear_top{padding-top:15px; width:100%; margin:0px 0%; bottom:auto; position:relative;}
+
+
+#suscripciones_reembolsos .box_pestanas {height:auto;}
+#suscripciones_reembolsos h2.title {margin-top:-20px;}
+
+#suscripciones_reembolsos h4 {display:block; float:none; text-align:center; width:100%; padding:15px 0px; background:#F4F4F4; border:1px solid #CCC; border-right:0px solid #CCC; cursor:pointer;}
+
+
+/*-------------------INICIO Nuevos Clientes ---------------------*/
+	
+
+	#nuevos_clientes .right{width:92%; padding:0px 4%; margin-top:40px; margin-bottom:70px; float:none; display:block; position:relative; margin-left:0px;} #nuevos_clientes .left{float:none; width:92%; padding:0px 4%;}
+	#nuevos_clientes h3 {margin-bottom:5px;}
+		
+	/*-------------------FIN Nuevos Clientes ---------------------*/
+	 
+	/*-------------------INICIO Suscripciones ---------------------*/
+	
+	#suscripciones .right{margin-left:0px; margin-top:40px;} #suscripciones .left{margin-top:25px;} .list_number h3{margin-bottom:35px;}
+
+	#suscripciones .list_number{padding-left:30px;} 
+	#suscripciones .left .downloads  {display:none;}
+	#suscripciones .right .downloads  {padding-top:15px; border-top:1px dotted #CCC; margin-left:0px;}
+	#suscripciones .downloads .pdf_descarga{margin-bottom:15px;}
+	
+	
+	/*-------------------FIN Suscripciones ---------------------*/
+	
+	/*-------------------INICIO Reembolsos ---------------------*/
+	#reembolsos{display:none;} #reembolsos h3{margin-bottom:5px;}
+	#reembolsos .left{float:none; width:92%; padding:0px 4%; background:transparent;}
+
+
+
+	/*-------------------FIN Reembolsos---------------------*/
+	
+	/*-------------------INICIO Traspasos ---------------------*/
+	#traspasos {display:none;}#traspasos{margin-bottom:5px;}
+	#traspasos .left{width:92%; padding:0px 4%; background:transparent; margin-top:90px;}
+
+
+
+	/*-------------------FIN Traspasos---------------------*/
+	
+	
+	
+	
+/*------------------- INICIO CONTACTO ---------------------*/
+
+#contacto {padding:30px 0px; height:auto; overflow:hidden;}
+#contacto h2 {width:100%; text-align:center; font-size:2.5em; color:#666;}
+#contacto  .left{width:92%; padding:0px 4%; margin-top:50px;} #contacto  .right {width:92%; padding:0px 4%; margin-top:50px;}
+
+#contacto .left h3 {margin-bottom:30px;}
+#contacto .left li {font-size:1em; font-size:16px; color:#373a36; margin-top:10px; padding-left:40px; padding-bottom:20px;}
+
+
+	
+	/*------------------- INICIO FORMULARIO DE CONTACTO ---------------------*/
+			
+			#formulario_contacto input {width:90%; margin:0px 2% 15px 2%; padding-left:3%;}
+			#formulario_contacto textarea {width:87%; margin:0px 2% 15px 2%; padding:2% 3%;}
+
+				
+	/*------------------- FIN FORMULARIO DE CONTACTO ---------------------*/
+
+/*------------------- FIN DE CONTACTO ---------------------*/
+	
+/*------------------- FOOTER ---------------------*/
+
+#footer {background:#F4F4F4; width:100%; min-height:160px; overflow:hidden; margin-top:0px; padding-top:25px; padding-bottom:25px; display:block; position:relative;}
+
+#footer .left {width:92%; padding:0px 4%; float:none;} #footer .right {float:none; width:92%; padding:0px 4%; margin-top:30px;} #footer h3{margin-bottom:20px; font-size:18px;  padding-top:0px; color:#878787; font-family: 'Roboto Slab', serif; line-height:24px; margin-bottom:14px;} #footer .left p{color:#878787; font-size:0.875em; margin:0;}
+
+
+
+
+/*------------------- FIN FOOTER ---------------------*/	
+
+#color_cartesioy .content, #color_cartesiox .content{width:94%; min-width:94%; max-width:94%;}
+
+#informacion_fondo {margin-bottom:35px;}
+#informacion_fondo .final{margin:0; margin-bottom:50px; }
+
+	
+#informacion_fondo .col_otro_fondo, #otros_fondos .inicio, #otros_fondos .center, #otros_fondos .inicio, #otros_fondos .col_otro_fondo {width:94%; padding:0px 3% 0px 3%;}	
+
+#otros_fondos .col_otro_fondo {margin:0; border:0px;}
+.highcharts-container{width:100% !important; max-width:480px; min-width:100%;}	
+
+#rentabilidad_riesgo {padding:0px 3%;}
+
+	.tabla_fondo{padding-bottom:20px; border-bottom:1px dotted #CCC;}
+	.tabla_fondo li {display:block; margin:0; padding:10px 0; float:left; min-width:16%; font-size:11px; text-align:center; margin-left:3%; height:auto; min-height:15px; line-height:11px;}.tabla_fondo li .ultima_fila {width:10%;}
+	.tabla_fondo li.primera_fila {width:21%; padding-left:0; text-align:left; margin-right:0; }
+	.tabla_fondo ul {clear:both; overflow:hidden; border-bottom:1px solid #CCC;} .tabla_fondo ul.cabecera {width:100%; background:#E4EBF3; border-bottom:0px; padding:0; height:auto;}	.tabla_fondo ul.cabecera li{margin:0;  height:auto; text-transform:lowercase; margin-left:3%; width:16%; padding:10px 0px; font-family: 'Open Sans', sans-serif; color:#777777; font-weight:600; font-size:10px; line-height:10px;}
+	.tabla_fondo ul li.ultima_fila {width:16%; margin-right:0px; line-height:11px;} 
+	.tabla_fondo ul.cabecera li.ultima_fila {width:16%; margin-right:0px; } 
+	.tabla_fondo ul.cabecera li.primera_fila {width:21%;  margin-left:2%; margin-right:0px; text-transform:uppercase;  } 
+
+/*------------------FONDO MOBILE----------------------*/	
+	/*------------------------LONGIN CLIENTES--------------------------------*/
+		#login_clientes.wrapper{padding:80px 0px; min-height:initial;}
+		#login_clientes h1{line-height:46px;}
+		#login_clientes .content {width:94%; min-width:94%; margin:0px 3%; min-height:160px; padding:0px 0px 20px 0px; height:auto; overflow:hidden; }
+		#login_clientes .left, #login_clientes .right{float:none; width:94%; padding:0px 3%;}
+		#login_clientes .right {margin-top:20px;}
+		#login_clientes li {float:none; margin-left:0px; }
+		#login_clientes input {width:94%; padding:3px 3%; margin:20px 0px 0px 0px;}
+
+
+
+
+
+	#glosario h3.titulo {display:block; text-align:center; width:100%; padding:15px 0px; background:#F4F4F4; border:1px solid #CCC; cursor:pointer;}#glosario h2.titulo{display:none;} #glosario li a{font-weight:600; display:block; margin-bottom:6px;}
+	#glosario.wrapper{padding:80px 0px; height:auto;  min-height:100px; position:relative; padding-bottom:100px; }
+	
+	#glosario .clear{width:94%; margin:0px 3%; margin-top:20px;}
+	#glosario a.imprimir{padding-left:40px; padding-bottom:10px;}
+	
+	#glosario .content {width:94%; min-width:94%; height:auto; min-height:500px; margin:0px 3%;  padding:40px 0px;  }
+	#glosario .left{width:94%; margin:0px 3%; margin-bottom:40px; float:none;} #glosario .right{display:none !important; width:94%; margin:0px 3%; margin-bottom:40px;}
+	
+		/*------------------------LEGAL CLIENTES--------------------------------*/
+	
+	#legal.wrapper {width:96%; padding:80px 3%; position:relative}
+	
+	#legal .content {width:94%; min-width:94%; min-height:345px; padding:40px 3%; margin:0;}
+	#legal .left{width:94%; padding:0px 3%;} #legal .right{width:94%; padding:0px 3%;} #legal .clear{padding-top:15px; border-top:1px dotted #CCC; margin-top:20px;}
+	.pdf_descarga{margin-bottom:15px;} #legal a.imprimir{padding-left:40px; padding-bottom:10px;}
+	
+
+	
+	
+	/*------------------------FIN LEGAL CLIENTES-----------------------------*/
+	
+	
+	#capitalizacion,#bloomberg,#comision_gestion,#distribucion_activos,#distribucion_sectorial,#depositario, #indice, #isin, #m2, #rentabilidad_riesgo2, #sharpe, #valor_liquidativo ,#var, #volatilidad {display:block;}
+	
+		/*------------------------CAMBIAR CONTRASENA--------------------------------*/
+		#cambiar_contrasena.wrapper {padding:80px 0px; height:auto; min-height:100px; position:relative;}
+		
+		#cambiar_contrasena h1{line-height:48px; }
+		#cambiar_contrasena .content {width:94%; min-width:94%; margin:0px 3%; min-height:220px; padding:40px 0px; overflow:hidden;}
+		#cambiar_contrasena .left{width:	94%; padding:0px 3%;} #cambiar_contrasena .right{width:	94%; padding:0px 3%;}
+		
+		#cambiar_contrasena li {float:none; margin-left:0px; } 
+		#cambiar_contrasena input {width:94%; padding:0px 3%; }
+	
+	/*------------------------FIN CAMBIAR CONTRASENA-----------------------------*/
+	
+	/*------------------------MOVIMIENTOS------------------------------------*/
+	
+		/*----------------------MI CARTERA--------------------------*/
+		
+		#mi_cartera  .content {width:94%; min-width:94%; min-height:345px;  height:auto; position:relative; padding:40px 0px; margin:0 3%; overflow:hidden;}
+				
+		#mi_cartera_update {width:100%; text-align:center; margin-top:140px;}
+			
+		
+		#mi_cartera  .clear{width:94%; padding:0px 3%; padding-top:15px; border-top:1px dotted #CCC; margin-top:20px;}
+		#mi_cartera  a.imprimir{padding-left:40px; padding-bottom:10px;}
+		
+		#mi_cartera ul.info_micartera {width:94%; margin:0 3%; border-left:0px; margin-top:30px; margin-bottom:40px; overflow:hidden; display:block;}
+		#mi_cartera .tabla_fondo ul li {width:94%; padding:0px 3%; float:none; text-align:left;}
+		#mi_cartera .tabla_fondo ul {margin:20px 0px;}
+		#mi_cartera ul.info_micartera li {border:0; padding:0; width:100%; margin-bottom:10px;}
+		#mi_cartera ul.info_micartera li.inicio, #mi_cartera ul.info_micartera li.centro{width:100%; padding:0; float:none;}
+		#mi_cartera ul.info_micartera li span{color:#00577d; font-size:24px; font-weight:300;} 
+		
+		#mi_cartera .tabla_fondo {margin-top:20px;}
+		#mi_cartera h5 { display:block; float:none; font-size:16px; text-align:center; width:100%; padding:15px 0px;  background:#F4F4F4; border:1px solid #CCC; cursor:pointer;}
+		#mi_cartera span.title_tabla {display:inline; margin-right:10px; font-weight:800;}
+		.cartera{margin-bottom:150px; display:block; position:relative;} #mi_cartera .end {margin-bottom:0px;}
+		.def_cartera {margin-top:30px; }.def_cartera p {margin-bottom:0px; color:#666; font-size:0.875em;}
+		
+			/*------------------TABLA-----------------------*/
+			.info_micartera h3 {max-width:520px; font-weight:300; padding-bottom:2px; margin-bottom:10px; font-family: 'Roboto Slab', serif;}
+			
+			#mi_cartera .cabecera {display:none;}
+			#mi_cartera li.first {display:none;}
+			
+			
+			#mi_cartera .tabla_fondo ul li.ultima_fila {width:100%; margin-top:20px;}
+			#mi_cartera .tabla_fondo ul li.peq {font-size:10px; width:8%;}
+			#mi_cartera .tabla_fondo ul li.first{text-align:left; width:11%; padding-left:2%;}
+			
+			#movimientos_color_cartesiox, #movimientos_color_cartesioy {	width:100%;  padding:80px 0px;} 
+			#movimientos_color_cartesiox h2, #movimientos_color_cartesioy h2 {width:100%; text-align:center; margin:0; padding:0; margin-top:20px;}
+			#movimientos_color_cartesiox .cabecera, #movimientos_color_cartesioy .cabecera {display:none;} 
+			#movimientos_color_cartesiox .content, #movimientos_color_cartesioy .content {width:94%; margin:0 3%; min-width:94%;} 
+			#movimientos_color_cartesiox .title_tabla, #movimientos_color_cartesioy .title_tabla {display:inline; margin-right: 10px; font-weight: 800;} 
+			#movimientos_color_cartesiox h5, #movimientos_color_cartesioy h5 { display:block; float:none; font-size:16px; text-align:center; width:94%; padding:15px 0px; font-weight:normal;   margin:0px 3%; margin-bottom:10px; background:#F4F4F4; border:1px solid #CCC; cursor:pointer;}
+
+			
+			.mov_fond .tabla_fondo{width:100%; padding:0; margin:auto; font-size:0.875em; margin-top:10px; border:0px;}
+			.mov_fond .first{display:none;}
+			
+			
+			.mov_fond .tabla_fondo li{width:96%; padding:0px 3%; margin:0; text-align:left; float:none; min-height:15px;}
+			.mov_fond .tabla_fondo li a{font-size:14px; }
+			.mov_fond .tabla_fondo li.peq{width:100%; } .mov_fond .tabla_fondo ul {border:0px; font-size:0.875em; color:#666; }
+			.mov_fond .tabla_fondo ul.cabecera li{width:100%;}
+			.mov_fond .tabla_fondo ul.cabecera li{width:100%;}
+			#movimientos_color_cartesiox .tabla_fondo ul li.ultima_fila {width:96%; padding:0px 3%; margin:0; text-align:left; float:none; min-height:15px;}
+			.mov_fond .tabla_fondo ul.cabecera li {font-size:1.25em; font-weight:800; font-family: 'Roboto Slab', serif; text-align:left;}
+			.mov_fond .tabla_fondo ul.cabecera li.peq{width:100%; text-align:left;}
+			.mov_fond .tabla_fondo li.peq {text-align:left;}
+			.mov_fond .tabla_fondo ul.bg_grey{background:transparent; }
+			#movimientos_color_cartesioy ul.bg_grey {background:transparent;}
+			#movimientos_color_cartesiox ul.bg_grey {background:transparent;}
+
+			.mov_fond .top{width:96%; margin:0 3%;}
+	
+			a.volver{ margin-left:3%;}
+			
+			#movimientos_color_cartesiox .clear, #movimientos_color_cartesioy .clear{display:none;}
+			.pdf_descarga{margin-bottom:15px;} #movimientos_color_cartesiox a.imprimir, #movimientos_color_cartesioy a.imprimir{padding-left:40px; padding-bottom:10px;}
+			
+			
+			/*----------------FIN TABLA--------------------*/
+			
+			.miembroEquipo {
+				width: 33.3333334%;
+	
+			}	
+					
+		
+	
+
+		
+}
+@media screen and (max-width: 520px) {
+	.miembroEquipo {
+				width: 50%;
+	
+			}	
+	
+	
+}
+@media screen and (max-width: 420px) {
+
+
+
+#los_fondos .fondos_premios img {height:auto; margin-top:0px;}
+#otros_fondos .col_otro_fondo p{width:100%; float:none; display:block; position:relative; min-height:100px;} #otros_fondos .premio {width:100%; float:none; margin-left:0px; height:auto; }#otros_fondos .premio img {width:100%; max-width:198px; margin-top:0px;}
+#otros_fondos .ver_mas {position:relative; margin-top:0px; margin-top:20px; margin-bottom:100px; }
+}
+
+
+/* Iphone LANDSCAPE */
+
+
+@media screen and (max-width: 320px) {
+
+#footer ul{float:none; position:relative; width:100%; display:block; margin-top:10px; }
+ul.col_footer.col1, ul.col_footer.col2, ul.col_footer.col3, ul.col_footer.col4{width:100%; margin-right:0; margin-left:0;}
+
+
+#cabecera-responsive  .blue_box {
+	padding: 10px;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+
+}
+#cabecera-responsive  .blue_box h3{color:#FFF; font-size:25px !important; font-family: 'Roboto Slab', serif; font-weight:300; line-height:25px !important;}
+#cabecera-responsive  .blue_box h4{color:#FFF; font-size:14px; font-family: 'Roboto Slab', serif; font-weight:400;  margin-top:15px; line-height:18px;}
+
+#cabecera-responsive  .blue_box h3 br {display:none;}
+
+.nivo-caption {width:100%; height:100%; bottom:auto; left:0px; top:0px;}
+#link_slider {position:relative; width:100%; top:0px; left:0px; right:auto; bottom:auto;}
+
+
+#cabecera-responsive .acceso_fondos{color:#FFF; font-size:14px; line-height:14px; margin-top:15px; font-family: 'Roboto Slab', serif; font-weight:300;}
+.acceso_fondos .fila {overflow:hidden; margin-bottom:5px;}
+.acceso_fondos .fila_cabecera {margin-bottom:0px !important;}
+.acceso_fondos .fila_cabecera .columna_01,.acceso_fondos .fila_cabecera .columna_02,.acceso_fondos .fila_cabecera .columna_03{height:21px;}
+
+.helper {height:100%; vertical-align:middle; display: inline-block;}
+.acceso_fondos .columna {float:left;}
+#cabecera-responsive .columna_01 {width:200px; height:45px;}
+#cabecera-responsive .columna_02 {width:125px; height:45px; margin:0px 15px; text-align:center;}
+#cabecera-responsive .columna_03 {width:75px;  height:45px; margin:0px 15px;  margin-right:0px; text-align:center;}
+
+#cabecera-responsive .columna_02 img, #cabecera-responsive .columna_03 img{position:relative; top:auto; left:auto; width:20px; max-height:auto; vertical-align: middle; }
+#cabecera-responsive .columna_01 img{width:123px; height:auto; position:relative;}
+.fila_dos_lineas .columna_01 img{width:90px !important; height:auto; position:relative;}
+
+#cabecera-responsive .acceso_fondos a {line-height:0px;}
+#nav_container .nivo-controlNav {display:none;}
+#nav_slider_container .nivo-controlNav {display:block;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    left: auto;
+    margin-top: 0px;
+    z-index: 999;
+    width: 100%;
+    margin-left: 0px;}
+
+
+}

@@ -1,0 +1,209 @@
+﻿@model CartersioLibreria.Models.MiCarteraModels
+@using System.Globalization
+@{
+    Layout = null;
+    int abs = Model.getDatosClientes.Count();
+}
+
+<title>Estado cartera</title>
+
+<link rel="stylesheet" href="@Server.MapPath("~/Content/pdfs.css")">
+<style>
+    .cartera {
+        display: inline-table !important;
+    }
+
+    th, td {
+        padding: 10px !important;
+    }
+</style>
+
+<section style="width:100% !important;height:100% !important; font-family:Arial !important; font-size: 100% !important;">
+
+    @{
+        if( Model.getDatosClientes.Count() > 0 )
+
+        {
+            int contador = 1;
+            int cont = 0;
+
+            foreach( var a in Model.getDatosClientes )
+            {
+
+                if(cont % 2 == 0 )
+                {
+
+                    <img src="@Server.MapPath("~/images/bg-cartesio-pdf.jpg")" alt="" style="position: absolute;z-index: -1; width:100%; height:100%; left: 0px;">
+                    <div class="container" style="width:90% !important; padding-top:0px;">
+                        <img src="@Server.MapPath("~/images/line-blue.jpg")" alt="" style="width:100% !important;">
+                        <img src="@Server.MapPath("~/images/cartesio-header.jpg")" alt="" style="width:100% !important;">
+                    </div>
+                    }
+
+            double vlcodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.valor_liquidativo).FirstOrDefault() ?? 0;
+            double vlcodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.valor_liquidativo).FirstOrDefault() ?? 0;
+            double vlcodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.valor_liquidativo).FirstOrDefault() ?? 0;
+            double vlcodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.valor_liquidativo).FirstOrDefault() ?? 0;
+
+            double vacodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.total_valoracion).FirstOrDefault() ?? 0;
+            double vacodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.total_valoracion).FirstOrDefault() ?? 0;
+            double vacodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.total_valoracion).FirstOrDefault() ?? 0;
+            double vacodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.total_valoracion).FirstOrDefault() ?? 0;
+
+            double pvcodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.pyg_no_realizadas).FirstOrDefault() ?? 0;
+            double pvcodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.pyg_no_realizadas).FirstOrDefault() ?? 0;
+            double pvcodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.pyg_no_realizadas).FirstOrDefault() ?? 0;
+            double pvcodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.pyg_no_realizadas).FirstOrDefault() ?? 0;
+
+            double taecodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.tae_media_inversion).FirstOrDefault() ?? 0;
+            double taecodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.tae_media_inversion).FirstOrDefault() ?? 0;
+            double taecodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.tae_media_inversion).FirstOrDefault() ?? 0;
+            double taecodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.tae_media_inversion).FirstOrDefault() ?? 0;
+
+            double pcodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.saldo_actual).FirstOrDefault() ?? 0;
+            double pcodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.saldo_actual).FirstOrDefault() ?? 0;
+            double pcodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.saldo_actual).FirstOrDefault() ?? 0;
+            double pcodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.saldo_actual).FirstOrDefault() ?? 0;
+
+            double recodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.rtbdad_bruta_inversion).FirstOrDefault() ?? 0;
+            double recodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.rtbdad_bruta_inversion).FirstOrDefault() ?? 0;
+            double recodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.rtbdad_bruta_inversion).FirstOrDefault() ?? 0;
+            double recodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.rtbdad_bruta_inversion).FirstOrDefault() ?? 0;
+
+            TextInfo myTI = new CultureInfo("es", false).TextInfo;
+
+                <div class="container" style="width:90% !important;">
+
+                    <div class="cuenta" id="cuenta-1">
+                        <h1 class="title_tabla" style="letter-spacing: normal; text-align: center; font-size:150% !important; width:100% !important; padding-bottom:1% !important;">Cuenta @contador </h1>
+                        <img src="@Server.MapPath("~/images/line-blue.jpg")" alt="" style="width:100% !important; padding-bottom:1% !important;">
+                        <div class="name" style="font-size:120% !important;">
+                            <p style="height:20px; font-size:100%!important; padding-bottom:1% !important;">
+
+                                <strong>@(myTI.ToTitleCase(( a.C1NOMBRE ).ToLower())) @(myTI.ToTitleCase(( a.C1APELLIDOS ).ToLower()))</strong>
+
+                                <span>@(string.IsNullOrEmpty(a.C3NOMBRE) ? ( string.IsNullOrEmpty(a.C2NOMBRE) ? "" : "y" ) : ",")</span>
+
+                                @(myTI.ToTitleCase(( a.C2NOMBRE ).ToLower())) @(myTI.ToTitleCase(( a.C2APELLIDOS ).ToLower()))
+
+                                <span>@(string.IsNullOrEmpty(a.C4NOMBRE) ? ( string.IsNullOrEmpty(a.C3NOMBRE) ? "" : "y" ) : ",")</span>
+
+                                @(myTI.ToTitleCase(( a.C3NOMBRE ).ToLower())) @(myTI.ToTitleCase(( a.C3APELLIDOS ).ToLower()))
+
+                                <span>@(string.IsNullOrEmpty(a.C5NOMBRE) ? ( string.IsNullOrEmpty(a.C4NOMBRE) ? "" : "y" ) : ",")</span>
+
+                                @(myTI.ToTitleCase(( a.C4NOMBRE ).ToLower())) @(myTI.ToTitleCase(( a.C4APELLIDOS ).ToLower()))
+
+                                <span>@(string.IsNullOrEmpty(a.C6NOMBRE) ? ( string.IsNullOrEmpty(a.C5NOMBRE) ? "" : "y" ) : ",")</span>
+
+                                @(myTI.ToTitleCase(( a.C5NOMBRE ).ToLower())) @(myTI.ToTitleCase(( a.C5APELLIDOS ).ToLower()))
+
+                                <span>@(string.IsNullOrEmpty(a.C6NOMBRE) ? "" : "y")</span>
+
+                                @(myTI.ToTitleCase(( a.C6NOMBRE ).ToLower())) @(myTI.ToTitleCase(( a.C6APELLIDOS ).ToLower()))
+
+                            </p>
+                            <hr>
+                        </div>
+                        <div class="total" style="font-size:100%!important; padding-top:10px;">
+                            <div class="valor">
+                                <p style="padding-bottom:1% !important;">Total</p>
+                                <p style="line-height:5px;"><strong id="valoracion-cartera-1">Valoración actual</strong></p>
+                                <p><strong style="color:#06577a"> @(( vacodigo_cuenta_x + vacodigo_cuenta_y + vacodigo_cuenta_income + vacodigo_cuenta_bruselas ).ToString("#,0.00")) &euro;</strong></p>
+                                <hr style="width: 2px;height: 100px;position: relative;top: -110px;left: 80px;background-color: #06577a;border:none;">
+                            </div>
+                            <div class="plusvalia">
+                                <p>&nbsp;</p>
+                                <p style="line-height:5px; padding-bottom:1% !important;"><strong id="plusvalia-cartera-1">Plusval&iacute;a</strong></p>
+                                <p><strong style="color:#06577a">@(( pvcodigo_cuenta_x + pvcodigo_cuenta_y + pvcodigo_cuenta_income + pvcodigo_cuenta_bruselas ).ToString("#,0.00"))</strong></p>
+                                <hr style="width: 2px;height: 100px;position: relative;top: -110px;left: 80px;background-color: #06577a;border:none;">
+                            </div>
+                            <div class="fecha">
+                                <p>&nbsp;</p>
+                                <p style="line-height:5px; padding-bottom:1% !important;"><strong id="fecha-cartera-1">Fecha</strong></p>
+                                <p><strong style="color:#06577a">@(Model.fecha)</strong></p>
+                            </div>
+                        </div>
+                        <table class="cartera" style="font-size:100% !important; padding-top:0px;">
+                            <tr class="tr-estado-head">
+                                <td>&nbsp;</td>
+                                <td>Participaci&oacute;n</td>
+                                <td>V. Liquidativo</td>
+                                <td>Valor Actual</td>
+                                <td>Plusval&iacute;a (1)</td>
+                                <td>T.A.E.(2)</td>
+                                <td>Rent. A&ntildeo</td>
+                            </tr>
+                            <tr class="tr-estado-impar">
+                                <td class="tr-title">Cartesio X</td>
+                                <td id="cartera-1-cell-X1">@(( pcodigo_cuenta_x ).ToString("#,0.00"))</td>
+                                <td id="cartera-1-cell-X2">@(( vlcodigo_cuenta_x ).ToString("#,0.00")) &euro; </td>
+                                <td id="cartera-1-cell-X3">@(( vacodigo_cuenta_x ).ToString("#,0.00")) &euro;</td>
+                                <td id="cartera-1-cell-X4">@(( pvcodigo_cuenta_x ).ToString("#,0.00"))</td>
+                                <td id="cartera-1-cell-X5">@(( taecodigo_cuenta_x ).ToString("0.00"))  %</td>
+                                <td id="cartera-1-cell-X6">@(( recodigo_cuenta_x ).ToString("0.00")) %</td>
+
+                            </tr>
+                            <tr class="tr-estado-par">
+                                <td class="tr-title">Cartesio Y</td>
+                                <td id="cartera-1-cell-Y1">@(( pcodigo_cuenta_y ).ToString("#,0.00"))</td>
+                                <td id="cartera-1-cell-Y2">@(( vlcodigo_cuenta_y ).ToString("#,0.00")) &euro; </td>
+                                <td id="cartera-1-cell-Y3">@(( vacodigo_cuenta_y ).ToString("#,0.00")) &euro;</td>
+                                <td id="cartera-1-cell-Y4">@(( pvcodigo_cuenta_y ).ToString("#,0.00"))</td>
+                                <td id="cartera-1-cell-Y5">@(( taecodigo_cuenta_y ).ToString("0.00"))  %</td>
+                                <td id="cartera-1-cell-Y6">@(( recodigo_cuenta_y ).ToString("0.00")) %</td>
+
+                            </tr>
+                            <tr class="tr-estado-impar">
+                                <td class="tr-title">Cartesio Equity</td>
+                                <td id="cartera-1-cell-E1">@(( pcodigo_cuenta_bruselas ).ToString("#,0.00"))</td>
+                                <td id="cartera-1-cell-E2">@(( vlcodigo_cuenta_bruselas ).ToString("#,0.00")) &euro; </td>
+                                <td id="cartera-1-cell-E3">@(( vacodigo_cuenta_bruselas ).ToString("#,0.00")) &euro;</td>
+                                <td id="cartera-1-cell-E4">@(( pvcodigo_cuenta_bruselas ).ToString("#,0.00"))</td>
+                                <td id="cartera-1-cell-E5">@(( taecodigo_cuenta_bruselas ).ToString("0.00"))  %</td>
+                                <td id="cartera-1-cell-E6">@(( recodigo_cuenta_bruselas ).ToString("0.00")) %</td>
+
+                            </tr>
+                            <tr class="tr-estado-par">
+                                <td class="tr-title">Cartesio Income</td>
+                                <td id="cartera-1-cell-I1">@(( pcodigo_cuenta_income ).ToString("#,0.00"))</td>
+                                <td id="cartera-1-cell-I2">@(( vlcodigo_cuenta_income ).ToString("#,0.00")) &euro; </td>
+                                <td id="cartera-1-cell-I3">@(( vacodigo_cuenta_income ).ToString("#,0.00")) &euro;</td>
+                                <td id="cartera-1-cell-I4">@(( pvcodigo_cuenta_income ).ToString("#,0.00"))</td>
+                                <td id="cartera-1-cell-I5">@(( taecodigo_cuenta_income ).ToString("0.00"))  %</td>
+                                <td id="cartera-1-cell-I6">@(( recodigo_cuenta_income ).ToString("0.00")) %</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                abs++;
+
+                if( contador == Model.getDatosClientes.Count() )
+                    {
+                    <div class="def_cartera center" style="font-size:80%!important; width:80% !important; padding-left:40px; padding-top:0%;">
+
+                        <p>(1) Las plusvalías/minusvalías mostradas no incluyen las históricas asociadas a traspasos/ventas de otros fondos </p>
+                        <p>(2) TAE desde inicio</p>
+                    </div>
+                    }
+
+                if( contador % 2 == 0 )
+                    {
+                    <div style="page-break-after:always;"></div>
+                }
+
+                contador++;
+                cont++;
+
+                }
+        }
+
+    }
+
+</section>
+
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/cartesio")

@@ -1,0 +1,40 @@
+﻿.cajasombra{
+        background-color: #d0e1e8!important;
+}
+
+.tblInstrucciones{
+       color: rgba(233, 236, 239, 0.58)!important;
+}
+#sortable1, #sortable2 {
+        border: 1px solid #eee;
+        width: 47%;
+        min-height: 20px;
+        list-style-type: none;
+        margin: 0;
+        padding: 7px;
+        float: left;
+        margin-right: 10px;
+    }
+
+#sortable1 li, #sortable2 li {
+            margin:  7px ;
+            padding: 5px;
+            font-size: 0.9em;
+            width: 97%;
+        }
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: 1px solid #00577d!important;
+    background: #f1fbff!important;
+    color: #203277!important
+}
+
+#pass{
+    border: 1px solid #00577d ;
+    background: #f1fbff ;
+    color: #203277;
+
+}
+.pass{
+  background:#f78686!important;
+
+}

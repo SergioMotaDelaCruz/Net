@@ -1,0 +1,157 @@
+﻿@model CartersioLibreria.Models.MiCarteraModels
+@using System.Globalization
+@{
+    Layout = null;
+    int abs = 0;
+}
+
+<title>Estado cartera</title>
+
+<link rel="stylesheet" href="@Server.MapPath("~/Content/pdfs.css")">
+<style>
+    .cartera {
+        display: inline-table !important;
+    }
+
+    th, td {
+        padding: 10px !important;
+    }
+</style>
+
+@{
+
+    if (abs % 2 == 0)
+    {
+
+        <img src="@Server.MapPath("~/images/bg-cartesio-pdf.jpg")" alt="" style="position: absolute;z-index: -1; width:100%; height:100%; left: 0px;">
+        <div class="container" style="width:90% !important; padding-top:60px;">
+            <img src="@Server.MapPath("~/images/line-blue.jpg")" alt="" style="width:100% !important;">
+
+            <div class="cartesio-head">
+
+                <img src="@Server.MapPath("~/images/logo-cartesio.png")" alt="Cartesio" class="logo-cartesio-head" style="padding-top:20px;">
+                <p class="title-pdf" style="font-size:180%; padding-top:20px;"><strong>Last movements</strong></p>
+                <hr style="width: 100%;top: 22px;position: relative;">
+
+            </div>
+        </div>
+    }
+
+    TextInfo myTI = new CultureInfo("es", false).TextInfo;
+
+    foreach (var a in Model.getNombres.Where(x => x.codigo_cuenta_x == Model.ID))
+    {
+
+        <div class="container" style="width:90% !important;">
+
+            <div class="cuenta" id="cuenta-1">
+                <h1 class="title_tabla" style="letter-spacing: normal; text-align: center; font-size:180% !important; width:100% !important; padding-bottom:5px !important;  margin-top:10px !important;">Movements </h1>
+                <img src="@Server.MapPath("~/images/line-green.jpg")" alt="" style="width:100% !important; padding-bottom:1% !important;">
+                <div class="name">
+                    <p style="height:20px; font-size:100%!important; padding-bottom:1% !important;">
+
+                        <strong>@(myTI.ToTitleCase((a.C1NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C1APELLIDOS).ToLower()))</strong>
+
+                        <span>@(string.IsNullOrEmpty(a.C3NOMBRE) ? (string.IsNullOrEmpty(a.C2NOMBRE) ? "" : "and") : ",")</span>
+
+                        @(myTI.ToTitleCase((a.C2NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C2APELLIDOS).ToLower()))
+
+                        <span>@(string.IsNullOrEmpty(a.C4NOMBRE) ? (string.IsNullOrEmpty(a.C3NOMBRE) ? "" : "and") : ",")</span>
+
+                        @(myTI.ToTitleCase((a.C3NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C3APELLIDOS).ToLower()))
+
+                        <span>@(string.IsNullOrEmpty(a.C5NOMBRE) ? (string.IsNullOrEmpty(a.C4NOMBRE) ? "" : "and") : ",")</span>
+
+                        @(myTI.ToTitleCase((a.C4NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C4APELLIDOS).ToLower()))
+
+                        <span>@(string.IsNullOrEmpty(a.C6NOMBRE) ? (string.IsNullOrEmpty(a.C5NOMBRE) ? "" : "and") : ",")</span>
+
+                        @(myTI.ToTitleCase((a.C5NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C5APELLIDOS).ToLower()))
+
+                        <span>@(string.IsNullOrEmpty(a.C6NOMBRE) ? "" : "and")</span>
+
+                        @(myTI.ToTitleCase((a.C6NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C6APELLIDOS).ToLower()))
+
+                    </p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+
+    }
+}
+
+
+<div class="container" style="width:90% !important;">
+    <div class="mov-type" style="width:600px !important;">
+        <img src="@Server.MapPath("~/images/cartesio-x.jpg")" alt="" id="logo-mov">
+    </div>
+    <table class="cartera" style="font-size:100% !important; margin-top:10px !important;">
+        <tr class="tr-x-head">
+            <td class="tr-title">Operación</td>
+            <td>Fecha</td>
+            <td>Participaciones</td>
+            <td>Saldo Acumulado</td>
+            <td>Valor Liquidativo</td>
+            <td>Efectivo</td>
+            <td>Plusval&iacute;a</td>
+        </tr>
+
+        @{
+            double totalParti = 0.0;
+            int contador = 1;
+
+            foreach (var a in Model.getDatosCuentaTipo3.Where(x => x.codigo_cuenta == Model.ID && x.codigo_fondo == 501).OrderBy(x => x.fecha_operacion).Distinct())
+            {
+                String[] fechaOperacion = a.fecha_operacion.ToString().Split(' ');
+                String tipoOperacion = a.tipo_operacion.ToString();
+                double? efectivoCompra = a.efectivo;
+                double? liquido = a.liquido;
+                string plusvaliaBruta = a.plusvalia_bruta.Value.ToString("#,0.#");
+                double? participaciones = a.participaciones;
+                string valorLiquidativo = (a.valor_liquidativo.Value).ToString("#,0.#");
+
+
+                if (tipoOperacion == "s")
+                {
+                    plusvaliaBruta = "";
+                    tipoOperacion = "Subscription";
+                    totalParti = totalParti + (double)participaciones;
+                }
+                else if (tipoOperacion == "t")
+                {
+                    plusvaliaBruta = "";
+                    tipoOperacion = "Transfer";
+                    totalParti = totalParti + (double)participaciones;
+                }
+                else if (tipoOperacion == "r")
+                {
+                    //plusvaliaBruta = 0.0;
+                    tipoOperacion = "Refund";
+                    totalParti = totalParti + (double)participaciones;
+                }
+                else if (tipoOperacion == "x")
+                {
+                    //plusvaliaBruta = 0.0;
+                    tipoOperacion = "Transfer";
+                    totalParti = totalParti + (double)participaciones;
+                }
+
+                string clase = ((contador % 2) == 0) ? "tr-x-par" : "tr-x-impar";
+
+                <tr class="@clase">
+                    <td class="tr-title">@tipoOperacion</td>
+                    <td id="cartera-1-cell-X1">@fechaOperacion[0]</td>
+                    <td id="cartera-1-cell-X2">@((participaciones.Value).ToString("#,0.0000"))</td>
+                    <td id="cartera-1-cell-X3">@totalParti.ToString("#,0.0000")</td>
+                    <td id="cartera-1-cell-X4">@valorLiquidativo</td>
+                    <td id="cartera-1-cell-X5">@((efectivoCompra.Value).ToString("#,0.#")) €</td>
+                    <td id="cartera-1-cell-X6">@plusvaliaBruta</td>
+                </tr>
+
+                contador++;
+            }
+        }
+    </table>
+</div>

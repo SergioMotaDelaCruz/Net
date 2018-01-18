@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CartersioLibreria.View_valoresCartesio>
+@using PagedList.Mvc;
+@using PagedList;
+ 
+@{
+    Layout = null;
+}
+
+<div class="table-responsive ">
+    @functions {
+        public static string Sorter(string columnName , string columnHeader , WebGrid grid)
+            {
+            return string.Format("{0} {1}" , columnHeader , grid.SortColumn == columnName ?
+            grid.SortDirection == SortDirection.Descending ? "▲" :
+            "▼" : "");
+            }
+    }
+    @{
+        var grid = new WebGrid(source: Model, canSort: true, rowsPerPage:30);
+
+        @grid.GetHtml(
+                                mode: WebGridPagerModes.All ,
+                                columns: grid.Columns(
+                                grid.Column("fecha" , Sorter("fecha" , "fecha" , grid) , style: "ancho" , format: @<span>
+                                <a class="listado-ver" style="cursor:pointer;" onclick="mostrarValores('@item.fecha.ToString().Split(new Char[] { ' ' })[0]')">  @item.fecha.ToString().Split(new Char[] { ' ' })[0]    </a>
+                                </span>) ,
+                                grid.Column("valorCartesioX" , Sorter("valorCartesioX" , "% CartesioX" , grid) , format: @<span>@item.valorCartesioX </span>) ,
+                                grid.Column("vLiquidativoCartesioX" , Sorter("vLiquidativoCartesioX" , "VL CartesioX" , grid) , format: @<span>@item.vLiquidativoCartesioX </span>) ,
+                                grid.Column("valorCartesioY" , Sorter("valorCartesioY" , "% CartesioY" , grid) , format: @<span>@item.valorCartesioY</span>) ,
+                                grid.Column("vLiquidativoCartesioY" , Sorter("vLiquidativoCartesioY" , "VL CartesioY" , grid) , format: @<span>@item.vLiquidativoCartesioY </span>) ,
+                                grid.Column("valorCartesioIncome" , Sorter("valorCartesioIncome" , "% Crt.Income" , grid) , format: @<span>@item.valorCartesioIncome </span>) ,
+                                grid.Column("vLiquidativoCartesioIncome" , Sorter("vLiquidativoCartesioIncome" , "VL Crt.Income" , grid) , format: @<span>@item.vLiquidativoCartesioIncome</span>) , 
+                                grid.Column("valorPareturnCartesioEquity" , Sorter("valorPareturnCartesioEquity" , "% Pareturn Crt.Equity" , grid) , format: @<span>@item.valorPareturnCartesioEquity </span>) ,
+                                grid.Column("vLiquidativoPareturnCartesioEquity" , Sorter("vLiquidativoPareturnCartesioEquity" , "VL Pareturn Crt.Equity" , grid) , format: @<span>@item.vLiquidativoPareturnCartesioEquity </span>) 
+                               
+                             
+
+                                    @*grid.Column(header: "Acciones" , format: @<span>
+                                        @if( item.Tipo == "Normal" )
+                                            {
+                                            <span>
+                                                <a class="listado-ver" onclick="EliminarEncargo(@item.IdFincaTarea,'@item.Finca')"><span class="aktua-trash"></span></a>
+                                            </span>
+                                            }
+                                        else
+                                            {  <span>
+        <a class="listado-ver" target="_blank" href="@item.IdTarea"><span class="aktua-link"></span></a>
+    </span>
+                                            }
+                                    </span>)*@
+                         )
+                         , htmlAttributes: new { @class = "table table-striped table-hover table-bordered table-facilities " , @id = "gridValores" }
+                         )
+    }
+
+    @*@Html.PagedListPager((IPagedList) Model , page => Url.Action("_GridValores" , new { page    }))*@
+
+
+
+</div>

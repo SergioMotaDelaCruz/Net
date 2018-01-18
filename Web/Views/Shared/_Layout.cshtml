@@ -1,0 +1,558 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Fondos de inversi&oacute;n con excelente rentabilidad-riesgo</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- <meta charset="windows-1252"> -->
+    <meta name="description" content="Gestora independiente de fondos de inversi&oacute;n donde los gestores est&aacute;n realmente alineados con el inversor y los resultados son excelentes " />
+    <meta name="keywords" content="ahorro, allfunds, carmignac, donde invertir, fondo de autor, fondos conservadores, banca privada, fondos de inversion, fondos de inversion garantizados, fondos fidelity, gestoras independientes, inversiones rentables, inversiones seguras, inversis, invertir dinero, jp morgan, mejores fondos de inversion, morningstar, proteccion de capital, ranking de fondos, rentabilidad, rentabilidad fondos de inversion, rentabilidad riesgo" />
+    <meta name="geo.region" content="ES-MD" />
+    <meta name="geo.placename" content="Madrid" />
+    <meta name="geo.position" content="40.433238;-3.690966" />
+    <meta name="ICBM" content="40.433238, -3.690966" />
+    <meta name="viewport" content="target-densityDpi=device-dpi, width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" href="css/ie7.css">
+    <![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie8.css">
+    <![endif]-->
+    @Styles.Render("~/Content/css")
+    @*@Scripts.Render("~/bundles/modernizr")>*@
+
+    <!--Fuentes desde Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,300' rel='stylesheet' type='text/css'>
+    <link href="/content/font-awesome.min.css" rel="stylesheet">
+    <!--fin fuentes Google Fonts-->
+
+    <!--<script type="text/javascript" src="/scripts/jquery-1.6.1.min.html"></script>
+    <script type="text/javascript" src="/scripts/funciones.html"></script>-->
+
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+
+
+
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-26243567-1', 'cartesio.com');
+  ga('send', 'pageview');
+
+    </script>
+</head>
+
+
+
+<body>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!--    Para las Cookies                                                                                                                                                         -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div id="aceptarCookies">
+
+        <div class="cookies_izq"></div>
+        <div class="texto_cookies">
+            En la página web de CARTESIO utilizamos cookies propias y de terceros para mejorar nuestros servicios mediante el análisis de sus hábitos de navegación. Al continuar con la navegación, entendemos que se acepta nuestra política de cookies. "<a target="_blank" href="docs/legal/clausula_cookies_web.pdf">Normas de uso</a>"
+        </div>
+        <div class="contenedor_boton_cookies">
+            <button class="botonCookies" onclick="setCookie('acepto-cookies', 'acepto-cookies', 7); $('#aceptarCookies').fadeOut(2000);"></button></p>
+        </div>
+
+        <script src="/Scripts/cookies/jquery.cookie.js"></script>
+
+        <script>
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+	            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                var expires = 'expires='+d.toUTCString();
+                document.cookie = cname + '=' + cvalue + "; " + expires;
+            }
+;
+        function getCookie(cname) {
+            var name = cname + '=';
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+            }
+            return '';
+        }
+
+       </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!---Menu Superior Fixed-->
+
+    <div id="menu">
+        <div class="center">
+            <div class="logo left">
+                <h1><a id="nav_section1" href="/Home/Index"><img src="../../images/cartesio-logo.png" alt="Logo Cartesio" /></a></h1>
+            </div>
+            <div id="menu_mobile" class="right"><img src="../../images/menu-options.png" /></div>
+            <ul class="right">
+                <div class="close_menu"><img src="../../images/close_menu.png" /></div>
+                <li><a id="nav_section2" href="/Home/Index#sobre_cartesio" data-target="#sobre_cartesio">Sobre Cartesio</a></li>
+                <li><a id="nav_section3" href="/Home/Index#los_fondos" data-target="#los_fondos">Los Fondos</a></li>
+                <li><a id="nav_section4" href="/Home/Index#suscripciones_reembolsos" data-target="#suscripciones_reembolsos">Suscripciones y reembolsos</a></li>
+                <li><a href="/Blog/Index">Blog</a></li>
+                <li class="mcontacto"><a id="nav_section5" href="/Home/Index#contacto" data-target="#contacto">Contacto</a></li>
+                <li class="mclientes">
+                    <a href="/Home/login_micartera">Mi Cartera</a>
+                </li>
+                <li class="boton_ingles"><a href="/En/index">EN</a></li>
+                <li class="english_mobile"><a href="/En/index">English</a></li>
+
+
+            </ul>
+            <div class="menu_overlay"></div>
+        </div>
+    </div>
+    <!--FIN DEL MENU SUPERIOR-->
+
+    @RenderBody()
+
+    <div id="footer">
+        <div class="center">
+            <div class="left">
+                <ul class="col_footer col1">
+                    <li><h5>Sobre Cartesio</h5></li>
+                    <li><a href="/Home/#sobre_cartesio" class="external-tab-1">Presentación</a></li>
+                    <li><a href="/Home/#sobre_cartesio" class="external-tab-1">Rasgos diferenciales</a></li>
+                    <li><a href="/Home/#sobre_cartesio" class="external-tab-1">Estilo de inversión</a></li>
+                    <li><a href="/Home/#sobre_cartesio" class="external-tab-1">Equipo</a></li>
+                </ul>
+                <ul class="col_footer col2">
+                    <li><h5>Los fondos</h5></li>
+                    <li><a href="/Home/fondo_cartesio_y">Cartesio Y</a></li>
+                    <li><a href="/Home/fondo_cartesio_equity">Castesio Equity</a></li>
+                    <li><a href="/Home/fondo_cartesio_x">Cartesio X</a></li>
+                    <li><a href="/Home/fondo_cartesio_income">Cartesio Income</a></li>
+                </ul>
+                <ul class="col_footer col3">
+                    <li><h5>Suscripciones y Reembolsos</h5></li>
+                    <li><a href="/Home/Index#suscripciones_reembolsos" data-target="#suscripciones_reembolsos" class="external-tab-2">Nuevos clientes</a></li>
+                    <li><a href="/Home/Index#suscripciones_reembolsos" data-target="#suscripciones_reembolsos" class="external-tab-2">Suscripciones</a></li>
+                    <li><a href="/Home/Index#suscripciones_reembolsos" data-target="#suscripciones_reembolsos" class="external-tab-2">Reembolsos</a></li>
+                    <li><a href="/Home/Index#suscripciones_reembolsos" data-target="#suscripciones_reembolsos" class="external-tab-2">Traspasos</a></li>
+                </ul>
+                <ul class="col_footer col4">
+                    <li><h5>Contacto</h5></li>
+                    <li><a href="/Home/legal">Legal</a></li>
+                    <li><a href="/Home/glosario">Glosario</a></li>
+                    <li><a href="/Home/index#contacto">Contacto</a></li>
+                    <li><a href="/En/index">English</a></li>
+                </ul>
+
+
+
+
+            </div>
+            <div class="right">
+                <ul class="redes_sociales">
+                    <li><a href="https://www.facebook.com/cartesioinversiones" target="_blank" class="logo_fb"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
+                    <li><a href="https://plus.google.com/+CartesioInversiones/posts" target="_blank" class="logo_gplus"><span class="fa fa-google-plus" aria-hidden="true"></span></a></li>
+                    <li><a href="http://www.linkedin.com/company/cartesio-inversiones-sgiic-sa" target="_blank" class="logo_in"><span class="fa fa-linkedin" aria-hidden="true"></span></a></li>
+                    <li><a href="https://twitter.com/Cartesioinv" target="_blank" class="logo_tw"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
+                </ul>
+                <p style="logo_bottom"><img src="/images/cartesio_grey.png" alt="Cartesio. Otra forma de gestionar fondos"></p>
+                <h3>© 2015 Cartesio Inversiones, SGIIC SA</h3>
+            </div>
+        </div>
+    </div>
+
+    <!--FIN DEL CONTENIDO DE LA PAGINA-->
+
+    @*<div id="footer">
+        <div class="center">
+            <div class="left">
+                <p style="logo_bottom"><img src="../../images/cartesio_grey.png" alt="Cartesio. Otra forma de gestionar fondos"></p>
+                <h3>© 2015 Cartesio Inversiones, SGIIC SA</h3>
+
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="legal.html"> Legal</a></li>
+                    <li><a href="glosario.html"> Glosario</a></li>
+                    <li><a href="index-2.html#contacto"> Contacto</a></li>
+                    <li><a href="en/index.html">English</a></li>
+
+                </ul>
+                <ul class="redes_sociales">
+                     <li style="padding-top:12px; margin-right:10px;"><div class="g-plusone" data-size="medium" data-annotation="none" ></div></li>
+                    <li><a href="https://www.facebook.com/cartesioinversiones" target="_blank" class="logo_fb"></a></li>
+                    <li><a href="https://plus.google.com/+CartesioInversiones/posts" target="_blank" class="logo_gplus"></a></li>
+                    <li><a href="http://www.linkedin.com/company/cartesio-inversiones-sgiic-sa" target="_blank" class="logo_in"></a></li> 
+                    <li><a href="https://twitter.com/Cartesioinv" target="_blank" class="logo_tw"></a></li>
+
+
+
+
+                </ul>
+                <script type="text/javascript">
+    window.___gcfg = { lang: 'es' };
+
+    (function () {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = '../apis.google.com/js/platform.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+                </script>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    *@
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/cartesio")
+
+
+    @RenderSection("scripts", required: false)
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!----Script------->
+
+    <script type="text/javascript">
+        function squareDiv(sel) {
+            var w = jQuery(sel).width();
+            jQuery(sel).height(w);
+        }
+        $(window).on('resize', function () {
+            squareDiv('.miembroEquipo');
+        });
+
+        $(document).ready(function () {
+
+        /* INICIO - Para el mensaje de las Cookies */
+        //******************************
+        squareDiv('.miembroEquipo');
+
+        jQuery('.menuEquipo a').on('click', function (e) {
+            e.preventDefault();
+            var selector = jQuery(this).attr('data-option');
+
+            jQuery('.worker_modal').hide();
+            jQuery('.menuEquipo a').removeClass('active');
+            jQuery(this).addClass('active');
+
+            jQuery('.miembroEquipo').css('display', 'none');
+            jQuery(selector).css('display', 'table');
+
+        });
+
+        //*****************************
+
+        $("#sobre_cartesio .box_pestanas").tabs({ active: 0 }, { show: { effect: "fade", duration: 1000 } });
+        $("#socios_gestores").tabs({ active: 0 }, { show: { effect: "fade", duration: 500 } });
+        $("#suscripciones_reembolsos").tabs({ active: 0 }, { show: { effect: "fade", duration: 1000 } });
+        function currentYear(){
+            var d = new Date();
+            currentYear = d.getFullYear();
+            return currentYear;
+        }
+
+       // document.getElementById('currentYear').innerHTML = currentYear();
+
+
+        $('#aceptarCookies').hide();
+        var mostrar = getCookie('acepto-cookies');
+        $('#aceptarCookies').hide();
+        if(mostrar==""){
+            $('#aceptarCookies').fadeIn(2000);
+        }
+
+        /* FIN - Para el mensaje de las Cookies */
+
+        $(".vimeo").colorbox({iframe:true, innerWidth:'90%', innerHeight:'90%'});
+
+
+
+    });
+
+    $(window).load(function() {
+        $('#slider').nivoSlider({
+            effect: 'fade',
+            animSpeed: 500,
+            pauseTime: 6000,  /*6000*/
+            directionNav: false,  /* FALSE */
+            controlNav: true,
+            controlNavThumbs: false,   /* FALSE */
+            pauseOnHover: false	/* FALSE */
+        });
+
+        $('#cabecera-responsive').nivoSlider({
+            effect: 'fade',
+            animSpeed: 500,
+            pauseTime: 6000,  /*6000*/
+            directionNav: false,  /* FALSE */
+            controlNav: true,
+            controlNavThumbs: false,   /* FALSE */
+            pauseOnHover: false	/* FALSE */
+        });
+    });
+
+    $(function(){
+        $('#menu').data('size','big');
+    });
+
+
+
+    jQuery(window).on('resize', function () {
+        jQuery('#link_slider').hide();
+        if(!jQuery("#menu_mobile").is(":visible"))
+        {
+            $('#menu ul').show();
+        }else {$('#menu ul').hide();
+
+        }
+    });
+
+    jQuery(function ($) {
+
+        $('#menu_mobile').click(function () {
+
+            $('#menu ul').toggle("slide", { direction: "up" }, 1000)
+
+        });
+
+        $('#menu ul li').click(function () {
+            if(!jQuery("#menu_mobile").is(":hidden"))
+            {
+                $('#menu ul').toggle("slide", { direction: "up" }, 1000)
+            }
+        });
+
+    });
+    $(window).on("resize", function (event) {
+        if ($(window).width() < 980) {
+            $('#menu').data('size', 'big').stop().animate({
+                marginTop: '0px'
+            }, 300);
+        } else {
+            $('#menu').data('size', 'small').stop().animate({
+                marginTop: '-41px'
+            }, 300);
+        }
+
+    });
+
+    $(window).scroll(function () {
+        var $nav = $('#menu');
+        if ($(document).scrollTop() > 0 && $(window).width() > 980) {
+            if ($nav.data('size') == 'big') {
+                $nav.data('size', 'small').stop().animate({
+                    marginTop: '-41px'
+
+                }, 300);
+
+            }
+        } else {
+            if ($nav.data('size') == 'small') {
+                $nav.data('size', 'big').stop().animate({
+                    marginTop: '0px'
+                }, 300);
+
+            }
+        }
+    });
+
+
+    jQuery(function ($) {
+
+        $('#menu a').click(function () {
+            var tamano = $($(this).data('target')).offset().top;
+            tamano = tamano - 48;
+            $('html, body').animate({
+                scrollTop: tamano
+            }, 0);
+        });
+
+        $('#flecha_01').click(function () {
+            var tamano = $('#sobre_cartesio').offset().top;
+            tamano = tamano - 48;
+            $('html, body').animate({
+                scrollTop: tamano
+            }, 2000);
+        });
+        $('#flecha_02').click(function () {
+            var tamano = $('#los_fondos').offset().top;
+            tamano = tamano - 48;
+            $('html, body').animate({
+                scrollTop: tamano
+            }, 2000);
+        });
+        $('#flecha_03').click(function () {
+            var tamano = $('#suscripciones_reembolsos').offset().top;
+            tamano = tamano - 48;
+            $('html, body').animate({
+                scrollTop: tamano
+            }, 2000);
+        });
+        $('#flecha_04').click(function () {
+            var tamano = $('#contacto').offset().top;
+            tamano = tamano - 48;
+            $('html, body').animate({
+                scrollTop: tamano
+            }, 2000);
+        });
+        $('#flecha_05').click(function () {
+            var tamano = $('#suscripciones_reembolsos').offset().top;
+            tamano = tamano - 48;
+            $('html, body').animate({
+                scrollTop: tamano
+            }, 2000);
+        });
+        $('#flecha_06').click(function () {
+            var tamano = $('#los_fondos').offset().top;
+            tamano = tamano - 48;
+            $('html, body').animate({
+                scrollTop: tamano
+            }, 2000);
+        });
+        $('#flecha_07').click(function () {
+            var tamano = $('#sobre_cartesio').offset().top;
+            tamano = tamano - 48;
+            $('html, body').animate({
+                scrollTop: tamano
+            }, 2000);
+        });
+        $('#flecha_08').click(function () {
+            var tamano = $('.logo').offset().top;
+
+            $('html, body').animate({
+                scrollTop: 0
+            }, 2000);
+        });
+
+    });
+
+
+
+    $(function(){
+        var sections = {},
+            _height  = $(window).height(),
+            i        = 0;
+
+
+        $('.section').each(function(){
+            sections[this.name] = $(this).offset().top;
+        });
+
+        $(document).scroll(function(){
+            var $this = $(this),
+                pos   = $this.scrollTop();
+
+            for(i in sections){
+                if(sections[i] > pos && sections[i] < pos + _height){
+                    $('#menu a').removeClass('active');
+                    $( "#menu a" ).parent().css( "background-color", "#F4F4F4" );
+
+                    $('#nav_' + i).addClass('active');
+                    $('#nav_' + i ).parent().css( "background-color", " #FCFCFC" );
+                }
+            }
+        });
+    });
+
+
+
+
+    //<!--Funcion para mostrar u ocultar los gestores-->
+        //$(function () {
+        //alert("hola");
+        //$( "#sobre_cartesio .box_pestanas" ).tabs({ active: 0}, { show: { effect: "fade", duration: 1000 } });
+        //$( "#socios_gestores" ).tabs({ active: 0 }, { show: { effect: "fade", duration: 500 }  });
+        //$( "#suscripciones_reembolsos" ).tabs({ active: 0}, { show: { effect: "fade", duration: 1000 } });
+
+        //});
+
+    //$(window).on("resize", function(event){
+    //    if($(window).width() < 980){
+    //        $('#menu').data('size','big').stop().animate({
+    //            marginTop:'0px'
+    //        }, 300);
+    //    }else{
+    //        $('#menu').data('size','small').stop().animate({
+    //            marginTop:'-41px'
+    //        }, 300);
+    //    }
+
+    //});
+
+    //$(window).scroll(function(){
+    //    var $nav = $('#menu');
+    //    if ($(document).scrollTop() > 0 && $(window).width() > 980) {
+    //        if ($nav.data('size') == 'big') {
+    //            $nav.data('size','small').stop().animate({
+    //                marginTop:'-41px'
+
+    //            }, 300);
+
+    //        }
+    //    } else {
+    //        if ($nav.data('size') == 'small') {
+    //            $nav.data('size','big').stop().animate({
+    //                marginTop:'0px'
+    //            }, 300);
+
+    //        }
+    //    }
+    //});
+
+
+
+
+
+    //<!--Funcion para mostrar u ocultar los gestores-->
+    $(function() {
+        $( "#sobre_cartesio .box_pestanas" ).tabs({ active: 0}, { show: { effect: "fade", duration: 1000 } });
+        $( "#socios_gestores" ).tabs({ active: 0 }, { show: { effect: "fade", duration: 500 }  });
+        $( "#suscripciones_reembolsos" ).tabs({ active: 0}, { show: { effect: "fade", duration: 1000 } });
+
+        $( "#sobre_cartesio .box_pestanas" ).accordion({ header: "h4", heightStyle: "content", collapsible: true });
+
+        $('#sobre_cartesio .box_pestanas h4')
+            .off('click')
+        .click(function(){
+            $(this).next().toggle('fast');
+        });
+
+        $( "#suscripciones_reembolsos" ).accordion({ header: "h4", heightStyle: "content", collapsible: true });
+
+        $('#suscripciones_reembolsos h4')
+            .off('click')
+        .click(function(){
+            $(this).next().toggle('fast');
+        });
+
+    });
+
+   
+
+    </script>
+
+    <script type="text/javascript" src="/scripts/jquery.colorbox.js"></script><!--plugin para modal-->
+    <script type="text/javascript" src="/scripts/jquery.scrollTo.js"></script><!--Javascript que hace funcionar el Scroll del Menú-->
+    <script type="text/javascript" src="/scripts/jquery.nivo.slider.js"></script><!--Javascript que controlla el carrusel-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+</body>
+</html>

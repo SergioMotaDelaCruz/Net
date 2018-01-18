@@ -1,0 +1,457 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Rentabilidad histórica</h1>
+   
+       
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+
+
+    <div class="row-grupo">
+        <div class="row row-odm">
+            <div class="col-md-6 align-self-auto">
+                <label for="ValorLiquidativo">Modificar por fechas</label>
+                <input type="text" class="form-control datepicker" required id="fechaTodos" aria-describedby="emailHelp" placeholder="Fecha">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="titulo-odm">
+                    <h2 class="verde">Cartesio X</h2>
+                </div>
+                
+                <form id="CartesioX" onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="ValorLiquidativo">Valor Liquidativo</label>
+                        <input type=number step="any" class="form-control ValorLiquidativoX" id="ValorLiquidativo" required placeholder="Valor Liquidativo">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Valor">Valor</label>
+                        <input type=number step="any" class="form-control" id="Valor" required placeholder="Valor">
+                    </div>
+                    <div class="form-group">
+                        <label for="Valor">Fecha</label>
+                        <input type="text" class="form-control datepicker" id="fecha" required placeholder="dd/mm/yyyy">
+                    </div>
+                    <input type="hidden" id="fondo" value="CartesioX" />
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-danger" onclick="borrar('CartesioX')">Borrar</button>
+                </form>
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="titulo-odm">
+                    <h2 class="naranja">Cartesio Y</h2> 
+                </div>
+                    <form id="CartesioY" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="ValorLiquidativo">Valor Liquidativo</label>
+                            <input type=number step="any" class="form-control ValorLiquidativoY" id="ValorLiquidativo" required placeholder="Valor Liquidativo">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="Valor">Valor</label>
+                            <input type=number step="any" class="form-control" id="Valor" required placeholder="Valor">
+                        </div>
+                        <div class="form-group">
+                            <label for="Valor">Fecha</label>
+                            <input type="text" class="form-control datepicker" id="fecha" required placeholder="dd/mm/yyyy">
+                        </div>
+                        <input type="hidden" id="fondo" value="CartesioY" />
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-danger" onclick="borrar('CartesioY')">Borrar</button>
+                    </form>
+                </div>
+
+            <div class="col-md-3">
+                <div class="titulo-odm">
+                    <h2 class="verde">Pareturn Cartesio Income</h2>    
+                </div>
+                    <form id="PareturnCartesioIncome" class="formulario" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="ValorLiquidativo">Valor Liquidativo</label>
+                            <input type=number step="any" class="form-control ValorLiquidativoIN" id="ValorLiquidativo" required placeholder="Valor Liquidativo">
+
+                        </div>                    <div class="form-group">
+                            <label for="Valor">Valor</label>
+                            <input type=number step="any" class="form-control" id="Valor" required placeholder="Valor">
+                        </div>
+                        <div class="form-group">
+                            <label for="Valor">Fecha</label>
+                            <input type="text" class="form-control datepicker" id="fecha" required placeholder="dd/mm/yyyy">
+                        </div>
+                        <input type="hidden" id="fondo" value="PareturnCartesioIncome" />
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-danger" onclick="borrar('PareturnCartesioIncome')">Borrar</button>
+                    </form>
+                </div>
+            <div class="col-md-3">
+                <div class="titulo-odm">
+                    <h2 class="naranja">Pareturn Cartesio Equity</h2> 
+                </div>
+                <form id="PareturnCartesioEquity" class="formulario" onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="ValorLiquidativo">Valor Liquidativo</label>
+                        <input type=number step="any" class="form-control ValorLiquidativoEQ" id="ValorLiquidativo" required placeholder="Valor Liquidativo">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Valor">Valor</label>
+                        <input type=number step="any" class="form-control" id="Valor" required placeholder="Valor">
+                    </div>
+                    <div class="form-group">
+                        <label for="Valor">Fecha</label>
+                        <input type="text" class="form-control datepicker" id="fecha" required placeholder="dd/mm/yyyy">
+                    </div>
+                    <input type="hidden" id="fondo" value="PareturnCartesioEquity" />
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-danger" onclick="borrar('PareturnCartesioEquity')">Borrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row row-grupo">
+        <div class="col-md-3">    
+            <button type="button" class="btn btn-danger verde" onclick="verGrafico('_grafica_cartesio_x', null, null);">Gráfica Cartesio X  </button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-danger naranja" onclick="verGrafico('_grafica_cartesio_y', null, null);">Gráfica Cartesio Y</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-danger verde" onclick="verGrafico('_grafica_cartesio_income', null, null);">Gráfica Pareturn Cartesio Income</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-danger naranja" onclick="verGrafico('_grafica_cartesio_equity', null, null);">Gráfica Pareturn Cartesio Equity</button>
+        </div>   
+    </div>
+
+        <div class="row row-odm row-grupo">
+            <div id="TablaValores">
+
+            </div>
+        </div>
+
+    </div>
+<span id="xxx"></span>
+    <hr>
+<style>
+   .ui-dialog-titlebar {
+  background:   #33708a;
+         color:white ;
+}
+   .ui-dialog-titlebar-close{
+       background:#d01616;
+   }
+   .ui-dialog-buttonset button{
+       background:   #33708a;
+       color:white ;
+   }
+</style>
+@*<div id="dialogo" title="Select Sales" style="display:none;padding-left:4%;padding-right:4%;width:auto!important;min-height: 0px;max-height: none; height: auto;top:5px"></div>*@
+ <div id="dialogo" title="Gráfico" style="top:30px!important; margin-left: 15px!important;"></div>
+
+@section scripts{
+
+<script>
+    //MOSTRAR GRÁFICA
+    $('#Rentabilidad').addClass("active");
+   
+    var dialogo = $('#dialogo');
+
+    function verGrafico(urlbtn, fechaIni, fechaFin) {
+        
+       
+       // dialogo.dialog('open');
+        var url = "./Graficos/" + urlbtn + "?fechaIni=" + fechaIni + "&fechaFin=" + fechaFin + "&vista=admin";
+        //alert(url);
+       
+        dialogo.load(url,
+            function (responseText, textStatus, XMLHttpRequest) {
+                dialogo.dialog({
+                    modal: true,
+                    open: function (event, ui) {
+                     //   $('#dialogo').show();
+                        dialogo.parent(".ui-dialog").css({ position: "fixed", top: "100px" }).end();                        //  loading("close");
+                     
+
+                        //$('.ui-dialog-titlebar').css("display", "none");                    
+                    },
+                    height: 700,//$(window).height(),
+                    width: $(window).width()-30,
+                    position: 100,
+                    
+                    type:'POST',
+                    
+               //      autoOpen: false,
+
+                    close: function (event, ui) {
+                        //  dialogo.hide();
+                        dialogo.dialog("close");
+                       // location.reload(true);
+                    },
+                    buttons: {
+                        Back: function () {
+                            // dialogo.dialog("close");
+                            // dialogo.hide();
+                            dialogo.dialog("close");
+                        }
+                    },
+                    error: function () {
+                   //     dialogo.hide();
+                    }
+                });
+            });
+    }
+   
+    //FIN MOSTRAR GRÁFICA
+
+
+
+
+
+    //CREACIÓN DE TABLA
+    CargarTabla();
+        function CargarTabla() {
+            var requestUrl = '/Admin/_GridValores' + '?_=' + $.now() ;//+ '&id=' + '@*@Model.Id*@';
+            $("#TablaValores").load(requestUrl, function () {
+                overrideGrid();
+            });
+        }
+       
+        function overrideGrid(){
+            $("#gridValores  a").not(".listado-ver").click('click', function (event) {
+                if (!$(this).hasClass("listado-ver")){
+                    event.preventDefault();
+                    var href = $(this).attr("href");
+                    if (href != "#") {
+                        $(this).attr("href","#");
+
+                        $.get(href, function (data) {
+                            $("#TablaValores").html(data);
+                            overrideGrid();
+                        });
+                    }
+                }
+            });
+        }
+    //FIN CREACIÓN DE TABLA
+
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy',
+        language: 'es'
+    });
+
+   
+
+
+
+    //GURDAR DATOS VALORES CON BOTÓN
+      var CartesioX = $('#CartesioX');
+
+      CartesioX.on('submit', function (ev)
+		{
+			ev.preventDefault();
+			var formulario = CartesioX[0];
+			envio(crearJson(formulario));
+		});
+      var CartesioY = $('#CartesioY');
+      CartesioY.on('submit', function (ev) {
+        ev.preventDefault();
+        var formulario = CartesioY[0];
+        envio(crearJson(formulario));
+    });
+      var PareturnCartesioEquity = $('#PareturnCartesioEquity');
+      PareturnCartesioEquity.on('submit', function (ev) {
+        ev.preventDefault();
+        var formulario = PareturnCartesioEquity[0];
+        envio(crearJson(formulario));
+    });
+      var PareturnCartesioIncome = $('#PareturnCartesioIncome');
+      PareturnCartesioIncome.on('submit', function (ev) {
+        ev.preventDefault();
+        var formulario = PareturnCartesioIncome[0];
+        envio(crearJson(formulario));
+      });
+
+		function crearJson(formulario)
+		{
+					var fn = {
+					    "ValorLiquidativo": formulario['ValorLiquidativo']["value"].replace(".", ","),
+						"fecha": formulario['fecha']["value"],
+						"Valor": formulario['Valor']["value"].replace(".", ","),
+						"fondo": formulario['fondo']["value"]
+						};
+						return fn;
+		}
+		function limpiarFormulario(formulario)
+		{
+		    formulario['ValorLiquidativo']["value"] = "";
+		    formulario['Valor']["value"] = "";
+
+		}
+		function cargarFormulario(formulario, ValorLiquidativo, Valor,fecha) {
+		    formulario['ValorLiquidativo']["value"] = ValorLiquidativo;
+		    formulario['Valor']["value"] = Valor;
+		    formulario['fecha']["value"] = fecha;
+		}
+
+		
+        function envio(fn)
+		{
+            $.ajax({
+                cache: false,
+                url: "/Admin/AcualizarValor",
+                type: "post",
+                data: fn,
+                success: function (data) {
+                    CargarTabla();
+                   // $('#xxx').html(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+            });
+        }
+
+    //FIN GURDAR DATOS VALORES CON BOTÓN
+
+
+    //BORRAR DATOS
+        function borrar(fondo) {
+            var fecha;
+            
+            switch (fondo) {
+                case 'CartesioX':
+                 fecha=   CartesioX[0]['fecha']["value"] ;
+                    break;
+                case 'CartesioY':
+                    fecha = CartesioY[0]['fecha']["value"];
+                    break;
+                case 'PareturnCartesioEquity':
+                    fecha = PareturnCartesioEquity[0]['fecha']["value"];
+                    break;
+                case 'PareturnCartesioIncome':
+                    fecha = PareturnCartesioIncome[0]['fecha']["value"];
+                    break;
+            }
+
+            $.ajax({
+                cache: false,
+                url: "/Admin/EliminarValor?fecha="+fecha+"&fondo="+fondo,
+                type: "post",
+           
+                success: function (data) {
+                    if (data == "ok") {
+
+                        CargarTabla();
+                        limpiarFormulario($('#'+fondo)[0]);
+                    }
+                
+                    // $('#xxx').html(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+            });
+
+
+        }
+    //FIN BORRAR DATOS
+
+        //CARGAR DATOS DE FORMULARIOS  AL MODIFICAR FECHA
+                $('#fechaTodos').on('change', function (ev) {
+                    ev.preventDefault();
+                    mostrarValores(this.value);
+                });
+        //FIN CARGAR DATOS DE FORMULARIOS  AL MODIFICAR FECHA
+
+
+         //CARGAR FORMULARIO SEGUN FECHA
+                function mostrarValores(fecha) {
+            
+                    $.ajax({
+                        cache: false,
+                        url: "/Admin/verValor?fecha="+fecha,
+                        type: "post",
+                       // data: fn,
+                        success: function (data) {
+                            var dato = JSON.parse(data);
+                            cargarFormulario(CartesioX[0], dato.vLiquidativoCartesioX, dato.valorCartesioX, dato.fecha);
+                            cargarFormulario(CartesioY[0], dato.vLiquidativoCartesioY, dato.valorCartesioY, dato.fecha);
+                            cargarFormulario(PareturnCartesioIncome[0], dato.vLiquidativoCartesioIncome, dato.valorCartesioIncome, dato.fecha);
+                            cargarFormulario(PareturnCartesioEquity[0], dato.vLiquidativoPareturnCartesioEquity, dato.valorPareturnCartesioEquity, dato.fecha);
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+
+                        }
+                    });
+                }
+    //FIN CARGAR FORMULARIO SEGUN FECHA
+
+    //CARGAR CAJA 
+
+                   
+                $('.ValorLiquidativoX').on('blur', function (ev) {
+                    ev.preventDefault();
+                    porcentajeVL(this, 'CartesioX');
+                 });
+                $('.ValorLiquidativoY').on('blur', function (ev) {
+                     ev.preventDefault();
+                     porcentajeVL(this,'CartesioY');
+                 });
+                $('.ValorLiquidativoEQ').on('blur', function (ev) {
+                     ev.preventDefault();
+                     porcentajeVL(this,'PareturnCartesioEquity');
+                 });
+                $('.ValorLiquidativoIN').on('blur', function (ev) {
+                     ev.preventDefault();
+                     porcentajeVL(this, 'PareturnCartesioIncome');
+                 });
+                function porcentajeVL(txt,fondo) {
+
+                    $.ajax({
+                        cache: false,
+                        url: "/Admin/porcentajeVL?valor=" + txt.value.replace(".", ",") + "&fondo=" + fondo,
+                        type: "post",
+                        // data: fn,
+                        success: function (data) {
+
+                                
+                            switch (fondo) {
+                                case 'CartesioX':
+                                    CartesioX[0]['Valor']["value"] = data;
+                                    break;
+                                case 'CartesioY':
+                                    CartesioY[0]['Valor']["value"] = data;
+                                    break;
+                                case 'PareturnCartesioEquity':
+                                    PareturnCartesioEquity[0]['Valor']["value"] = data;
+                                    break;
+                                case 'PareturnCartesioIncome':
+                                    PareturnCartesioIncome[0]['Valor']["value"] = data;
+                                    break;
+                            }
+                            
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+
+                        }
+                    });
+                }
+                //FIN CARGAR FORMULARIO SEGUN FECHA
+
+
+</script>
+    }

@@ -1,0 +1,126 @@
+﻿@model CartersioLibreria.Models.MiCarteraModels
+@using System.Globalization
+
+<div id="movimientos_color_cartesiox" class="mov_fond wrapper">
+    <h1>Movimientos</h1>
+    <div class="content">
+        <div class="top">
+            @{
+
+                TextInfo myTI = new CultureInfo("es", false).TextInfo;
+
+                foreach (var a in Model.getNombres.Where(x => x.codigo_cuenta_income == Model.ID))
+                {
+                    <strong>@(myTI.ToTitleCase((a.C1NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C1APELLIDOS).ToLower()))</strong>
+
+                    <span>@(string.IsNullOrEmpty(a.C3NOMBRE) ? (string.IsNullOrEmpty(a.C2NOMBRE) ? "" : "y") : ",")</span>
+
+                    @(myTI.ToTitleCase((a.C2NOMBRE + " " + a.C2APELLIDOS).ToLower()))
+
+                    <span>@(string.IsNullOrEmpty(a.C4NOMBRE) ? (string.IsNullOrEmpty(a.C3NOMBRE) ? "" : "y") : ",")</span>
+
+                    @(myTI.ToTitleCase((a.C3NOMBRE + " " + a.C3APELLIDOS).ToLower()))
+
+                    <span>@(string.IsNullOrEmpty(a.C5NOMBRE) ? (string.IsNullOrEmpty(a.C4NOMBRE) ? "" : "y") : ",")</span>
+
+                    @(myTI.ToTitleCase((a.C4NOMBRE + " " + a.C4APELLIDOS).ToLower()))
+
+                    <span>@(string.IsNullOrEmpty(a.C6NOMBRE) ? (string.IsNullOrEmpty(a.C5NOMBRE) ? "" : "y") : ",")</span>
+
+                    @(myTI.ToTitleCase((a.C5NOMBRE + " " + a.C5APELLIDOS).ToLower()))
+
+                    <span>@(string.IsNullOrEmpty(a.C6NOMBRE) ? "" : "y")</span>
+
+                    @(myTI.ToTitleCase((a.C6NOMBRE + " " + a.C6APELLIDOS).ToLower()))
+                }
+            }
+        </div>
+
+        <h2><img src="/images/cartesio_income.png" width="240" alt="Cartesio Income"></h2>
+        <a href="/Cartera/mi_cartera" class="volver"> Volver</a>
+        <div class="tabla_fondo">
+            <ul class="cabecera">
+                <li>Operación</li>
+                <li class="peq">Fecha</li>
+                <li>Participaciones</li>
+                <li>Saldo Acumulado</li>
+                <li>Valor liquidativo</li>
+                <li class="peq">Efectivo</li>
+                <li>Plusvalía</li>
+            </ul>
+
+            <h5><span class="title_tabla">Operación:</span> Suscripción</h5>
+
+            @{
+                double totalParti = 0.0;
+                int contador = 1;
+
+                foreach (var a in Model.getDatosCuentaTipo3.Where(x => x.codigo_cuenta == Model.ID && x.codigo_fondo == 511).OrderBy(x => x.fecha_operacion).Distinct())
+                {
+                    String[] fechaOperacion = a.fecha_operacion.ToString().Split(' ');
+                    String tipoOperacion = a.tipo_operacion.ToString();
+                    double? efectivoCompra = a.efectivo;
+                    double? liquido = a.liquido;
+                    string plusvaliaBruta = a.plusvalia_bruta.ToString();
+                    double? participaciones = a.participaciones;
+                    double? valorLiquidativo = a.valor_liquidativo;
+
+
+                    if (tipoOperacion == "s")
+                    {
+                        plusvaliaBruta = "";
+                        tipoOperacion = "Suscripción";
+                        totalParti = totalParti + (double)participaciones;
+                    }
+                    else if (tipoOperacion == "t")
+                    {
+                        plusvaliaBruta = "";
+                        tipoOperacion = "Traspaso";
+                        totalParti = totalParti + (double)participaciones;
+                    }
+                    else if (tipoOperacion == "r")
+                    {
+                        //plusvaliaBruta = 0.0;
+                        tipoOperacion = "Reembolso";
+                        totalParti = totalParti + (double)participaciones;
+                    }
+                    else if (tipoOperacion == "x")
+                    {
+                        //plusvaliaBruta = 0.0;
+                        tipoOperacion = "Traspaso";
+                        totalParti = totalParti + (double)participaciones;
+                    }
+
+
+                    string clase = ((contador % 2) == 0) ? "bg_grey" : "";
+
+
+                    <ul class="@clase">
+
+                        <li class="first">@tipoOperacion</li>
+                        <li class="peq"><span class="title_tabla">Fecha:</span>@fechaOperacion[0]</li>
+                        <li><span class="title_tabla">Participaciones:</span>@participaciones</li>
+                        <li><span class="title_tabla">Saldo Acumulado:</span>@totalParti</li>
+                        <li><span class="title_tabla">Valor liquidativo:</span>@valorLiquidativo</li>
+                        <li class="peq"><span class="title_tabla">Efectivo:</span>@efectivoCompra €</li>
+                        <li class="ultima_fila"><span class="title_tabla">Plusvalía:</span>@plusvaliaBruta</li>
+
+                    </ul>
+
+
+
+                    contador++;
+                }
+            }            
+
+
+        </div>
+        <div class="clear">
+            <a class="imprimir" href="/Cartera/_imprimir_mi_cartera_income/@(Model.ID)" target="_self">Imprimir</a>
+        </div>
+    </div>
+
+
+
+</div>
+

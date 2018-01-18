@@ -1,0 +1,25 @@
+﻿		#selector_fechas {width:400px; margin:auto; font-size:16px; font-family: Arial; color:#666; }
+		#selector_fechas .boton {display:inline;}
+		#selector_fechas .boton a {background: #D65F00;	color:#FFF;	font-size:0.875em; text-align:center; font-family: 'Roboto Slab', serif;font-weight: 300; text-decoration:none;	-webkit-border-radius: 3px;			-moz-border-radius: 3px;
+
+			border-radius: 3px;
+
+			border:0px; height:20px; padding:5px 10px; padding-top:3px; position:relative; margin-left:10px;
+		}
+		input {width:95px; height:28px; padding:5px 5px 5px 15px; border:1px solid #CCC; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; margin:0px 5px; color:#999; }
+		#selector_fechas .boton a:hover {background: #BB5300;}
+
+		.selector_anos_y {min-height:30px; margin:auto; margin-top:20px; width:900px; text-align:center;}
+		.btn_2014 a{ width:60px; display:block; font-family: 'Open Sans', sans-serif; float:left; font-size:14px; min-width:52px; color:#FFF; text-decoration: none; background:#D65F00; height:17px; padding:5px; border:0px solid; margin-left:11px;}
+		.btn_2014 a:hover{ background:#BB5300;}
+
+		@media screen and (max-width: 768px) {
+			#chart {width:100% !important; max-width:660px; height:300px;}
+			#grafica {margin-bottom:0px;}
+			.selector_anos_y {width:100%; margin:20px 3% 0px 3%; }
+			#selector_fechas {width:100%; }
+			.btn_2014 a {margin-bottom:10px; margin-left:7px; margin-right:7px;}
+			input {width:80px; padding:5px 5px 5px 7px; margin:0px;}
+			#selector_fechas .boton a {padding:5px 30px; margin:auto; }
+			.boton{display:block !important; margin: auto; margin-top:20px; width:100px;}
+		}

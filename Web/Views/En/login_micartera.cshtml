@@ -1,0 +1,81 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutEN.cshtml";
+}
+
+<script type="text/javascript">
+
+    function CompruebaIdentidad() {
+
+        var usuario = document.getElementById("user").value;
+        var clave = document.getElementById("pass").value;
+
+
+        var longitudCodigo = 10
+        // Comprobar que el código tiene longitud de 10 caracteres, eoc. rellenar con ceros a la izda. como paso previo
+        lonUsuario = usuario.length;
+        if (lonUsuario < longitudCodigo) {
+            var strPrefix = "";
+            var faltan = longitudCodigo - lonUsuario;
+            for (k = 0 ; k < faltan ; k++) {
+                strPrefix = strPrefix + "0";
+            }
+            usuario = strPrefix + usuario;
+        }
+
+        var params = "usuario=" + usuario + "&clave=" + clave;
+
+        $.ajax({
+            url: "/Home/ajaxlogin",
+            data: params,
+            type: "post",
+            dataType: "json",
+            success: function (resul) {
+                $("#visorMensajes").html(resul.mensaje);
+                if (resul.codigo_error == "0") {
+                    window.location = "/EnCartera/mi_cartera";// + resul.code;
+                }
+                else {
+                    alert(resul.mensaje);
+                }
+            },
+            error: function (a, b, c) {
+                $("#visorMensajes").html("Error de login");
+                alert("Error login.");
+            }
+        });
+
+
+
+
+
+
+
+
+    }
+</script>
+
+    <div id="login_clientes" class="wrapper">
+        <h1>Clients</h1>
+        <div class="content">
+            <div class="left">
+                <form method="post" id="frmLogin">
+                    <input type="text" id="user" placeholder="Usuario" name="usuario" />
+                    <input type="password" id="pass" placeholder="Contraseña" name="clave" />
+                    <input type="button" onclick="CompruebaIdentidad();" value="Send" name="enviar" />
+                </form>
+            </div>
+            <div class="right">
+                <p>If you want to register or have forgotten your password please contact us.</p>
+                <ul>
+                    <li class="correo"><a href="mailto:info@cartesio.com?Subject=Cartesio web" target="_blank" title="">info@cartesio.com</a></li>
+                    <li class="telefono">91 310 62 40 </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+    </div>
+

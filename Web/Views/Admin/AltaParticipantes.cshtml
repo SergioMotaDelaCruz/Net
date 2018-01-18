@@ -1,0 +1,314 @@
+﻿@model CartersioLibreria.excel_codigos_titularidad
+@{
+    ViewBag.Title = "AltaParticipantes";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+ <section id="add-item-section">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Alta Participes</h1>
+            <table border="0" class="tblInstrucciones">
+                <tr>
+                    <td><b>Intrucciones</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        Introduzca el N&deg; de titular y cambie de campo. Si ya existen datos para ese Nº, se cargar&aacute;n autom&aacute;ticamente.
+                        <br />
+
+                        <br />
+                        <div style="font-size:12px">
+                            <b>Observaciones:</b>
+                            <br />
+                            &bull; Cuando se trate de Empresas, escriba el nombre de la Empresa en el campo de Apellidos<br />
+                            &bull; Los NIF/CIF deben tener 10 caracteres. Si tienen menos, debe rellenar con ceros por la izquierda<br />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+   @using( Ajax.BeginForm("AltaParticipantes" , new AjaxOptions { HttpMethod = "POST" , InsertionMode = InsertionMode.Replace , UpdateTargetId = "add-item-section" }) )
+        {
+@*@using( Html.BeginForm() )
+    {*@
+        @Html.AntiForgeryToken()
+        <div class="container">
+
+            <div id="veladoCambiosCorrectos" style="display:none;margin-bottom: 15px;margin-top: -15px; padding: 5px 45px 5px 30px;" class="alert alert-success">
+                <p class="error">Cambios guardados correctamente.</p>
+            </div>
+
+            <div class="row-grupo">
+                <div class="form-row">
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="ValorLiquidativo">N° de titular</label>
+
+                            @Html.EditorFor(model => model.CODIGO_CLIENTE , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                    </div>
+
+                    <div class="form-row col-md-10">
+                        <div class="form-group col-md-3">
+                            <label for="ValorLiquidativo">Cartesio Y</label>
+                          
+                            @Html.TextBoxFor(model => model.codigo_cuenta_y ,  new { @class = "form-control  "   })
+                            
+                        </div>
+
+
+                        <div class="form-group col-md-3">
+                            <label for="ValorLiquidativo">Cartesio X</label>
+                         
+                        
+                        
+                            @Html.TextBoxFor(model => model.codigo_cuenta_x , new { @class = "form-control  " })
+
+                  
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="ValorLiquidativo">Pareturn Cartesio Equity</label>
+                            @Html.EditorFor(model => model.codigo_cuenta_bruselas , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </div>
+
+
+                        <div class="form-group col-md-3">
+                            <label for="ValorLiquidativo">Pareturn Cartesio Income</label>
+                            @Html.EditorFor(model => model.codigo_cuenta_income , new { htmlAttributes = new { @class = "form-control  " } })
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>NIF/CIF</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Línea 1</th>
+                        <td>
+                            @Html.EditorFor(model => model.C1DNINIF , new { htmlAttributes = new { @class = "form-control  " } })
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C1NOMBRE , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C1APELLIDOS , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Línea 2</th>
+                        <td>
+                            @Html.EditorFor(model => model.C2DNINIF , new { htmlAttributes = new { @class = "form-control  " } })
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C2NOMBRE , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C2APELLIDOS , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Línea 3</th>
+                        <td>
+                            @Html.EditorFor(model => model.C3DNINIF , new { htmlAttributes = new { @class = "form-control  " } })
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C3NOMBRE , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C3APELLIDOS , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Línea 4</th>
+                        <td>
+                            @Html.EditorFor(model => model.C4DNINIF , new { htmlAttributes = new { @class = "form-control  " } })
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C4NOMBRE , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C4APELLIDOS , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Línea 5</th>
+                        <td>
+                            @Html.EditorFor(model => model.C5DNINIF , new { htmlAttributes = new { @class = "form-control  " } })
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C5NOMBRE , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C5APELLIDOS , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Línea 6</th>
+                        <td>
+                            @Html.EditorFor(model => model.C6DNINIF , new { htmlAttributes = new { @class = "form-control  " } })
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C6NOMBRE , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.C6APELLIDOS , new { htmlAttributes = new { @class = "form-control  " } })
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="form-group col-md-3">
+
+                    <input type="button" id="btnguardar" class="btn btn-primary" value="Guardar"   />
+                    
+                    @*<input type="button" value="sss" onclick="$('form').attr('action', 'AltaParticipantes'); $('form').submit();" />*@
+                </div>
+                <div class="form-group col-md-3">
+
+                    <button type="button" class="btn btn-danger" onclick="$('#CODIGO_CLIENTE').val('');limpiar();">Borrar</button>
+                   
+                </div>
+            </div>
+        </div>
+
+
+
+        }
+
+    @section scripts{
+      
+        <script>
+            $(function () {
+                $('#AParticipantes').addClass("active");
+            $('#CODIGO_CLIENTE').on('blur', function (ev) {
+              
+                ev.preventDefault();
+                //$('form').attr("action", "AltaParticipantesComprobarDatos");
+                //$('form').submit();
+                var id = $('#CODIGO_CLIENTE').val();
+                if(id!=""){
+                $.ajax({
+                    cache: false,
+                    url: "/Admin/AltaParticipantesComprobarDatos?id="+id,
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                   // data: fn,
+                    success: function (d) {
+                        //alert("dd");
+                        //debugger;
+                        
+
+                        $('#codigo_cuenta_bruselas').val(d.codigo_cuenta_bruselas);
+                        $('#codigo_cuenta_income').val(d.codigo_cuenta_income);
+                        $('#codigo_cuenta_x').val(d.codigo_cuenta_x);
+                        $('#codigo_cuenta_y').val(d.codigo_cuenta_y);
+
+                        $('#C1APELLIDOS').val(d.C1APELLIDOS);
+                        $('#C1DNINIF').val(d.C1DNINIF);
+                        $('#C1NOMBRE').val(d.C1NOMBRE);
+
+                        $('#C2APELLIDOS').val(d.C2APELLIDOS);
+                        $('#C2DNINIF').val(d.C2DNINIF);
+                        $('#C2NOMBRE').val(d.C2NOMBRE);
+
+                        $('#C3APELLIDOS').val(d.C3APELLIDOS);
+                        $('#C3DNINIF').val(d.C3DNINIF);
+                        $('#C3NOMBRE').val(d.C3NOMBRE);
+
+                        $('#C4APELLIDOS').val(d.C4APELLIDOS);
+                        $('#C4DNINIF').val(d.C4DNINIF);
+                        $('#C4NOMBRE').val(d.C4NOMBRE);
+
+                        $('#C5APELLIDOS').val(d.C5APELLIDOS);
+                        $('#C5DNINIF').val(d.C5DNINIF);
+                        $('#C5NOMBRE').val(d.C5NOMBRE);
+
+                        $('#C6APELLIDOS').val(d.C6APELLIDOS);
+                        $('#C6DNINIF').val(d.C6DNINIF);
+                        $('#C6NOMBRE').val(d.C6NOMBRE);
+                       
+                      
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        limpiar();
+                        //alert(thrownError);
+                    }
+                });
+                } else { limpiar();}
+
+            });
+   
+            });
+            $('#btnguardar').on('click', function (ev) {
+                debugger;
+                ev.preventDefault();
+                $('form').attr("action", "AltaParticipantesx");
+                $('form').submit();
+                $("#veladoCambiosCorrectos").show().delay(1500).fadeOut();
+             });
+        </script>
+        <script>
+            function limpiar() {
+              //  $('#CODIGO_CLIENTE').val("");
+                $('#codigo_cuenta_bruselas').val("");
+                $('#codigo_cuenta_income').val("");
+                $('#codigo_cuenta_x').val("");
+                $('#codigo_cuenta_y').val("");
+
+                $('#C1APELLIDOS').val("");
+                $('#C1DNINIF').val("");
+                $('#C1NOMBRE').val("");
+
+                $('#C2APELLIDOS').val("");
+                $('#C2DNINIF').val("");
+                $('#C2NOMBRE').val("");
+
+                $('#C3APELLIDOS').val("");
+                $('#C3DNINIF').val("");
+                $('#C3NOMBRE').val("");
+
+                $('#C4APELLIDOS').val("");
+                $('#C4DNINIF').val("");
+                $('#C4NOMBRE').val("");
+
+                $('#C5APELLIDOS').val("");
+                $('#C5DNINIF').val("");
+                $('#C5NOMBRE').val("");
+
+                $('#C6APELLIDOS').val("");
+                $('#C6DNINIF').val("");
+                $('#C6NOMBRE').val("");
+            }
+
+        </script>
+    }
+</section>

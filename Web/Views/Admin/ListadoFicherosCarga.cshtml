@@ -1,0 +1,173 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Restaurar version de fichero BNP";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .selected{
+        background-color:silver;
+    }
+    body{
+        /*color:darkblue;*/
+    }
+    .files{
+        max-width:350px;
+        list-style-type: square;
+    }
+    .files:hover{
+        cursor:pointer;
+    }
+    a{
+        /*margin-left:130px;*/
+    }
+    #result li{
+        /*margin-top:20px;*/
+        margin-bottom:20px;
+    }
+
+    .row a{
+        margin-left:30px;
+    }
+
+    .row span{
+         margin-left:30px;
+    }
+
+    .colorVersiones{
+        color:#00577d;
+        font-weight:bolder;
+    }
+    .title-odm{
+        height:50px;
+    }
+    .title_carga{
+        font-weight:bolder;
+    }
+</style>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Restaurar version de fichero BNP</h1>
+
+
+    </div>
+</div>
+
+<div id="result">
+
+    <div class="container">
+        <!-- Example row of columns -->
+
+        <form id="CartesioX" onsubmit="return false;">
+
+            <h1>Seleccionar Version </h1>
+
+            <div class="row-grupo">
+
+                <div class="row">
+                    <div class="col-md-6 izquierda">
+
+                        <div class="row">
+
+                            <div class="title-odm">
+                                <h3>Listado Ficheros en Servidor FTP:</h3>
+                                @*<h2 class="verde">Cartesio X</h2>*@
+                            </div>
+                            <ul>
+                                @foreach (var item in (IEnumerable<CartersioLibreria.Models.FicheroDeCargaDBModel>)Model.ListadoFicheros)
+                                {
+                                    <li class="files colorVersiones" onclick="changeState(this)">
+                                        @item.NombreFichero
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="row">
+                            @{
+                                if (Request.Url.AbsoluteUri.Contains("nombreFichero"))
+                                {
+                                    <div>
+                                        <br />
+                                        @*<a class="btn btn-primary" href="/Admin/ListadoFicherosCarga/">Procesando...</a>*@
+                                        <span class="btn btn-primary">Procesando...</span>
+                                    </div>
+                                }
+                                else if (!Model.EnProceso) //Si la carga no esta completada no se podra lanzar una nueva carga
+                                {
+                                    <div>
+                                        <br />
+                                        @*<a class="btn btn-primary" href="/Admin/ListadoFicherosCarga/">Procesando...</a>*@
+                                        <span class="btn btn-primary">Procesando...</span>
+                                    </div>
+                                    @*<div>
+                        <input type="submit" value="PROCESANDO..." disabled="disabled" />
+                    </div>*@
+                                }
+                                else
+                                {
+                                    <div>
+                                        <br />
+                                        <a class="btn btn-primary" id="linkVersion" href="#" onclick="return confirm('Are you sure to load this version??')">Select Version</a>
+                                    </div>
+                                    @*<div>
+                        <input type="submit" value="CARGAR VERSION" />
+                    </div>*@
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-6 derecha">
+                        <div class="estadoCarga">
+                            <div class="title_carga">Estado Ultima Carga:</div>
+                            @*<p>Fecha: <span id="fecha">13-11-2017</span></p>*@
+                            @if (Model.Estado && Model.FechaFin != "")
+                            {
+                                <p style="color:forestgreen; font-weight:600" id="estado">Cargado Correctamente</p>
+                            }
+                            else if (Model.Estado && Model.FechaFin == "")
+                            {
+                                <p style="color:red; font-weight:600" id="estado">Error no se finalizo la carga</p>
+
+                            }
+                            else if (!Model.Estado && Model.FechaFin == "")
+                            {
+                                <p style="color:orange; font-weight:600" id="estado">Proceso de Carga Lanzado</p>
+                            }
+                        </div>
+                        <br />
+                        <div class="ultimoCargado">
+                            <div class="title_carga">Ultimo Fichero Cargado:</div>
+                            <p style="color:#00577d; font-weight:600" id="ultimaCarga">@Model.NombreFichero</p>
+                        </div>
+                        <br />
+                        <div class="logErrores">
+                            <div class="title_carga">Detalles Ultima Carga:</div>
+                            <div id="log">@Html.Raw(Model.LogUltimaCarga)</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+    //window.onload = function () {
+    //    $(".files").on('focusout', function () {
+    //        $(".files").removeClass("selected");
+    //        console.log("juja");
+    //    });
+    //}
+
+    function changeState(elem)
+    {
+        $(".files").removeClass("selected");
+        $(elem).addClass("selected");
+        $("#linkVersion").attr("href", "/Admin/ListadoFicherosCarga/?nombreFichero=" + $(".selected").text().replace(/\s+/g, ''));
+    }
+    
+</script>

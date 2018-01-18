@@ -1,0 +1,1191 @@
+ubs* {margin: 0; padding: 0; outline: 0;}
+
+html{ height:100%; min-height:100%;  margin:0px; padding: 0px; position:relative; }
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #666;
+	font-size:15px;
+	font-size:0.9375em;
+	background:#FFF;
+	font-size:100%;
+	min-height:100%; height:100%; margin:0px;  padding: 0px; position:relative;
+	
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	margin:0px;
+	padding:0px;
+	font-size:2em;
+	outline:0;
+	}
+
+
+h1 {
+	font-size: 2.25em;
+	letter-spacing: -2px;
+	line-height: 36px;
+}
+h2 {
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300; 
+	font-size:2em;
+	font-size:32px;
+	color: #00577d;
+	
+	
+
+}h2.title { color:#FFF; font-size:2.5em;} 
+
+
+
+h1.title {
+	font-size: 2.875em;
+	font-size:46px;
+	font-weight: 700;
+	color: #6a6a6a;
+}
+
+h3{	
+	font-family: 'Open Sans', sans-serif;
+	font-weight:600;
+	font-size: 15px;
+	color: #666;
+	line-height:15px;
+	
+	
+}
+h3.sub_title{font-family: 'Open Sans', sans-serif; font-weight:bold;}
+
+h3.cartesio_med_x, h3.cartesio_med_y, h3.cartesio_med_income, h3.cartesio_med_equity{position:relative; height:25px; display:block; font-size:20px; ; font-family: 'Roboto Slab', serif; padding-right:28px; margin-top:-7px; }
+h3.cartesio_med_x{background:url('../images/x.png')no-repeat right; width:77px; padding-top:9px;} h3.cartesio_med_y{background:url('../images/y.png')no-repeat right; width:77px; padding-top:4px;}
+h3.cartesio_med_income{background:url('../images/income.png')no-repeat right; width:130px; padding-top:13px;} h3.cartesio_med_equity{background:url('../images/equity.png')no-repeat right; width:130px; padding-top:9px;}
+
+.color_x{background:url('../images/x.png')no-repeat right; margin-top:-12px; margin-left:-1px !important; width:26px; height:23px; position:absolute;}
+.color_y{background:url('../images/y.png')no-repeat right; width:23px; height:30px; margin-top:0px !important; margin-left:2px; position:absolute; }
+.color_income{background:url('../images/income.png')no-repeat right; width:75px; height:24px; margin-top:-4px !important; margin-left:1px; position:absolute; }
+.color_equity{background:url('../images/equity.png')no-repeat right; width:72px; height:28px; margin-top:-3px !important; margin-left:4px; position:absolute; }
+
+
+
+#black_box h3{color:#FFF;}
+
+h4 {font-family: 'Roboto Slab', serif; font-size:0.9375em; color:#666; font-weight:300;}
+ul,li{padding:0px; margin:0px; list-style:none; font-family: 'Roboto Slab', serif; font-weight: 400; font-size:0.9375em; color:#666; }
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight:300;
+	color:#373a36;
+	font-size:14px;
+		font-size:0.875em;
+	margin: 0 0 15px 0;
+	line-height:22px;
+}
+img{border:0;}
+strong {font-weight:bold;}
+a {font-size:15px; font-family: 'Open Sans', sans-serif; font-weight:300; color:#00577d; text-decoration:none; outline:0;}
+textarea, input {font-family: 'Open Sans', sans-serif; font-weight:300; color:#373a36; font-size:14px;}
+input[type=button], input[type=submit]{font-family: 'Roboto Slab', serif; font-weight: 300; color:#FFF; font-weight:400; font-size:18px; cursor:pointer; }
+
+
+.left{float:left;} .right{float:right;} .clear{clear:both;}.mobile{display:none;}
+.pdf_descarga{padding-left:38px; height:29px; font-family: 'Roboto Slab', serif; font-size:14px; padding-top:8px; display:block; background:url('../images/logo_pdf.png')no-repeat; color:#08446a;}
+
+.light_grey{color:#999999; font-size:13px;}
+.video_enlace{padding-left:39px; height:31px; font-size:14px; padding-top:8px; display:block; background:url('../images/10_aniversario_peque.png')no-repeat;}
+
+ a.imprimir {background:url('../images/imprimir.png')no-repeat; font-size:14px;  cursor:pointer;}
+
+.wrapper {width:100%; min-width:100%; display:block; -webkit-box-sizing:  border-box; -moz-box-sizing: border-box; box-sizing: border-box; min-height:100%; padding:150px 0px 264px 0px;  background:#EEEEEE;}
+
+.wrapper_home{width:100%; min-width:100%; position:relative; padding-bottom:0px;}		
+		
+		
+.center{width:960px; margin:auto;}
+
+#cabecera-responsive {display:none;}
+
+.logo{position:absolute; bottom:15px; cursor:pointer;} .logo h1{line-height:0;}
+#menu {background:#F4F4F4; width:100%; height:89px; position:fixed; z-index:9999999999; border-bottom:1px #BBB solid; top:0; } #menu_mobile {display:none;} #menu li.english_mobile {display:none;} #menu li {display:block; float:left; padding:55px 15px 13px 15px; border-right:1px solid #BBB; } 
+#menu li a{color:#666; font-family: 'Roboto Slab', serif;	font-weight: 400; font-size:1em; font-size:16px; bottom:15px; cursor:pointer;}
+#menu li a.active{color:#000; font-weight: 400; font-size:1em; font-size:16px; bottom:15px; cursor:pointer;}#menu li.active{background:#FCFCFC;}
+.section {display:block; position:relative; width:100%; min-width:100%;} #menu li a.en_menu{position:absolute; color:#878787; font-size:1.0625em; margin-left:35px; bottom:60px; font-family: 'Roboto Slab', serif;	font-weight: 400;}
+.seccion{position:relative; display:block;}
+.ancla {position:absolute; top:-49px; width:100%; height:1px; visibility:hidden; display:block;}
+#menu li.mcontacto{border-right:1px solid #CCC;} 
+#menu li.mclientes{border-right:0px solid; padding-right:0px; float:right; margin-right:0px;} 
+
+ #menu li.mclientes a, li.mclientes{font-weight:700;}
+#menu li.boton_ingles {position:absolute; right:0; background:#004f6a !important;  border:0px;}
+#menu li.boton_ingles a{ color:#FFF !important; }
+.close_menu{
+	display:none;
+}
+
+.close_menu img{
+	width:26px;
+	height:24px;
+}
+
+
+
+#carrusel { background:#000203;} #nav_slider_container .nivo-controlNav {display:none;}
+#boton_aniversario { margin-top:-620px; margin-left:910px; z-index:999999999; position:absolute;}
+
+.sec_pest h2{color:#FFF; text-align:center; width:100%; display:block; margin-bottom:50px; margin-top:-100px; }
+.sec_pest{width:100%;  overflow:hidden; height:auto; padding:160px 0px 0px 0px;
+
+background: #004f6a; /* Old browsers */
+background: -moz-linear-gradient(top, #004f6a 0%, #00769d 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#004f6a), color-stop(100%,#00769d)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #004f6a 0%,#00769d 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #004f6a 0%,#00769d 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #004f6a 0%,#00769d 100%); /* IE10+ */
+background: linear-gradient(to bottom, #004f6a 0%,#00769d 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004f6a', endColorstr='#00769d',GradientType=0 ); /* IE6-9 */}
+.box_pestanas{display:block; vertical-align: middle; position:relative; background:#FFF; min-width:890px; height:auto; padding:35px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; overflow:hidden;}
+
+.box_pestanas ul{overflow:hidden;}
+.box_pestanas li {
+	display:block;
+	float:left;
+	text-align:center;
+	width:222px;
+	height:20px;
+	padding:15px 0px;
+	border-right:0px solid #CCC;
+	border-bottom:1px solid #CCC;
+	cursor:pointer;
+}
+.box_pestanas li a {
+	display:block;
+	height:20px;
+	padding:6px 0px;
+	margin-top:-5px; 
+	color:#666; font-size:1em;
+	font-size:16px;  
+	font-family: 'Roboto Slab', serif;
+	border-left:1px solid #CCC;
+} 
+
+.box_pestanas li:first-of-type a, .box_pestanas li.ui-state-active a, .box_pestanas li.ui-state-active + li a{
+	border-left:0px solid #CCC;	
+}
+
+
+
+
+.box_pestanas li.ui-state-active a {font-weight:400; font-size:1em; font-size:16px; }
+
+
+.box_pestanas li.ui-state-active {
+	background:#FFF;
+	border-bottom:0px solid;
+	font-weight:400;
+	border-left:1px solid #CCC;
+	border-right:1px solid #CCC;
+	border-top:1px solid #CCC;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.box_pestanas li.ui-state-active.lastTab {
+	-webkit-border-top-right-radius: 0px;
+	-moz-border-radius-topright: 0px;
+	border-top-right-radius: 0px;
+	border-right:0px solid #CCC;	
+}
+
+.box_pestanas li.ui-state-active.firstTab {
+	-webkit-border-top-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	border-top-left-radius: 0px;
+	
+}
+
+ .sec1_01 {border-left:0px !important; width:221px !important;} 
+
+
+
+/*-------------------INICIO FLECHAS DE NAVEGACIÓN ---------------------*/
+#flecha_01 {background:url('../images/flecha01.png')no-repeat; width:86px; height:43px; margin:auto; cursor:pointer; position:absolute; margin-top:-42px; margin-left:-43px; left:50%; z-index:999999;}
+#flecha_02 {background:url('../images/flecha01.png')no-repeat bottom; width:86px; height:43px; margin:auto; cursor:pointer; clear:both; margin-top:115px; display:block; position:relative;}
+#flecha_03 {background:url('../images/flecha02.png')no-repeat bottom; width:86px; height:43px; margin:auto; cursor:pointer; clear:both; margin-top:60px; display:block; position:relative;}
+#flecha_04 {background:url('../images/flecha01.png')no-repeat bottom; width:86px; height:43px; margin:auto; cursor:pointer; clear:both; margin-top:105px; display:block; position:relative;}
+#flecha_05 {background:url('../images/flecha04.png')no-repeat bottom; width:86px; height:43px; margin:auto; cursor:pointer; clear:both; margin-top:-90px; margin-bottom:90px; display:block; position:relative; z-index:999999;}
+#flecha_06 {background:url('../images/flecha03.png')no-repeat bottom; width:86px; height:43px; margin:auto; cursor:pointer; clear:both; margin-top:-163px; margin-bottom:130px; display:block; position:relative; z-index:999999;}
+#flecha_07{background:url('../images/flecha04.png')no-repeat bottom; width:86px; height:43px; margin:auto; cursor:pointer; clear:both; margin-top:-80px; margin-bottom:9px; display:block; position:relative; z-index:999999;}
+#flecha_08{background:url('../images/flecha03.png')no-repeat bottom; width:86px; height:43px; margin:auto; cursor:pointer; clear:both; margin-top:-165px; margin-bottom:122px; display:block; position:relative; z-index:999999;}
+
+/*-------------------FIN FLECHAS DE NAVEGACIÓN---------------------*/
+
+/*-------------------INICIO VALORES---------------------*/
+#valores {position:absolute; font-family: 'Roboto Slab', serif; margin-left:655px; margin-top:-177px; z-index:999999; color:#FFF;}
+#valores h3{color:#FFF; font-family: 'Roboto Slab', serif; font-size:1em; font-size:16px; font-weight:400; text-align:right;} .valores_num{width:310px; margin-top:20px; border-top:1px solid #FFF; padding:5px 0px 7px 0px; border-bottom:1px solid #FFF; overflow:hidden;}
+.valor_txt {min-width:100px; margin-top:22px; margin-left:10px; position:absolute; }.valor_num {min-width:160px; text-align:left; font-size:2.8125em; line-height:53px;} #valores .color_x, #valores .color_y, #valores .color_equity, #valores .color_income{margin-top:0;}
+
+/*-------------------FIN VALORES---------------------*/
+
+/*-- MENSAJE COOKIES --*/
+
+#aceptarCookies {width: 100%; position: fixed;
+	 z-index:999999999999999;
+	 bottom: 0; left: 0; display: block;
+	 background-color: rgba(244,244,244,0.9);
+     font-family: open-sans, sans-serif;
+	 color: black;
+	 font-size: 11px;
+	 text-align: center;
+ 	 border: 1px solid #C0C0C0; display: none;}
+
+.texto_cookies {display: block; float: left; padding-top: 20px; padding-bottom: 20px; box-sizing: border-box; width: 65%; margin: auto auto; text-align: left; padding-left: 2em; padding-right: 3em;}	 
+.texto_cookies a { font-size: 11px;}	 
+.contenedor_boton_cookies {display: block; float: left; padding-top: 20px; margin: auto auto; margin-left: 0px;}	 
+.cookies_izq {display: block; float: left; padding-top: 20px; box-sizing: border-box; width: 20%;	}
+	 
+.botonDesactivado{
+  background: linear-gradient(to bottom, #999999 0%,#666666 100%);
+    width: 140px;
+  height: 35px;
+  padding: 0;
+    border: 1px solid #CCC;
+  margin-right: 20px;
+    border-radius: 3px;
+  margin-bottom: 15px;
+    font-family: 'Roboto Slab', serif;
+	  color: #FFF;
+  font-weight: 400;
+  font-size: 18px;
+  cursor: pointer;
+  
+}
+
+
+
+/*  Estilos para las cookies   */
+  .botonCookies {
+  background: url(../js/cookies/close.png) /* Url de la imagen */ no-repeat center center, rgba(0,0,0,0.0) /* Color del botón */;
+  background-size: 100%; /* Tamaño de la imagen */
+  height: 25px;  /* Alto del botón */
+  width: 25px;  /* Ancho del botón */
+  display: table;
+  border-radius: 100%;
+  cursor: pointer;
+    box-shadow:
+/* Sombras externa */
+inset 0 10px 15px rgba(255,255,255,.35), inset 0 -10px 15px rgba(0,0,0,.05), inset 10px 0 15px rgba(0,0,0,.05), inset -10px 0 15px rgba(0,0,0,.05),
+/* Sombra interna */
+0 5px 20px rgba(0,0,0,.1);
+
+border: none; padding-left: 0; margin-left: 0; color: #FFFFFF;
+}
+
+/* Al presionar */
+.botonCookies:active {
+  box-shadow: inset 0 5px 30px rgba(0,0,0,.2); /* Sombra interior */
+  background-size: 100%; /* Cambiamos el tamaño de la imagen */
+}
+
+
+
+
+
+
+
+/*-------------------INICIO SOBRE CARTESIO ---------------------*/
+	#sobre_cartesio h4 {display:none;}
+	#presentacion .clear, #rasgos_diferenciales .clear, #estilo_inversion .clear, #socios_gestores .clear  {padding-top:15px; width:100%; float:left; border-top:1px solid #CCC;}
+
+	
+	/*-------------------INICIO PRESENTACION----------------------------*/
+	#presentacion .table{
+		margin-bottom:30px;
+	}
+	#presentacion .left{width:460px; margin-top:40px; margin-right:20px;} #presentacion .right{width:350px; margin-top:40px;} #presentacion .selector_fondos{width:150px; margin-top:35px; padding-right:25px; border-right:1px solid #ccc;} 
+	
+	.btn_fondo {width:150px; height:115px; background:#F2F2F2; display:block; position:relative; } #presentacion .selector_fondos h3{margin-bottom:20px;} #presentacion .selector_fondos h4{margin-bottom:35px;}
+	#presentacion .bloque_estrategia{margin-bottom:40px; overflow:hidden; min-height:115px;} .bloque_estrategia h3{color:#999999; line-height:15px; padding-bottom:8px; border-bottom:1px dotted #CCC; margin-bottom:20px;}
+	#presentacion .boton{width:135px; height:90px; float:left; margin-right:60px;} #presentacion .final{margin:0px;}
+	a.btn_fnd_home{height:40px; display:block;} a.down_line {height:50px;}
+
+	
+	
+	/*-------------------FIN PRESENTACION-------------------------------*/
+	
+
+	 /*-------------------INICIO Pestaña Rasgos Diferenciales ---------------------*/
+	#rasgos_diferenciales{display:none; height:100%;}
+
+	#rasgos_diferenciales .right, #rasgos_diferenciales .left{width:415px; margin-top:40px;} #rasgos_diferenciales h3{margin-bottom:15px;} #rasgos_diferenciales p{margin-bottom:28px;}
+	#rasgos_diferenciales ul{margin-bottom:15px;} #rasgos_diferenciales h3 {margin-bottom:5px; margin-top:10px;} 
+	
+	#rasgos_diferenciales ul{list-style-type:square;} 
+	
+
+	 /*-------------------FIN Pestaña Rasgos Diferenciales ---------------------*/
+	 
+	#estilo_inversion{display:none; height:100%;}
+
+	
+	#estilo_inversion li, #rasgos_diferenciales li {
+		float:none; 
+		margin-bottom:8px;
+		display:list-item;
+		list-style-type:square; 
+		width:auto; 
+		height:auto;
+		padding:0px; 
+		background:#FFF; 
+		border:0px; 
+		text-align:left; 
+		line-height:21px; 
+		font-size:14px; 
+		line-height: 22px;
+		font-family: 'Roboto Slab', serif;
+		font-weight:300; 
+		cursor:auto;
+		letter-spacing: -0.3px;
+		
+		}
+		
+		#estilo_inversion li span, #rasgos_diferenciales li span {
+			font-size: 22px;
+			line-height: 0px;
+			padding-top: 0px;
+			display: inline-block;
+			padding-right: 3px;
+		}
+		
+		
+	#estilo_inversion .right, #estilo_inversion .left{width:49%; margin-top:40px;} 
+	
+	#estilo_inversion .left{	
+		margin-right:1%;
+	}
+	#estilo_inversion .right{	
+		margin-left:1%;
+	}
+
+	
+	#estilo_inversion h3, #rasgos_diferenciales h3, #nuevos_clientes h3{
+		font-family: 'Roboto Slab', serif;
+		line-height:24px;
+		font-weight:600;
+		font-size:16px;
+		margin-bottom:20px;
+	} 
+
+
+	/*-------------------INICIO Pestaña Socios Gestores ---------------------*/
+	#socios_gestores{display:none;} #foto_gestores {width:890px; height:385px; background:url('../images/foto_grupo.jpg')no-repeat; margin-top:52px; }
+	#socios_gestores li {width:150px; margin-right:20px; border:0px; background:transparent; color:#75A3B3;} #socios_gestores li a{color:#6699AB; font-weight:400; font-size:15px;} #socios_gestores li.ui-state-active a{color:#666; font-weight:bold;}
+
+
+	#alvaro {width:890px; height:385px; background:url('../images/alvaro.jpg')no-repeat; margin-top:52px; display:none;}
+	#cayetano {width:890px; height:385px; background:url('../images/cayetano.jpg')no-repeat; margin-top:52px; display:none;}
+	#juan {width:890px; height:385px; background:url('../images/juan.jpg')no-repeat; margin-top:52px; display:none;}
+	
+	#socios_gestores a.cruz_cierre {position:absolute; top:125px; right:60px; width:24px; height:25px; background:url('../images/cruz_cierre.png')no-repeat;}
+	#socios_gestores .ui-tabs-active  a.cruz_cierre{display: none;}
+
+	/*-------------------FIN Pestaña Socios Gestores---------------------*/
+	
+	
+	/* EQUIPO */
+	
+	 ul.menuEquipo{
+		 clear:both;
+		 width:100%;
+		 margin:26px 0;
+	 }
+	
+	 ul.menuEquipo li{
+		width:20%;
+		display:inline-block;
+		text-align:center;
+		background:none;
+		border:0px solid #FFF;
+		padding:0;
+		 color: #666666;
+		 font-size:14px;
+	}
+	ul.menuEquipo li a {
+		display:block;
+		padding:0;
+		margin:0;
+	}
+	ul.menuEquipo li a.active {
+		display:block;
+		padding:0;
+		margin:0;
+		color: #666666;
+		 font-family: 'Roboto Slab';
+		 font-weight:600;
+	}
+
+
+	
+	
+	.miembroEquipo{
+		width:25%;
+		min-height:150px;
+		background-color:#F4F4F4;
+		
+	}
+	
+	.miembroEquipo{
+		display:table;
+		float:left;
+		position:relative;
+		 -moz-box-sizing:border-box;
+		  -webkit-box-sizing:border-box;
+		  box-sizing:border-box;
+		 
+
+	}
+	
+	#equipo, .containerEquipo{
+		position:relative;
+		width:100%;
+		height:100%;
+		    overflow: hidden;
+	}
+	
+	.containerEquipo{
+		/* min-height:444px; */
+	}
+	
+	.miembroInfo{
+		display:table-cell;
+		vertical-align:bottom;
+		 padding:10px;
+	}
+		#sobre_cartesio .miembroEquipo div.nombre{
+		  font-family: 'Roboto Slab';
+		  font-size: 14px;
+		  font-weight: bold;
+		  letter-spacing: -0.5px;
+		  text-align: center;
+		  color: #ffffff;
+		  display:inline-block;
+		  -moz-box-sizing:border-box;
+		  -webkit-box-sizing:border-box;
+		  box-sizing:border-box;
+		  margin:0;
+		   width:100%;
+		       position: relative;
+    z-index: 10;
+			text-shadow: 0px 0px 10px rgba(150, 150, 150, 1);
+		
+	}
+	
+		#sobre_cartesio .miembroEquipo div.cargo{
+		display: block;
+		 -moz-box-sizing:border-box;
+		  -webkit-box-sizing:border-box;
+		  box-sizing:border-box;
+		  margin:0;
+		  width:100%;
+		      position: relative;
+    z-index: 10;
+	text-align: center;
+		  color: #ffffff;
+		  font-size:12px;
+		  		text-shadow: 0px 0px 10px rgba(150, 150, 150, 1);
+		
+	}
+	/* #sobre_cartesio .miembroEquipo .mujer div.nombre{
+		font-size:15px;
+		color:#004f6a;
+		text-shadow: rgb(255, 255, 255) 1px 0px 0px, rgb(255, 255, 255) 0.540302px 0.841471px 0px, rgb(255, 255, 255) -0.416147px 0.909297px 0px, rgb(255, 255, 255) -0.989992px 0.14112px 0px, rgb(255, 255, 255) -0.653644px -0.756802px 0px, rgb(255, 255, 255) 0.283662px -0.958924px 0px, rgb(255, 255, 255) 0.96017px -0.279415px 0px;
+	}
+	#sobre_cartesio .miembroEquipo .mujer div.cargo{
+		font-size:13px;
+		color:#004f6a;
+		text-shadow: rgb(255, 255, 255) 1px 0px 0px, rgb(255, 255, 255) 0.540302px 0.841471px 0px, rgb(255, 255, 255) -0.416147px 0.909297px 0px, rgb(255, 255, 255) -0.989992px 0.14112px 0px, rgb(255, 255, 255) -0.653644px -0.756802px 0px, rgb(255, 255, 255) 0.283662px -0.958924px 0px, rgb(255, 255, 255) 0.96017px -0.279415px 0px;
+	} */
+	
+	
+	.imagenEquipo {
+		position:absolute;
+		z-index: 0;
+	}
+	.imagenEquipo img {
+		width:100%;
+		height:auto;
+		
+		
+	}
+	
+	.worker_modal{
+		width:100%;
+		height:100%;
+		/* position:absolute; */
+		background-color:#FFF;
+		display:none;
+		z-index:99;
+	}
+	
+	.worker_modal .left{
+		width:48%;
+		margin-right:2%;
+		overflow:hidden;
+	}
+	
+	.worker_modal .right{
+		width:48%;
+		margin-left:2%;
+	}
+	
+	.worker_modal img{
+		width:auto;
+		height:100%;
+	}
+	.worker_modal h5{
+		font-family: 'Roboto Slab';
+		font-size: 22px;
+		letter-spacing: -0.5px;
+		font-weight:400;
+		color: #666666;
+		text-align:left;
+		margin-bottom:20px;
+		padding-right:30px;
+
+	}
+	
+	.box_pestanas .worker_modal li{
+		list-style-type: none;
+		
+	}
+	.box_pestanas .worker_modal li:before{
+		    content: "-";
+		position: absolute;
+		margin-left: -10px;
+	}
+
+	.box_pestanas .worker_modal ul{
+		
+		padding-right:30px;
+	}
+	
+	.worker_modal li{
+		width:100%;
+		display:block;
+		font-family: 'Roboto Slab';
+		font-size: 14px;
+		line-height:17px;
+		letter-spacing: -0.5px;
+		color: #666666;
+		border-width:0;
+		background-color:#FFF;
+		text-align:left;
+		padding:0;
+		padding-left:20px;
+		margin-bottom:15px;
+		cursor: auto;
+		float: none;
+		height: auto;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	.close_worker{
+		position:absolute;
+		top:0;
+		right:0;
+		cursor:pointer;
+	}
+	
+	
+	
+/*-------------------FIN SOBRE CARTESIO ---------------------*/
+
+/*-------------------INICIO LOS FONDOS ---------------------*/
+
+#los_fondos {overflow:hidden; padding-top:80px; width:100%; } #los_fondos .left, #los_fondos .right {width:450px; margin-top:30px;}
+
+#los_fondos h3.titulo_fondo {padding-bottom:10px; border-bottom:1px dotted #CCC; margin-bottom:30px; height:33px;} #los_fondos h3.titulo_fondo img{width:130px;} 
+#los_fondos h2 {width:100%; text-align:center; font-size:2.5em; color:#666;} #los_fondos h3 {margin-bottom:5px;}
+.min_height{min-height:310px;} #los_fondos .fondos_premios p{margin-bottom:0; line-height:20px;}
+#los_fondos .fondos_premios .left {width:185px; margin-right:60px; margin-bottom:40px;} #los_fondos .fondos_premios .final{margin-right:0;}
+.fondos_premios span {font-size:11px; color:#999; }
+.fondos_premios h4 {height:21px; display;block;}
+
+
+img.premio{width:100%;}
+
+/*-------------------FIN LOS FONDOS ---------------------*/
+
+/*-------------------INICIO SUBSCRIPCIONES Y REEMBOLSOS ---------------------*/
+#suscripciones_reembolsos .box_pestanas {height:680px;}
+#suscripciones_reembolsos.sec_pest {height:660px; padding-bottom:160px;}
+#suscripciones_reembolsos h4 {display:none;}
+
+.one{background:url('../images/one.png')no-repeat;}.two{background:url('../images/two.png')no-repeat;}.three{background:url('../images/three.png')no-repeat;}.four{background:url('../images/four.png')no-repeat;}.five{background:url('../images/five.png')no-repeat;}	
+	/*-------------------INICIO Nuevos Clientes ---------------------*/
+
+
+	#nuevos_clientes .right{width:540px; margin-top:40px;} #nuevos_clientes .left{width:290px; margin-top:40px;} #nuevos_clientes .left p{margin-bottom:30px;} #nuevos_clientes .right p{margin-bottom:15px;}
+	#nuevos_clientes .clear{padding-top:15px; width:890px; bottom:35px; border-top:1px dotted #CCC; position:absolute;} #nuevos_clientes h3{margin-bottom:5px;}
+	 
+	#nuevos_clientes .downloads {padding-top:15px; width:100%; border-top:1px dotted #CCC; }
+	#nuevos_clientes .downloads .pdf_descarga{margin-bottom:8px;}
+	
+	#nuevos_clientes .list_number{padding-left:30px; background-position:0px 3px; margin-bottom:5px;} 
+	
+	#nuevos_clientes .clear{background:#F4F4F4; width:850px; padding:20px; text-align:center; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color:#373a36; border:0px;} #nuevos_clientes .clear p {width:600px; margin:auto;}
+
+	
+	/*-------------------FIN Nuevos Clientes ---------------------*/
+	 
+	/*-------------------INICIO Suscripciones ---------------------*/
+	 
+	#suscripciones .right p{margin-bottom:20px; margin-top:0px; line-height:20px;}
+	#suscripciones h3 {margin-bottom:5px;} #suscripciones  .right h3 {margin-bottom:0px;}
+	#suscripciones .list_number{padding-left:30px;} 
+	#suscripciones .right .downloads {display:none;}
+	
+	
+	#suscripciones .downloads {padding-top:15px; max-width:275px; width:100%; border-top:1px solid #979797;}
+	
+	#suscripciones .downloads .pdf_descarga{margin-bottom:15px;}
+	
+	#suscripciones .clear_top{display:block; position:relative; padding-top:40px; max-width:272px; margin-bottom:25px;}
+	#suscripciones .clear{background:#F4F4F4; width:850px; padding:20px; text-align:center; position:absolute; bottom:35px; margin-top:30px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color:#373a36; border:0px;} #suscripciones .clear p {width:600px; margin:auto;}
+
+	
+	#suscripciones .outter-left .left{padding-top:0;}
+	
+	
+	.outter-left{ width:60%; display:table-cell; position:relative; float:none; vertical-align:top;}
+	
+	.outter-right{display:table-cell; width:40%; float:none; vertical-align:top;}
+	
+	.orden-img{
+		width:100%;
+		height:auto;
+	}
+	
+	/*-------------------FIN Suscripciones ---------------------*/
+	
+	/*-------------------INICIO Reembolsos ---------------------*/
+	#reembolsos{display:none;}
+
+
+	#reembolsos .clear_top{padding-top:15px; width:890px; bottom:123px; border-top:1px dotted #CCC; position:absolute;}
+	#reembolsos .clear{background:#F4F4F4; width:850px; padding:20px; text-align:center; position:absolute; bottom:35px; margin-top:30px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color:#373a36; border:0px;} #reembolsos .clear p {width:600px; margin:auto;}
+
+	/*-------------------FIN Reembolsos---------------------*/
+	
+	/*-------------------INICIO Traspasos ---------------------*/
+	#traspasos {display:none;}
+	
+	.table{
+		display:table;
+	}
+	
+	#suscripciones .left, #traspasos .left, #reembolsos .left{ width:48%; padding-right:2%; display:table-cell; position:relative; float:none; vertical-align:top; padding-top:40px;}
+	
+	#suscripciones .right, #traspasos .right, #reembolsos .right{display:table-cell; width:48%; padding-left:2%; float:none; vertical-align:top;}
+	
+	
+	#traspasos .left p, #reembolsos .left p, #suscripciones p, #nuevos_clientes p, #presentacion p{
+		font-family: 'Roboto Slab', serif;
+		font-size:14px;
+		line-height:18px;
+		color:#535353;
+		font-weight:300;
+	}
+
+	#traspasos .left p strong, #reembolsos .left p strong, #suscripciones p strong, #nuevos_clientes p strong, #presentacion p strong{
+		font-family: 'Roboto Slab', serif;
+		font-size:14px;
+		line-height:18px;
+		color:#535353;
+		font-weight:600;
+	}
+	
+	#traspasos .clear_top, #reembolsos .clear_top{padding-top:15px; width:100%; max-width:275px; bottom:20px; border-top:1px solid #979797; position:absolute;}
+	#traspasos .clear{background:#F4F4F4; width:850px; padding:20px; text-align:center; position:absolute; bottom:35px; margin-top:30px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color:#373a36; border:0px;} #traspasos .clear p {width:600px; margin:auto;}
+
+	
+	
+	
+	
+	/*-------------------FIN Traspasos---------------------*/
+	
+	
+/*-------------------FIN SUBSCRIPCIONES Y REEMBOLSOS ---------------------*/
+
+/*------------------- INICIO CONTACTO ---------------------*/
+
+#contacto {padding:90px 0px 90px 0px; height:750px;}
+#contacto h2 {width:100%; text-align:center; font-size:2.5em; color:#666;}
+#contacto  .left{width:275px; margin-top:50px;} #contacto  .right{width:620px; margin-top:50px;}
+
+#contacto .left h3 {font-size: 17px; color:#373a36; font-weight:400; font-family: 'Roboto Slab', serif; line-height:24px; padding-bottom:15px;}
+#contacto .left li {font-size:1em; font-size:16px; color:#373a36; margin-top:10px; padding-left:40px; padding-bottom:20px;}
+
+.direccion {background:url('../images/localizador.png')no-repeat;}
+.correo {background:url('../images/contacta.png')no-repeat;}
+.telefono {background:url('../images/telefono.png')no-repeat;}
+.fax {background:url('../images/fax.png')no-repeat;}
+	
+	/*------------------- INICIO FORMULARIO DE CONTACTO ---------------------*/
+			
+			#formulario_contacto input {width:280px; height:35px; padding-left:15px; border:1px solid #CCC; margin-right:20px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; margin-bottom:15px; display:block;   font-size: 14px;
+  font-weight: 300;  letter-spacing: -0.3px;  color: #5f5f5f; font-family: 'Roboto Slab', serif;}
+			#formulario_contacto textarea {width:588px; height: 50px; padding:10px 15px;  border:1px solid #CCC; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; margin-bottom:15px; resize: none; text-align:left;}
+			#formulario_contacto input[type=button], #formulario_contacto input[type=submit]{width:140px; height:35px; padding:0; background: #0085b2; /* Old browsers */
+			
+			background: -moz-linear-gradient(top, #0085b2 0%, #004c66 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0085b2), color-stop(100%,#004c66)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #0085b2 0%,#004c66 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #0085b2 0%,#004c66 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, #0085b2 0%,#004c66 100%); /* IE10+ */
+			background: linear-gradient(to bottom, #0085b2 0%,#004c66 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0085b2', endColorstr='#004c66',GradientType=0 ); /* IE6-9 */}
+				
+	/*------------------- FIN FORMULARIO DE CONTACTO ---------------------*/
+
+/*------------------- FIN DE CONTACTO ---------------------*/
+
+
+/*------------------------INICIO DE FONDO-----------------------------------*/
+#color_cartesioy, #color_cartesiox{background:#EEE; width:100%; min-height:100%; padding:125px 0px;}
+
+#color_cartesiox .content{border-color:#3daf2c;} #color_cartesioy .content{border-color:#d65f00;}
+#color_cartesiox .tabla_fondo ul.cabecera {background:#DDF0DD;} #color_cartesioy .tabla_fondo ul.cabecera {background:#F8EBDD;}
+.content {min-height:750px; width:960px; margin:auto; background:#FFF; padding:30px 0px; -webkit-border-bottom-right-radius: 5px; border-top:solid 15px #00577d;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;} 
+
+#color_cartesiox .content, #color_cartesioy .content {margin-bottom:150px;}
+	
+#header {min-height:85px; width:900px; margin:auto; padding-bottom: 5px; border-bottom:1px dotted #CCC; position:relative; display:block;}	
+#header h1 {width:100%; text-align:center; color:#666; height:50px;} #header h1 img {width:250px;}	.date_fondo {position:absolute; bottom:0; right:0; margin-top:0; font-size:13px; color:#666; font-family: 'Open Sans', sans-serif; font-weight:400;}
+
+h2.tit_sec_fondo {font-size: 1.25em;  font-size: 20px;font-weight:400; color:#666; padding:5px 0px 0px 35px; min-height:33px; margin-bottom:23px;} 
+.content h3 {line-height:15px; margin-bottom:5px;} .content p {margin-bottom:15px;}
+
+.num1x{background:url('../images/num1x.png')no-repeat left;} .num2x{background:url('../images/num2x.png')no-repeat left;} .num3x{background:url('../images/num3x.png')no-repeat left;}
+.num1y{background:url('../images/num1y.png')no-repeat left;} .num2y{background:url('../images/num2y.png')no-repeat left;} .num3y{background:url('../images/num3y.png')no-repeat left;}
+	
+	/*--------------------INICIO INFORMACION FONDO-------------------*/
+	
+	#informacion_fondo {border-bottom:1px dotted #CCC; overflow:hidden; margin:22px auto 30px; width:900px; }
+	#informacion_fondo .col_otro_fondo{float:left; width:300px; margin-right:25px;} #informacion_fondo .centro{width:340px;} #informacion_fondo .final{width:185px; margin:2px 0px 0px 25px; }
+	#informacion_fondo .col_otro_fondo span {font-size:10px;}
+	#informacion_fondo .top {margin-bottom:55px;}
+	#informacion_fondo .centro h3{border-bottom:1px dotted #CCC; padding-bottom:10px; margin-bottom:5px;}
+	
+	#informacion_fondo .pdf_descarga {margin-bottom:20px;}
+	
+		/*----------------INICIO INFORMES ANTERIORES----------------*/
+		#historico {font-weight:800; font-size:0.875em; cursor:pointer; color:#00577d; font-family: 'Open Sans', sans-serif;	font-weight:600;}
+		
+		#informes_anteriores {width:338px; height:120px; background:url('../images/informes_anteriores.png')no-repeat left; position:absolute; margin-top:-172px; margin-left:-30px; padding:20px 30px; display:none;}
+		#informes_anteriores p{font-size:0.875em; color:#666; font-weight:600;}
+		
+		#informes_anteriores select{background:#F9F9F9; width:75px; padding:6px; -webkit-border-radius: 3px;	-moz-border-radius: 3px; border-radius: 3px;}
+		
+		#informes_anteriores input[type=button]{background: #0085b2; /* Old browsers */
+			background: -moz-linear-gradient(top, #0085b2 0%, #004c66 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0085b2), color-stop(100%,#004c66)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #0085b2 0%,#004c66 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #0085b2 0%,#004c66 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, #0085b2 0%,#004c66 100%); /* IE10+ */
+			background: linear-gradient(to bottom, #0085b2 0%,#004c66 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0085b2', endColorstr='#004c66',GradientType=0 ); /* IE6-9 */
+		
+			font-size:0.875em; text-align:center; font-family: 'Roboto Slab', serif;	font-weight: 300;
+		
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		
+			border:0px; width:100px; height:30px; padding:0; margin-left:20px;
+		}
+		
+		
+		
+		/*----------------FIN INFORMES ANTERIORES------------------*/
+	
+	/*--------------------FIN INFORMACION FONDO--------------------*/
+
+	/*--------------------INICIO GRAFICA------------------------*/
+	#enlace_grafica{position:relative; margin-top:-80px; height:90px; width:100%; }
+	
+	#grafica {padding:0px 0px 20px 0px; position:relative; width:900px; margin:auto; border-bottom:1px dotted #CCC; margin-bottom:30px;}
+	#selector_fechas {width:430px; margin:auto; font-size:18px; font-family: 'Open Sans', sans-serif; }
+		#selector_fechas input{padding:5px 5px 5px 10px; width:100px;}
+		#selector_fechas input[type=button]{background: #0085b2; /* Old browsers */
+			background: -moz-linear-gradient(top, #0085b2 0%, #004c66 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0085b2), color-stop(100%,#004c66)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #0085b2 0%,#004c66 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #0085b2 0%,#004c66 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, #0085b2 0%,#004c66 100%); /* IE10+ */
+			background: linear-gradient(to bottom, #0085b2 0%,#004c66 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0085b2', endColorstr='#004c66',GradientType=0 ); /* IE6-9 */
+		
+			font-size:0.875em; text-align:center; font-family: 'Roboto Slab', serif;	font-weight: 300;
+		
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		
+			border:0px; width:100px; height:30px; padding:0; margin-left:10px;
+		}
+	
+	
+		/*--------------------CHART-----------------------------*/
+		
+		
+		
+		/*-------------------FIN CHART-------------------------*/
+		
+	/*--------------------FIN GRAFICA--------------------------*/
+	
+	/*--------------------INICIO RENTABILIDAD Y RIESGO--------------------------*/
+	#rentabilidad_riesgo{padding:0px 30px;}
+	#rentabilidad_riesgo .fecha {float:right; font-size:0.75em; font-weight:400; padding-bottom:5px; font-family: 'Open Sans', sans-serif;}
+	#rentabilidad_riesgo h2{margin-bottom:0;}
+	
+	.tabla_fondo{padding-bottom:20px; border-bottom:1px dotted #CCC;}
+	.tabla_fondo li {display:block; float:left; min-width:50px; text-align:center; margin-right:70px; height:28px; margin-top:10px; margin-bottom:3px;}.tabla_fondo li .ultima_fila {width:80px;}
+	.tabla_fondo li.primera_fila {width:235px; padding-left:30px; text-align:left; margin-right:90px;}
+	.tabla_fondo ul {clear:both; overflow:hidden; border-bottom:1px solid #CCC;} .tabla_fondo ul.cabecera {width:100%; background:#E4EBF3; border-bottom:0px; padding:0; height:45px;}	.tabla_fondo ul.cabecera li{margin-bottom:12px;  margin-top:5px;padding-bottom:3px; padding-top:18px; height:30px; font-family: 'Open Sans', sans-serif; color:#777777;	font-weight:600; font-size: 0.9375em; line-height:0;}
+	.tabla_fondo ul li.ultima_fila {width:110px; margin-right:0px;} 
+	.tabla_fondo ul.cabecera li.ultima_fila {width:110px; margin-right:0px;} 
+
+	.tabla_fondo ul.no_border {border-bottom:0px;}
+	
+	.msg_rent {font-size:11px; padding-left:27px; margin-top:5px; }
+	/*--------------------FIN RENTABILIDAD Y RIESGO--------------------------*/
+	
+	/*--------------------INICIO VALORES LIQUIDATIVOS------------------------*/
+	#valores_liquidativos {margin-top:35px; padding:0px 30px;}
+	
+	/*--------------------FIN VALORES LIQUIDATIVOS------------------------*/
+	
+	/*--------------------INICIO OTROS FONDOS-----------------------------*/
+	
+	#otros_fondos{overflow:hidden; margin-top:60px; padding-bottom:40px; background: #f0f0f0;
+			background: -moz-linear-gradient(top,  #f0f0f0 0%, #ffffff 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f0f0), color-stop(100%,#ffffff));
+			background: -webkit-linear-gradient(top,  #f0f0f0 0%,#ffffff 100%); 
+			background: -o-linear-gradient(top,  #f0f0f0 0%,#ffffff 100%); 
+			background: -ms-linear-gradient(top,  #f0f0f0 0%,#ffffff 100%); 
+			background: linear-gradient(to bottom,  #f0f0f0 0%,#ffffff 100%); 
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#ffffff',GradientType=0 ); } 
+	
+	#otros_fondos h2{width:100%; text-align:center; margin-top:35px; margin-bottom:50px; font-family: 'Roboto Slab', serif;	font-weight: 300; font-size:1.875em; color:#666;} #otros_fondos p{font-size:0.9375em; min-height:175px;} 
+	#otros_fondos h4{margin-top:10px; font-family: 'Open Sans', sans-serif;	font-weight:600; margin-bottom:5px;	font-size: 14px; }	
+	#otros_fondos h5{min-height:33px; line-height:0px; margin:0px; padding:0px;}
+	#otros_fondos .col_otro_fondo {width:250px; padding-right:36px; float:left; border-right:#D6E2EC 1px solid; margin-left:36px;} #otros_fondos .inicio{width:255px; margin-left:30px; padding-right:30px;} #otros_fondos .centro{width:255px;} #otros_fondos .final{width:250px; padding-right:0px; border-right:0px;}
+	#otros_fondos .col_otro_fondo h3 {height:35px;}
+	#otros_fondos .col_otro_fondo span{font-size:10px;}
+	
+	#otros_fondos .premio{width:183px; height:290px;}
+	
+
+		.ver_mas{margin-top:10px; display:block;}
+		.ver_mas a{background: #0085b2; 
+		background: -moz-linear-gradient(top, #0085b2 0%, #004c66 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0085b2), color-stop(100%,#004c66)); 
+		background: -webkit-linear-gradient(top, #0085b2 0%,#004c66 100%); 
+		background: -o-linear-gradient(top, #0085b2 0%,#004c66 100%); 
+		background: -ms-linear-gradient(top, #0085b2 0%,#004c66 100%); 
+		background: linear-gradient(to bottom, #0085b2 0%,#004c66 100%); 
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0085b2', endColorstr='#004c66',GradientType=0 ); 
+		
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		
+		
+		min-width:60px; padding:3px 20px; cursor:pointer; color:#FFF; font-size:0.875em; text-align:center; font-family: 'Roboto Slab', serif;	font-weight: 300;}
+		
+	
+	/*--------------------FIN OTROS FONDOS--------------------------------*/
+		
+
+
+	/*------------------------LONGIN CLIENTES--------------------------------*/
+		
+		#login_clientes h1{color:#666; font-family: 'Roboto Slab', serif; width:100%; text-align:center;font-weight: 300; font-size:3.125em; display:block; margin-bottom:50px; }
+		#login_clientes .content {width:890px; min-height:160px; padding:40px 35px;}
+		#login_clientes .left{width:300px;} #login_clientes .right{width:430px;}
+		
+		#login_clientes li {float:left; margin-left:40px; } #login_clientes .correo{padding-left:40px; margin-left:0; padding-bottom:20px;} #login_clientes .telefono{padding-left:33px; padding-top:3px; padding-bottom:15px;}
+		#login_clientes input {width:280px; height:35px; padding-left:15px; border:1px solid #CCC; margin-right:20px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; margin-bottom:15px;}
+	#login_clientes input[type=button]{width:120px; height:35px; padding:0; background: #004f6a; /* Old browsers */
+background: -moz-linear-gradient(top, #004f6a 0%, #00769d 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#004f6a), color-stop(100%,#00769d)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #004f6a 0%,#00769d 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #004f6a 0%,#00769d 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #004f6a 0%,#00769d 100%); /* IE10+ */
+background: linear-gradient(to bottom, #004f6a 0%,#00769d 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004f6a', endColorstr='#00769d',GradientType=0 ); /* IE6-9 */}
+		
+		
+	/*------------------------FIN LOGIN CLIENTES-----------------------------*/
+	
+	/*------------------------CAMBIAR CONTRASENA--------------------------------*/
+		
+		#cambiar_contrasena h1{color:#666; font-family: 'Roboto Slab', serif; width:100%; text-align:center;font-weight: 300; font-size:3.125em; display:block; margin-bottom:50px; }
+		#cambiar_contrasena .content {width:890px; min-height:220px; padding:40px 35px;}
+		#cambiar_contrasena .left{width:300px;} #cambiar_contrasena .right{width:430px;}
+		
+		#cambiar_contrasena li {float:left; margin-left:40px; } #cambiar_contrasena .correo{padding-left:40px; margin-left:0; padding-bottom:20px;} #cambiar_contrasena .telefono{padding-left:40px; padding-top:3px; padding-bottom:15px;}
+		#cambiar_contrasena input {width:280px; height:35px; padding-left:15px; border:1px solid #CCC; margin-right:20px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; margin-bottom:15px;}
+	#cambiar_contrasena input[type=button]{width:120px; height:35px; padding:0; background: #004f6a; /* Old browsers */
+background: -moz-linear-gradient(top, #004f6a 0%, #00769d 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#004f6a), color-stop(100%,#00769d)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #004f6a 0%,#00769d 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #004f6a 0%,#00769d 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #004f6a 0%,#00769d 100%); /* IE10+ */
+background: linear-gradient(to bottom, #004f6a 0%,#00769d 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004f6a', endColorstr='#00769d',GradientType=0 ); /* IE6-9 */}
+		
+		#cambiar_contrasena input.disable[type=button]{background:#CCC; cursor:default;}
+		#cambiar_contrasena input.error {border-color:#e10000;}			
+		
+		#cambiar_contrasena p.error_contrasena {color:#e10000; font-weight:400;}
+	/*------------------------FIN CAMBIAR CONTRASENA-----------------------------*/
+	
+	
+	/*------------------------LEGAL CLIENTES--------------------------------*/
+	
+	#legal h1{color:#666; font-family: 'Roboto Slab', serif; width:100%; text-align:center;font-weight: 300; font-size:3.125em; display:block; margin-bottom:50px; }
+	#legal h3{padding-bottom:8px; border-bottom:1px dotted #CCC;}
+	
+	#legal .content {width:890px; min-height:345px; padding:40px 35px;}
+	#legal .left{width:450px; margin-bottom:10px;} #legal .right{width:370px; margin-bottom:10px;} #legal .clear{padding-top:15px; border-top:1px dotted #CCC; margin-top:20px;}
+	.pdf_descarga{margin-bottom:15px;} #legal a.imprimir{padding-left:40px; padding-bottom:10px;}
+	
+
+	
+	
+	/*------------------------FIN LEGAL CLIENTES-----------------------------*/
+
+	/*------------------------GLOSARIO CLIENTES--------------------------------*/
+	
+
+	
+	#glosario h1{color:#666; font-family: 'Roboto Slab', serif; width:100%; text-align:center;font-weight: 300; font-size:3.125em; display:block; margin-bottom:50px; }
+	#glosario h3.titulo {display:none;} #glosario h3{padding-bottom:8px; border-bottom:1px dotted #CCC;} #glosario li a{font-weight:600; display:block; margin-bottom:6px;}
+	
+	#glosario .clear{padding-top:15px; border-top:1px dotted #CCC; margin-top:20px;}
+	#glosario a.imprimir{padding-left:40px; padding-bottom:10px;}
+	
+	#glosario .content {width:890px; min-height:345px; padding:40px 35px;}
+	#glosario .left{width:450px; margin-bottom:40px;} #glosario .right{width:305px; margin-bottom:40px;}
+	
+	#capitalizacion,#bloomberg,#comision_gestion,#distribucion_activos,#distribucion_sectorial,#depositario, #indice, #isin, #m2, #rentabilidad_riesgo2, #sharpe, #valor_liquidativo ,#var, #volatilidad {display:none;}
+	
+	#glosario .ui-state-active a{color:#666; font-weight:600;}
+	
+	
+	/*------------------------FIN GLOSARIO CLIENTES-----------------------------*/
+	
+	/*------------------------MOVIMIENTOS------------------------------------*/
+	
+		/*----------------------MI CARTERA--------------------------*/
+		
+		#mi_cartera  .content {width:890px; min-height:345px;  height:auto; display:block; position:relative; padding:40px 35px; overflow:hidden;}
+				
+#mi_cartera_update {width:100%; text-align:center; margin-top:140px;}
+			
+		
+		#mi_cartera  .clear{padding-top:15px; border-top:1px dotted #CCC; margin-top:20px;}
+		#mi_cartera  a.imprimir{padding-left:40px; padding-bottom:10px;}
+		
+		#mi_cartera ul.info_micartera {margin-bottom:20px; overflow:hidden; display:block;}
+		#mi_cartera ul.info_micartera li{height:50px; float:left; padding:0px 25px; border-left:1px solid #6699B5; color:#666; font-size:18px; font-weight:600;}
+		#mi_cartera ul.info_micartera li.inicio{width:180px; margin-right:0px; padding-left:0px; border-left:0px; }
+		#mi_cartera ul.info_micartera li.centro{height:50px; float:left; padding:0px 25px; border-left:1px solid #6699B5; color:#666; font-size:18px; font-weight:600; margin-left:170px;}
+		#mi_cartera ul.info_micartera li span{color:#00577d; font-size:24px; font-weight:300;} 
+		
+		#mi_cartera .tabla_fondo {margin-top:20px;}
+		
+		.cartera{margin-bottom:150px; display:block; position:relative;} #mi_cartera .end {margin-bottom:0px;}
+		.def_cartera {margin-top:30px; }.def_cartera p {margin-bottom:0px; color:#666; font-size:0.875em;}
+		
+			/*------------------TABLA-----------------------*/
+			.info_micartera h3 {max-width:520px; font-weight:300; padding-bottom:2px; margin-bottom:10px; font-family: 'Roboto Slab', serif;}
+			#mi_cartera .tabla_fondo ul.cabecera li {font-size:13px; width:105px; font-weight:600;}
+			#mi_cartera .tabla_fondo ul.cabecera li.inicio {margin-left:125px;}
+			#mi_cartera .tabla_fondo ul li {font-size:13px; width:105px;}
+			#mi_cartera .tabla_fondo ul li.ultima_fila {width:117px;}
+			#mi_cartera .tabla_fondo ul li.peq {font-size:13px; width:83px;}
+			#mi_cartera .tabla_fondo ul li.first{text-align:left; width:115px; padding-left:10px;}
+			
+			span.title_tabla {display:none;}
+			#mi_cartera h5 {display:none;}
+			
+			
+			/*----------------FIN TABLA--------------------*/
+			
+				
+		
+		/*----------------------FIN DE MI CARTERA-------------------*/
+	
+	#movimientos_color_cartesiox, #movimientos_color_cartesioy {
+
+		font-size:0.875em; color:#666;
+
+		} 
+		
+	#movimientos_color_cartesiox ul.bg_grey{background:#DDF0DD;} #movimientos_color_cartesioy ul.bg_grey{background:#F8EBDD;}
+	#movimientos_color_cartesiox ul.cabecera {background:#DDF0DD} #movimientos_color_cartesioy ul.cabecera {background:#F8EBDD;}
+	#movimientos_color_cartesiox h5, #movimientos_color_cartesioy h5 {display:none;}
+	
+	#movimientos_color_cartesiox .content{border-color:#3daf2c; min-height:500px; height:auto; overflow:hidden; position:relative;} #movimientos_color_cartesioy .content{border-color:#d65f00; min-height:500px; height:auto; overflow:hidden; position:relative;}		
+	.mov_fond h1{color:#666; font-family: 'Roboto Slab', serif; width:100%; text-align:center;font-weight: 300; font-size:3.125em; display:block; margin-bottom:50px;}
+	.mov_fond  h2{padding-bottom:20px; padding-left:20px;}
+	.nombre_menu {color:#00577d; font-weight:600; margin-left:210px;}
+		
+	.mov_fond .tabla_fondo{width:900px; margin:auto; font-size:0.875em; margin-top:10px; border:0px;}
+	.mov_fond .tabla_fondo li{width:140px; height:25px; margin-right:0px; text-align:center; overflow:hidden; font-size:1.25em; color:#666; }
+	.mov_fond .tabla_fondo li a{font-size:14px; }
+	.mov_fond .tabla_fondo li.peq{width:100px; margin-right:0px; text-align:center; } .mov_fond .tabla_fondo ul {border:0px; font-size:0.875em; color:#666; }
+	 .mov_fond .tabla_fondo ul.cabecera li{width:140px; margin-right:0; text-align:center;}
+	  .mov_fond .tabla_fondo ul.cabecera li{width:137px; margin-right:0; text-align:center;}
+	
+	.mov_fond .tabla_fondo ul.cabecera li {font-size:1.25em; font-weight:800; font-family: 'Roboto Slab', serif;}
+	.mov_fond .tabla_fondo ul.cabecera li.peq{width:100px; text-align:center;}
+	
+	.mov_fond .tabla_fondo ul.bg_grey{background:#E4EBF3; }
+	#movimientos_color_cartesiox, #movimientos_color_cartesioy  h2{width:930px; margin:auto; }
+	.mov_fond .top{width:900px; margin:auto; font-size:18px; font-family: 'Open Sans', sans-serif; font-weight:300; padding-bottom:7px; border-bottom:dotted 1px #CCC; margin-bottom:25px;}
+	
+	a.volver{padding-left:20px; background:url('../images/flechita_back.png')no-repeat left; margin-left:40px; font-size:1.0625em;}
+	
+	#movimientos_color_cartesiox .clear, #movimientos_color_cartesioy .clear{padding-top:15px; border-top:1px dotted #CCC; margin-left:20px; margin-top:20px; width:900px; position:absolute; bottom:30px;}
+	.pdf_descarga{margin-bottom:15px;} #movimientos_color_cartesiox a.imprimir, #movimientos_color_cartesioy a.imprimir{padding-left:40px; padding-bottom:10px;}
+	
+	
+	/*------------------------FIN MOVIMIENTOS---------------------------------*/
+	
+	
+/*------------------- FOOTER ---------------------*/
+
+#footer {background:#F4F4F4; min-width:100%; width:100%; min-height:160px; margin-top:-100px; padding:45px 0; border-top:1px #BBB solid; z-index:9999999; position:relative; overflow:hidden; }
+
+
+
+#footer h3{margin-bottom:20px; font-size:13px;  font-weight:300; color:#878787; font-family: 'Roboto Slab', serif; line-height:24px; margin-bottom:0px;} 
+#footer .left{width:71%; margin-right:1%;}
+#footer .right{width:27%; margin-right:1%;}
+#footer .left p{color:#878787; font-size:13px; margin:0;}
+
+
+
+
+.col_footer{
+	width:23%;
+	float:left;
+	margin:0 1%;
+}
+
+
+ul.col_footer.col1{
+	margin-left:0;
+}
+ul.col_footer.col2{
+	margin-left:0;
+	width:21%;
+}
+ul.col_footer.col3{
+	margin-left:0;
+	width:30%;
+}
+ul.col_footer.col4{
+	margin-right:0;
+	width:20%;
+}
+
+ul.col_footer h5{
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #08446a;
+}
+
+ul.col_footer li {
+	display:block;
+	margin-bottom:10px;
+}
+ul.col_footer li a{
+	font-family: 'Roboto Slab', serif;
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: -0.1px;
+	color: #08446a;
+}
+.redes_sociales {
+	margin-bottom:30px;
+}
+.redes_sociales li{
+	display:inline-block;
+	margin-right:20px;
+}
+.redes_sociales li:last-of-type{
+	margin-right:0;
+}
+.redes_sociales li a{
+	font-size:26px;
+}
+
+
+
+@media print {
+	#menu {display:none;}
+	.cartera {
+margin-bottom: 40px;
+
+}
+.wrapper{padding-top:50px !important;}
+#mi_cartera a.imprimir {display:none;}
+#capitalizacion,#bloomberg,#comision_gestion,#distribucion_activos,#distribucion_sectorial,#depositario, #indice, #isin, #m2, #rentabilidad_riesgo2, #sharpe, #valor_liquidativo ,#var, #volatilidad {display:block !important;}
+#glosario .content {height:auto; min-height:100%;}
+
+#glosario .left{width:100%;} #glosario .right{display:none;}
+
+#m2{margin-top:50px;}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

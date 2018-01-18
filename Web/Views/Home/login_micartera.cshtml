@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "login_micartera";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+
+    function CompruebaIdentidad() {
+
+        var usuario = document.getElementById("user").value;
+        var clave = document.getElementById("pass").value;
+
+
+        var longitudCodigo = 10
+        // Comprobar que el código tiene longitud de 10 caracteres, eoc. rellenar con ceros a la izda. como paso previo
+        lonUsuario = usuario.length;
+        if (lonUsuario < longitudCodigo) {
+            var strPrefix = "";
+            var faltan = longitudCodigo - lonUsuario;
+            for (k = 0 ; k < faltan ; k++) {
+                strPrefix = strPrefix + "0";
+            }
+            usuario = strPrefix + usuario;
+        }
+
+        var params = "usuario=" + usuario + "&clave=" + clave;
+
+        $.ajax({
+            url: "/Home/ajaxlogin",
+            data: params,
+            type: "post",
+            dataType: "json",
+            success: function (resul) {
+                $("#visorMensajes").html(resul.mensaje);
+                if (resul.codigo_error == "0") {
+                    window.location = "/Cartera/mi_cartera";// + resul.code;
+                }
+                else {
+                    alert(resul.mensaje);
+                }
+            },
+            error: function (a, b, c) {
+                $("#visorMensajes").html("Error de login");
+                alert("Error login.");
+            }
+        });
+
+
+
+
+
+
+
+
+    }
+</script>
+
+<div id="login_clientes" class="wrapper">
+    <h1>Mi Cartera</h1>
+    <div class="content">
+        <div class="left">
+            <form method="post" id="frmLogin">
+                <input type="text" id="user" placeholder="Usuario" name="usuario" />
+                <input type="password" id="pass" placeholder="Contraseña" name="clave" />
+                <input type="button" onclick="CompruebaIdentidad();" value="Entrar" name="enviar" />
+            </form>
+        </div>
+        <div class="right">
+            <p>Si tiene problemas al acceder a la cuenta, contacte con nosotros y estaremos encantados de ayudarles</p>
+            <ul>
+                <li class="correo"><a href="mailto:info@cartesio.com?Subject=Cartesio web" target="_blank" title="">info@cartesio.com</a></li>
+                <li class="telefono">91 310 62 40 </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+</div>
+<div id="footer">
+    <div class="center">
+        <div class="left">
+            <p style="logo_bottom"><img src="images/cartesio_grey.png" /> alt="Cartesio Fondos"></p>
+            <h3>© 2015 Cartesio Inversiones, SGIIC SA</h3>
+
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="legal.html"> Legal</a></li>
+                <li><a href="glosario.html"> Glosario</a></li>
+                <li><a href="index-2.html#contacto"> Contacto</a></li>
+                <li><a href="en/index.html">English</a></li>
+
+            </ul>
+
+            <ul class="redes_sociales">
+                <li style="padding-top:12px; margin-right:10px;"><div class="g-plusone" data-size="medium" data-annotation="none"></div></li>
+                <li style="padding-top:12px; margin-right:10px;"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1503903215473" name="I0_1503903215473" src="https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&amp;size=medium&amp;annotation=none&amp;hl=es&amp;origin=https%3A%2F%2Fwww.cartesio.com&amp;url=https%3A%2F%2Fwww.cartesio.com%2Fpassword.asp%3Fcid%3DMDA1Mjc1MDA0VA%3D%3D&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.es.rxDNE3NDUEU.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCMNkLqTtYXV33zMLunJdK1Dj0pSpw#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1503903215473&amp;parent=https%3A%2F%2Fwww.cartesio.com&amp;pfname=&amp;rpctoken=27774082" data-gapiattached="true" title="G+"></iframe></div></li>
+                <li><a href="https://www.facebook.com/cartesioinversiones" target="_blank" class="logo_fb"></a></li>
+                <li><a href="https://plus.google.com/+CartesioInversiones/posts" target="_blank" class="logo_gplus"></a></li>
+                <li><a href="http://www.linkedin.com/company/cartesio-inversiones-sgiic-sa" target="_blank" class="logo_in"></a></li>
+                <li><a href="https://twitter.com/Cartesioinv" target="_blank" class="logo_tw"></a></li>
+
+                <script type="text/javascript">
+						  window.___gcfg = {lang: 'es'};
+
+						  (function() {
+							var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+							po.src = '../apis.google.com/js/platform.js';
+							var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+						  })();
+                </script>
+
+
+            </ul>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,322 @@
+﻿@{
+ 
+    Layout = null;
+}
+
+@*<script src="/Scripts/grafica/jquery-1.11.0.min.js"></script>
+<script src="/Scripts/grafica/jquery-ui.min.js"></script>*@
+@*<link href="/Scripts/grafica/datepicker.css" rel="stylesheet" />*@
+<link href="/Content/grafica_income.css" rel="stylesheet" />
+
+<div id="tt"></div>
+<script type="text/javascript">
+var inicio;
+var fin;
+
+//function carga(){
+
+//	var temp_1 = document.getElementById("desde_selector").value;
+//	var temp_2 = document.getElementById("hasta_selector").value;
+
+//	inicio = temp_1.substring(6,10) + temp_1.substring(3,5)+temp_1.substring(0,2)  ;
+//	fin = temp_2.substring(6,10) + temp_2.substring(3,5)+temp_2.substring(0,2);
+
+
+
+//}
+
+</script>
+
+ 
+<script>
+
+ 
+
+    var mydata =@ViewBag.datos;  
+</script>
+<script type="text/javascript">
+
+$(function() {
+
+
+//if (20141231 != ""){
+//	var temp_3 = "20141231";
+//	inicio = temp_3.substring(6,10) + "-" +  temp_3.substring(4,6) + "-" +temp_3.substring(0,4);
+//	$('#desde_selector').val(inicio);
+
+
+//}else{
+//	$('#desde_selector').attr("placeholder", "31-12-2004");
+//}
+
+//if (20151231 != ""){
+//	var temp_4 = "20151231";
+//	fin = temp_4.substring(6,10) + "-" +  temp_4.substring(4,6)+ "-" +  temp_4.substring(0,4);
+//	$('#hasta_selector').val(fin);
+//}else{
+//	$('#hasta_selector').attr("placeholder", "31-12-2015");
+//}
+
+
+       Highcharts.setOptions({
+	    chart: {
+
+
+	        style: {
+				fontFamily: '"Open Sans", sans-serif',
+				fontSize: '12px'
+			}
+	    },
+			lang: {	rangeSelectorFrom: 'Desde',
+					rangeSelectorTo: 'hasta',
+					months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+					shortMonths: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun',  'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+					weekdays: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
+				}
+		});
+
+		/*var ejemplo = [
+[Date.UTC(2003,8,24),0.8709],
+[Date.UTC(2003,8,25),0.872],
+[Date.UTC(2003,8,26),0.8714],
+[Date.UTC(2003,8,29),0.8638],
+[Date.UTC(2003,8,30),0.8567],
+[Date.UTC(2003,9,1),0.8536],
+[Date.UTC(2003,9,2),0.8564],
+[Date.UTC(2003,9,3),0.8639],
+[Date.UTC(2003,9,6),0.8538],
+[Date.UTC(2003,9,7),0.8489]
+
+];*/
+
+
+
+
+        $('#chart').highcharts('StockChart', {
+			navigator: {
+			outlineColor:'#3daf2c',
+			series: {
+	    	color: '#3daf2c',
+				lineWidth: 1,
+			lineColor: '#3daf2c',
+				marker: {
+					enabled: false
+					}
+				}
+
+			},
+
+			navigation: {
+            buttonOptions: {
+              symbolStroke: '#3daf2c'
+            }
+        },
+			colors: [
+			     '#3daf2c',
+			   '#0d233a',
+			   '#8bbc21'
+
+			],
+            rangeSelector : {
+				enabled:false,
+                buttonTheme: {
+	    		fill: 'none',
+	    		stroke: 'none',
+	    		'stroke-width': 0,
+	    		r: 8,
+	    		style: {
+
+	    			color: '#3daf2c',
+	    			fontWeight: 'bold'
+	    		},
+	    		states: {
+	    			hover: {
+	    			},
+	    			select: {
+	    		fill: '#3daf2c',
+	    				style: {
+	    					color: 'white'
+	    				}
+	    			}
+	    		}
+	    	},
+
+
+
+			states: {
+	    			hover: {
+	    			},
+	    			select: {
+	    				fill: '#000',
+	    				style: {
+	    					color: 'white'
+	    				}
+	    			}
+	    		},
+	    	labelStyle: {
+				display: 'none',
+				fontSize: '16px',
+	    		color: '#545454'
+
+
+	    	},
+	    	selected: 5
+            },
+
+
+
+
+            title : {
+                text : ''
+            },
+            tooltip: {
+			useHTML: true,
+            headerFormat: '<small style="color: #FFF; font-family: "Open Sans", sans-serif text-align:center;">{point.key}</small><table>',
+            pointFormat: '<tr><td style="color: #FFF;"></td>' +
+            '<td style="text-align: center; color: #FFF; font-size:19px; font-family: "Open Sans", sans-serif">{point.y} %</td></tr>',
+            footerFormat: '</table>',
+            backgroundColor: {
+
+                linearGradient: [0, 0, 0, 60],
+                stops: [
+                    [0, '#474747'],
+                    [1, '#6C6C6C']
+                ]
+            },
+            borderWidth: 0,
+            borderColor: '#CCC'
+        },
+           series : [{
+				name : '',
+				//data : ejemplo,
+				//data : usdeur,
+				data: mydata,//[[Date.UTC(2004,2,31),200.0001],[Date.UTC(2004,3,1),200.0981],[Date.UTC(2004,3,2),200.4468],[Date.UTC(2004,3,3),200.4498],[Date.UTC(2004,3,4),200.4508],[Date.UTC(2004,3,5),200.6337],[Date.UTC(2004,3,6),200.8245],[Date.UTC(2004,3,7),200.9514],[Date.UTC(2004,3,8),201.0423],[Date.UTC(2004,3,9),201.0443]],
+               //mydata,[[Date.UTC(2014, 11, 31), 0], [Date.UTC(2015, 0, 2), 2.23554471279081E-02], [Date.UTC(2015, 0, 5), -0.278727783735785], [Date.UTC(2015, 0, 6), -0.473331060443358], [Date.UTC(2015, 0, 7), -0.347569461321634], [Date.UTC(2015, 0, 8), 0.188271818795747], [Date.UTC(2015, 0, 9), 0.02987046250783], [Date.UTC(2015, 0, 12), 0.172920044258159], [Date.UTC(2015, 0, 13), 0.461564430857663], [Date.UTC(2015, 0, 14), 0.203761483523784], [Date.UTC(2015, 0, 15), 0.496278286305308], [Date.UTC(2015, 0, 16), 0.671105811531451], [Date.UTC(2015, 0, 19), 0.775942574251283], [Date.UTC(2015, 0, 20), 1.03300436181144], [Date.UTC(2015, 0, 21), 1.11571549438747], [Date.UTC(2015, 0, 22), 1.55716519371216], [Date.UTC(2015, 0, 23), 2.12855341584453], [Date.UTC(2015, 0, 26), 2.25010936415731], [Date.UTC(2015, 0, 27), 2.03933271719399], [Date.UTC(2015, 0, 28), 1.99354168311294], [Date.UTC(2015, 0, 29), 2.04877244981573], [Date.UTC(2015, 0, 30), 1.9100549182156], [Date.UTC(2015, 1, 2), 1.85486436948504], [Date.UTC(2015, 1, 3), 2.08067679263281], [Date.UTC(2015, 1, 4), 2.21220105263073], [Date.UTC(2015, 1, 5), 2.17362052642568], [Date.UTC(2015, 1, 6), 2.32100790375081], [Date.UTC(2015, 1, 9), 2.19493605170054], [Date.UTC(2015, 1, 10), 2.38260460091303], [Date.UTC(2015, 1, 11), 2.301266624817], [Date.UTC(2015, 1, 12), 2.54634920208118], [Date.UTC(2015, 1, 13), 2.62684834618528], [Date.UTC(2015, 1, 16), 2.77745316128775], [Date.UTC(2015, 1, 17), 2.76936360344757], [Date.UTC(2015, 1, 18), 2.91062061272195], [Date.UTC(2015, 1, 19), 3.05529040421015], [Date.UTC(2015, 1, 20), 3.08622951569403], [Date.UTC(2015, 1, 23), 3.24372309489476], [Date.UTC(2015, 1, 24), 3.2443091282042], [Date.UTC(2015, 1, 25), 3.32247562991973], [Date.UTC(2015, 1, 26), 3.48911017966287], [Date.UTC(2015, 1, 27), 3.63581385146032], [Date.UTC(2015, 2, 2), 3.71029179058111], [Date.UTC(2015, 2, 3), 3.60085294275477], [Date.UTC(2015, 2, 4), 3.71789873275468], [Date.UTC(2015, 2, 5), 3.90089625176543], [Date.UTC(2015, 2, 6), 4.04660021968206], [Date.UTC(2015, 2, 9), 4.01133480347258], [Date.UTC(2015, 2, 10), 3.82560246235109], [Date.UTC(2015, 2, 11), 4.12214680777889], [Date.UTC(2015, 2, 12), 4.12645587623068], [Date.UTC(2015, 2, 13), 4.19059779649178], [Date.UTC(2015, 2, 16), 4.26758648616381], [Date.UTC(2015, 2, 17), 4.01998741292378], [Date.UTC(2015, 2, 18), 3.80348257763189], [Date.UTC(2015, 2, 19), 3.95605807337298], [Date.UTC(2015, 2, 20), 4.00213637868415], [Date.UTC(2015, 2, 23), 3.96456130178451], [Date.UTC(2015, 2, 24), 4.02999019715654], [Date.UTC(2015, 2, 25), 3.92356195182185], [Date.UTC(2015, 2, 26), 3.83807577916289], [Date.UTC(2015, 2, 27), 3.92344704332981], [Date.UTC(2015, 2, 30), 4.1274555801115], [Date.UTC(2015, 2, 31), 4.10550231270576], [Date.UTC(2015, 3, 1), 4.16111227743231], [Date.UTC(2015, 3, 2), 4.22805796489936], [Date.UTC(2015, 3, 7), 4.47342206796906], [Date.UTC(2015, 3, 8), 4.51016980372595], [Date.UTC(2015, 3, 9), 4.74884048713386], [Date.UTC(2015, 3, 10), 4.90501836410065], [Date.UTC(2015, 3, 13), 4.95476225030815], [Date.UTC(2015, 3, 14), 4.88065776378652], [Date.UTC(2015, 3, 15), 4.89690582456207], [Date.UTC(2015, 3, 16), 4.74934033907428], [Date.UTC(2015, 3, 17), 4.47562256559177], [Date.UTC(2015, 3, 20), 4.5191728840779], [Date.UTC(2015, 3, 21), 4.60020060724541], [Date.UTC(2015, 3, 22), 4.63799401027994], [Date.UTC(2015, 3, 23), 4.58102812534724], [Date.UTC(2015, 3, 24), 4.70102706359278], [Date.UTC(2015, 3, 27), 4.87493532088253], [Date.UTC(2015, 3, 28), 4.71871722594354], [Date.UTC(2015, 3, 29), 4.49026765290327], [Date.UTC(2015, 3, 30), 4.42587293395967], [Date.UTC(2015, 4, 4), 4.53169790971111], [Date.UTC(2015, 4, 5), 4.3942156444005], [Date.UTC(2015, 4, 6), 4.15215516047718], [Date.UTC(2015, 4, 7), 4.08854756470411], [Date.UTC(2015, 4, 8), 4.42482152125744], [Date.UTC(2015, 4, 11), 4.53846027446813], [Date.UTC(2015, 4, 12), 4.36357529499595], [Date.UTC(2015, 4, 13), 4.40061604740757], [Date.UTC(2015, 4, 15), 4.51756416518923], [Date.UTC(2015, 4, 18), 4.52353366135111], [Date.UTC(2015, 4, 19), 4.74857045217755], [Date.UTC(2015, 4, 20), 4.79798110375812], [Date.UTC(2015, 4, 21), 4.79051205177501], [Date.UTC(2015, 4, 22), 4.8368891191655], [Date.UTC(2015, 4, 25), 4.81962986365993], [Date.UTC(2015, 4, 26), 4.76487022177453], [Date.UTC(2015, 4, 27), 4.89199348652704], [Date.UTC(2015, 4, 28), 4.9077819133344], [Date.UTC(2015, 4, 29), 4.62897369365419], [Date.UTC(2015, 5, 1), 4.64915162485779], [Date.UTC(2015, 5, 2), 4.54882502045084], [Date.UTC(2015, 5, 3), 4.53066947870728], [Date.UTC(2015, 5, 4), 4.38342573699722], [Date.UTC(2015, 5, 5), 4.27704920048395], [Date.UTC(2015, 5, 8), 4.04556604325363], [Date.UTC(2015, 5, 9), 3.93569628858211], [Date.UTC(2015, 5, 10), 4.04464677531724], [Date.UTC(2015, 5, 11), 4.11779752135489], [Date.UTC(2015, 5, 12), 3.94388926406512], [Date.UTC(2015, 5, 15), 3.55682000860205], [Date.UTC(2015, 5, 16), 3.45997513150415], [Date.UTC(2015, 5, 17), 3.29143310079302], [Date.UTC(2015, 5, 19), 3.40006758917502], [Date.UTC(2015, 5, 22), 3.94163705762098], [Date.UTC(2015, 5, 23), 4.28246713588401], [Date.UTC(2015, 5, 24), 4.25038468490425], [Date.UTC(2015, 5, 25), 4.23442964078342], [Date.UTC(2015, 5, 26), 4.2795714418844], [Date.UTC(2015, 5, 29), 3.59413079596997], [Date.UTC(2015, 5, 30), 3.45322425759635], [Date.UTC(2015, 6, 1), 3.75741001774532], [Date.UTC(2015, 6, 2), 3.75223913560316], [Date.UTC(2015, 6, 3), 3.67341191005837], [Date.UTC(2015, 6, 6), 3.42069366349761], [Date.UTC(2015, 6, 7), 3.17994313638363], [Date.UTC(2015, 6, 8), 3.15879422842222], [Date.UTC(2015, 6, 9), 3.50205462129206], [Date.UTC(2015, 6, 10), 3.92376878710754], [Date.UTC(2015, 6, 13), 4.33169393387729], [Date.UTC(2015, 6, 14), 4.32934980063952], [Date.UTC(2015, 6, 15), 4.44402847570323], [Date.UTC(2015, 6, 16), 4.77349410410273], [Date.UTC(2015, 6, 17), 4.88281804343702], [Date.UTC(2015, 6, 20), 4.96243813757695], [Date.UTC(2015, 6, 21), 4.76726031840913], [Date.UTC(2015, 6, 22), 4.60080387682867], [Date.UTC(2015, 6, 23), 4.49665656506114], [Date.UTC(2015, 6, 24), 4.2834323672172], [Date.UTC(2015, 6, 27), 3.90258540659852], [Date.UTC(2015, 6, 28), 3.97021479959327], [Date.UTC(2015, 6, 29), 4.15479805579428], [Date.UTC(2015, 6, 30), 4.20931064442176], [Date.UTC(2015, 6, 31), 4.28443207109803], [Date.UTC(2015, 7, 3), 4.38874025475443], [Date.UTC(2015, 7, 4), 4.32508095015994], [Date.UTC(2015, 7, 5), 4.50491848563936], [Date.UTC(2015, 7, 6), 4.38256392330685], [Date.UTC(2015, 7, 7), 4.18789744692866], [Date.UTC(2015, 7, 10), 4.27536579107544], [Date.UTC(2015, 7, 11), 4.07302342742845], [Date.UTC(2015, 7, 12), 3.69749672999158], [Date.UTC(2015, 7, 13), 3.83566844625448], [Date.UTC(2015, 7, 14), 3.86818754950401], [Date.UTC(2015, 7, 17), 3.87943134545089], [Date.UTC(2015, 7, 18), 3.94580823588232], [Date.UTC(2015, 7, 19), 3.67664658410951], [Date.UTC(2015, 7, 20), 3.2632690293921], [Date.UTC(2015, 7, 21), 2.69987843830626], [Date.UTC(2015, 7, 24), 1.69149322091606], [Date.UTC(2015, 7, 25), 2.3584623267338], [Date.UTC(2015, 7, 26), 2.39955934891469], [Date.UTC(2015, 7, 27), 2.97101651614229], [Date.UTC(2015, 7, 28), 3.01099318052572], [Date.UTC(2015, 7, 31), 3.00088697865012], [Date.UTC(2015, 8, 1), 2.5288658750161], [Date.UTC(2015, 8, 2), 2.67935003620191], [Date.UTC(2015, 8, 3), 2.97500958624095], [Date.UTC(2015, 8, 4), 2.55859844733347], [Date.UTC(2015, 8, 7), 2.64088441848891], [Date.UTC(2015, 8, 8), 2.73653424726951], [Date.UTC(2015, 8, 9), 2.99006259869921], [Date.UTC(2015, 8, 10), 2.7405617899158], [Date.UTC(2015, 8, 11), 2.42841861669251], [Date.UTC(2015, 8, 14), 2.30850011439141], [Date.UTC(2015, 8, 15), 2.37541132931084], [Date.UTC(2015, 8, 16), 2.55149135710032], [Date.UTC(2015, 8, 17), 2.49944930105187], [Date.UTC(2015, 8, 18), 2.38872922353919], [Date.UTC(2015, 8, 21), 2.43045249700175], [Date.UTC(2015, 8, 22), 1.80603400578931], [Date.UTC(2015, 8, 23), 1.82218439434664], [Date.UTC(2015, 8, 24), 1.28885386478052], [Date.UTC(2015, 8, 25), 1.65787674156747], [Date.UTC(2015, 8, 28), 1.07538835910329], [Date.UTC(2015, 8, 29), 0.678241628887632], [Date.UTC(2015, 8, 30), 1.21730034678234], [Date.UTC(2015, 9, 1), 1.19057263153201], [Date.UTC(2015, 9, 2), 1.25321499597188], [Date.UTC(2015, 9, 5), 1.89951206407022], [Date.UTC(2015, 9, 6), 2.09332821760727], [Date.UTC(2015, 9, 7), 2.29057438963194], [Date.UTC(2015, 9, 8), 2.32216847952049], [Date.UTC(2015, 9, 9), 2.44849313025326], [Date.UTC(2015, 9, 12), 2.44832651293978], [Date.UTC(2015, 9, 13), 2.27877903292323], [Date.UTC(2015, 9, 14), 1.94341285345708], [Date.UTC(2015, 9, 15), 2.18056099934537], [Date.UTC(2015, 9, 16), 2.38129464410369], [Date.UTC(2015, 9, 19), 2.4904060027277], [Date.UTC(2015, 9, 20), 2.47854170092376], [Date.UTC(2015, 9, 21), 2.46216149538234], [Date.UTC(2015, 9, 22), 2.85779717892757], [Date.UTC(2015, 9, 23), 3.36776681206039], [Date.UTC(2015, 9, 26), 3.4660825178565], [Date.UTC(2015, 9, 27), 3.1844532946965], [Date.UTC(2015, 9, 28), 3.38156157653073], [Date.UTC(2015, 9, 29), 3.3820097196497], [Date.UTC(2015, 9, 30), 3.3889674288432], [Date.UTC(2015, 10, 2), 3.54459949047277], [Date.UTC(2015, 10, 3), 3.71204414508484], [Date.UTC(2015, 10, 4), 3.78610266820966], [Date.UTC(2015, 10, 5), 3.71629001386601], [Date.UTC(2015, 10, 9), 3.57554434738124], [Date.UTC(2015, 10, 10), 3.48454831252858], [Date.UTC(2015, 10, 11), 3.56796613233069], [Date.UTC(2015, 10, 12), 3.28724468625787], [Date.UTC(2015, 10, 13), 3.17784605640375], [Date.UTC(2015, 10, 16), 3.36239484005714], [Date.UTC(2015, 10, 17), 3.77865659792496], [Date.UTC(2015, 10, 18), 3.72401760995622], [Date.UTC(2015, 10, 19), 3.84998604436365], [Date.UTC(2015, 10, 20), 3.9407350259584], [Date.UTC(2015, 10, 23), 3.87688612235203], [Date.UTC(2015, 10, 24), 3.64809756926023], [Date.UTC(2015, 10, 25), 3.79154933073273], [Date.UTC(2015, 10, 26), 4.06973704455588], [Date.UTC(2015, 10, 27), 4.11885467948172], [Date.UTC(2015, 10, 30), 4.17507365921611], [Date.UTC(2015, 11, 1), 4.11682079917248], [Date.UTC(2015, 11, 2), 4.09817689633772], [Date.UTC(2015, 11, 3), 3.64789647939914], [Date.UTC(2015, 11, 4), 3.59190731664886], [Date.UTC(2015, 11, 7), 3.67903668074411], [Date.UTC(2015, 11, 8), 3.35039264806275], [Date.UTC(2015, 11, 9), 3.12036308325684], [Date.UTC(2015, 11, 10), 3.03725551638325], [Date.UTC(2015, 11, 11), 2.67412744523835], [Date.UTC(2015, 11, 14), 2.3289078625791], [Date.UTC(2015, 11, 15), 2.7605271404091], [Date.UTC(2015, 11, 16), 2.89712461033094], [Date.UTC(2015, 11, 17), 3.07386536194968], [Date.UTC(2015, 11, 18), 2.8557173352215], [Date.UTC(201]],5, 11, 21), 2.72276246449759], [Date.UTC(2015, 11, 22), 2.72503190721553], [Date.UTC(2015, 11, 23), 3.07584753343751], [Date.UTC(2015, 11, 24), 3.03716933501421], [Date.UTC(2015, 11, 28), 2.98383455843022], [Date.UTC(2015, 11, 29), 1.99089878779585], [Date.UTC(2015, 11, 30), 1.94002305294167], [Date.UTC(2015, 11, 31), 1.89400220187653]],
+                             //[[Date.UTC(2017,10,2),1.2547],[Date.UTC(2017,9,29),0.7457],[Date.UTC(2017,9,28),0.01]]
+
+				marker: {
+					enabled : false,
+					radius : 3
+				},
+				shadow : true,
+				tooltip : {
+					valueDecimals : 4
+				}
+			}]
+
+        });
+
+
+
+
+
+
+
+});
+
+
+
+
+
+</script>
+
+ 
+<div id="chart" style="width:100%;">
+
+</div>
+<div style="width:100%; text-align:center;">
+    <div id="selector_fechas">
+        Desde 	<input type="text" id="desde_selector" name="desde_selector" class="datepicker" /> hasta 	<input type="text" class="datepicker"   id="hasta_selector" name="hasta_selector" /><div class="boton" /><a href="#" id="ir" onclick="check();" >Ver</a>
+    </div>
+
+   
+</div>
+<div class="selector_anos_y">
+    <!--grafica_cartesio_x.asp?inicio=0&fin=0-->
+    @*<div class="btn_2014"><a href="grafica_cartesio_xe05e.html?inicio=20031231&amp;fin=20041231">2004</a></div>
+        <div class="btn_2014"><a href="grafica_cartesio_x92b3.html?inicio=20041231&amp;fin=20051231">2005</a></div>
+        <div class="btn_2014"><a href="grafica_cartesio_x710e.html?inicio=20051231&amp;fin=20061231">2006</a></div>
+        <div class="btn_2014"><a href="grafica_cartesio_xc1f2.html?inicio=20061231&amp;fin=20071231">2007</a></div>
+        <div class="btn_2014"><a href="grafica_cartesio_x18d3.html?inicio=20071231&amp;fin=20081231">2008</a></div>
+        <div class="btn_2014"><a href="grafica_cartesio_xa6ab.html?inicio=20081231&amp;fin=20091231">2009</a></div>
+        <div class="btn_2014"><a href="grafica_cartesio_x507e.html?inicio=20091231&amp;fin=20101231">2010</a></div>
+        <div class="btn_2014"><a href="grafica_cartesio_x466a.html?inicio=20101231&amp;fin=20111231">2011</a></div>
+        <div class="btn_2014"><a href="grafica_cartesio_x073d.html?inicio=20111231&amp;fin=20121231">2012</a></div>
+        <div class="btn_2014"><a href="grafica_cartesio_xd479.html?inicio=20121231&amp;fin=20131231">2013</a></div>
+        <div class="btn_2014"><a href="grafica_cartesio_x7382.html?inicio=20131231&amp;fin=20141231">2014</a></div>*@
+
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2003', '31/12/2004');">2004</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2004', '31/12/2005');">2005</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2005', '31/12/2006');">2006</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2006', '31/12/2007');">2007</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2007', '31/12/2008');">2008</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2008', '31/12/2009');">2009</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2009', '31/12/2010');">2010</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2010', '31/12/2011');">2011</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2011', '31/12/2012');">2012</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2012', '31/12/2013');">2013</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2013', '31/12/2014');">2014</a></div>
+</div>
+<div class="selector_anos_y">
+
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2014', '31/12/2015');">2015</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2015', '31/12/2016');">2016</a></div>
+    <div class="btn_2014"><a href="#" onclick="verGrafico('_grafica_cartesio_x', '31/12/2016', '31/12/2017');">2017</a></div>
+
+
+
+
+</div>
+
+
+
+<script>
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy',
+        language: 'es'
+    });
+    
+    function check(){
+
+        if  (document.getElementById("desde_selector").value == "" || document.getElementById("hasta_selector").value == ""){
+
+            alert("Se debe introducir ambas fechas.");
+            return false;
+        } else {
+          
+            verGrafico('_grafica_cartesio_x', document.getElementById("desde_selector").value ,   document.getElementById("hasta_selector").value );
+            //	document.getElementById('ir').href = "grafica_cartesio_x8c6a.html?inicio="+inicio+"&fin="+fin;
+            return true;
+        }
+
+
+
+
+    }
+
+//$(function($){
+//    $.datepicker.regional['es'] = {
+//        closeText: 'Cerrar',
+//        prevText: '<Ant',
+//        nextText: 'Sig>',
+//        currentText: 'Hoy',
+//        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+//        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+//        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+//        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+//        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+//        weekHeader: 'Sm',
+//        dateFormat: 'dd-mm-yy',
+//	    firstDay: 1,
+//        isRTL: false,
+//        showMonthAfterYear: false,
+//		changeYear: true,
+//yearRange: '2004:' + new Date().getFullYear(),
+//        yearSuffix: ''
+//    };
+//	 $.datepicker.setDefaults($.datepicker.regional['es']);
+//});
+</script>
+
+@*<script src="/Scripts/grafica/highstock.js"></script>
+<script src="/Scripts/grafica/exporting.js"></script>*@

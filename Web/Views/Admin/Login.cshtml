@@ -1,0 +1,76 @@
+﻿@model CartersioLibreria.Models.AdminUsuarioModels
+
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    @Styles.Render("~/Content/admincss")
+    @Styles.Render("~/Content/adminlogincss")
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+@using (Html.BeginForm())
+{ @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-signin">
+            <h2 class="form-signin-heading" style="text-align: center;">Cartesio</h2>
+
+
+            @Html.LabelFor(model => model.Usuario, htmlAttributes: new { @class = "sr-only" })
+            
+            @Html.EditorFor(model => model.Usuario, new { htmlAttributes = new { @class = "form-control", @placeholder="Usuario..." } })
+            @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "text-danger" })
+
+
+            @Html.LabelFor(model => model.Contrasenia, htmlAttributes: new { @class = "sr-only" })
+
+            @Html.EditorFor(model => model.Contrasenia, new { htmlAttributes = new { @class = "form-control", @placeholder = "Contraseña..." } })
+            @Html.ValidationMessageFor(model => model.Contrasenia, "", new { @class = "text-danger" })
+
+            <span class="field-validation-error text-danger" data-valmsg-for="boton" data-valmsg-replace="true">
+            @ViewBag.error
+            </span>
+            
+            <button class="btn btn-lg btn-primary btn-block" id="boton" name="boton" type="submit">Entrar</button>
+
+        </div>
+}
+    </div> <!-- /container -->
+
+
+@Scripts.Render("~/bundles/adminjs")
+</body>
+</html>
+
+   
+
+   
+
+
+
+   
+
+
+
+
+
+
+

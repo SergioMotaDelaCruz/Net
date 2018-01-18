@@ -1,0 +1,357 @@
+﻿@model CartersioLibreria.Models.VolatilidadShapeRentabilidadModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutEN.cshtml";
+}
+
+<div id="color_cartesioy">
+    <div class="content">
+
+        <!--INICIO CABECERA-->
+        <div id="header">
+            <h1><img src="/images/titulos/cartesio_y.png" alt="Fondo Cartesio Y"></h1>
+            <div class="date_fondo right">Inception date 31st March 2004</div>
+        </div>
+        <!--FIN CABECERA-->
+        <!--INICIO DE LA INFORMACION DEL FONDO-->
+        <div id="informacion_fondo">
+
+            <div class="col_otro_fondo">
+                <h3>Investment Objetive</h3>
+                <p>Long term capital appreciation in real terms in Euros. Seeks higher risk adjusted returns (Sharpe ratio) than European Equities represented by the MSCI Pan Euro Index. Willingness to forego potential returns in order to give an adequate capital protection.</p>
+
+                <h3>Fees</h3>
+                <p>
+                    Management: 0.75% of assets and 7.5% of annual performance.
+                    Custody: 0.08%
+                </p>
+
+                <h3>Custodian</h3>
+                <p>BNP Paribas Securities Services</p>
+
+                <h3>Codes</h3>
+                <p>
+                    ISIN: ES0182527038<br />
+                    BLOOMBERG: MSCYACC SM
+                </p>
+
+                <h3>Asset Allocation</h3>
+                <p>Total flexibility in equity exposure (0%-100%). Equity exposure through a limited number of stocks. Maximum of 40% in non European stocks. Maximum 20% net exposure in non Euro currencies.</p>
+            </div>
+            <div class="col_otro_fondo centro">
+                <div class="descargas_fondo top">
+                    <h3>Monthly Report</h3>
+                    <a class="pdf_descarga" href="~/docs/historicos/espana/2017/0717%20-%20Cartesio%20Y.pdf" target="_blank">July 2017 <span class="light_grey">|PDF|234 KB</span></a>
+                    <div id="historico" href="#"> Previous Reports</div>
+                    <div id="informes_anteriores">
+                        <p>Selecciona fechas del informe que desea</p>
+                        <form>
+                            <select onchange="mes(this.value);" id="select_mes">
+                                <option>Month</option>
+                                <option value='01'>January</option>
+                                <option value='02'>February</option>
+                                <option value='03'>March</option>
+                                <option value='04'>April</option>
+                                <option value='05'>May</option>
+                                <option value='06'>June</option>
+                                <option value='07'>July</option>
+                                <option value='08'>August</option>
+                                <option value='09'>September</option>
+                                <option value='10'>October</option>
+                                <option value='11'>November</option>
+                                <option value='12'>December</option>
+                            </select>
+                            <select onchange="anio(this.value);" id="select_anio">
+                                <option>Year</option>
+                                <option value="2004">2004</option>
+                                <option value="2005">2005</option>
+                                <option value="2006">2006</option>
+                                <option value="2007">2007</option>
+                                <option value="2008">2008</option>
+                                <option value="2009">2009</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+
+                            </select>
+                            <input type="button" value="Download" onclick="descargar();">
+                        </form>
+                    </div>
+                </div>
+                <div class="descargas_fondo bottom">
+                    <h3>Additional Information</h3>
+
+                    <a class="pdf_descarga" href="~/docs/legal/Folleto%20Completo%20CY%20220416.pdf" target="_blank">Prospectus Cartesio Y <span class="light_grey">|PDF|1.5 MB </span></a>
+                    <a class="pdf_descarga" href="~/docs/legal/KID%20Cartesio%20Y%20-%20300117%20-%20WEB.pdf" target="_blank">KIID Cartesio Y <span class="light_grey">|PDF|1.5 MB </span></a>
+                    <a class="pdf_descarga" href="~/docs/legal/CARTESIO%20Y%2c%20FI-4-17.pdf" target="_blank">Quarterly report Cartesio Y <span class="light_grey">|PDF|115 KB </span></a>
+                    <a class="pdf_descarga" href="~/docs/legal/CARTESIO%20Y%20FI-%20Completo.pdf" target="_blank">Half year report Cartesio Y <span class="light_grey">|PDF|1.2 MB </span></a>
+                    <a class="pdf_descarga" href="~/docs/legal/CARTESIO-Y-FI-COMPLETO-2016.pdf" target="_blank">Annual report Cartesio Y <span class="light_grey">|PDF|133 KB </span></a>
+                    <a class="pdf_descarga" style="position:relative;z-index:9;" href="~/docs/informe-auditoria-2016-cy-deloitte.pdf" target="_blank">Auditors report 2016 CY <span class="light_grey">|PDF|1.8 MB </span></a>
+                </div>
+            </div>
+            <div class="col_otro_fondo final">
+                <div class="premio cartesio_y"><img src="/images/premios/premio_cartesio_y.jpg" alt="" /></div>
+            </div>
+        </div>
+        <!--FIN DE LA INFORMACION DEL FONDO-->
+        <div id="enlace_grafica"></div>
+        <!--INICIO DE LA SECCION GRAFICA-->
+        <div id="grafica" class="clear">
+            <h2 class="tit_sec_fondo num1y">NAV Chart</h2>
+            @*<iframe width="900" frameborder="0" scrolling="no" height="630px" src="/images/graficas_html/grafica_cartesio_y710e.html"></iframe>*@
+            <div id="vistaGrafico">
+
+            </div>
+        </div>
+        <!--FIN DE LA SECCION GRAFICA-->
+        <!--INICIO DE RENTABILIDAD Y RIESGO-->
+        <div id="rentabilidad_riesgo">
+            <h2 class="tit_sec_fondo num2y">Returns-Risk</h2>
+            <div class="fecha">Date: 30/06/2017</div>
+            <div class="tabla_fondo">
+                <ul class="cabecera">
+                    <li class="primera_fila">RETURN (P.A.)</li>
+                    <li>3 years</li>
+                    <li>5 years*</li>
+                    <li>10 years*</li>
+                    <li class="ultima_fila">Since Inception*</li>
+                </ul>
+                <ul>
+                    <li class="primera_fila">Cartesio Equity</li>
+                    <li>@Model.Rentabilidad.cy_rentabilidad_365d%</li>
+                    <li>@Model.Rentabilidad.cy_rentabilidad_5anios%</li>
+                    <li>@Model.Rentabilidad.cy_rentabilidad_180d%</li>
+                    <li class="ultima_fila">@Model.Rentabilidad.cy_rentabilidad_desde_inicio%</li>
+                </ul>
+
+                <ul class="no_border">
+                    <li class="primera_fila">European Equities (MSPE)</li>
+                    <li>@Model.Rentabilidad.cy_rentabilidad_rfe_365d%</li>
+                    <li>@Model.Rentabilidad.cy_rentabilidad_rfe_5anios%</li>
+                    <li>@Model.Rentabilidad.cy_rentabilidad_rfe_180d%</li>
+                    <li class="ultima_fila">@Model.Rentabilidad.cy_rentabilidad_rfe_desde_inicio%</li>
+                </ul>
+                <ul class="cabecera">
+                    <li class="primera_fila">VOLATILITY</li>
+                    <li>3 years</li>
+                    <li>5 years*</li>
+                    <li>10 years*</li>
+                    <li class="ultima_fila">Since Inception*</li>
+                </ul>
+                <ul>
+                    <li class="primera_fila">Cartesio Equity</li>
+                    <li>@Model.Volatilidad.cy_vol_365d%</li>
+                    <li>@Model.Volatilidad.cy_vol_5anios%</li>
+                    <li>@Model.Volatilidad.cy_vol_180d%</li>
+                    <li class="ultima_fila">@Model.Volatilidad.cy_vol_historica%</li>
+                </ul>
+                <ul>
+                    <li class="primera_fila">European Equities (MSPE)</li>
+                    <li>@Model.Volatilidad.cy_vol_rfe_365d%</li>
+                    <li>@Model.Volatilidad.cy_vol_rfe_5anios%</li>
+                    <li>@Model.Volatilidad.cy_vol_rfe_180d%</li>
+                    <li class="ultima_fila">@Model.Volatilidad.cy_vol_rfe_historica%</li>
+                </ul>
+                <!--<ul>
+                <li class="primera_fila">Volatilidad Relativa</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="ultima_fila"></li>
+            </ul>-->
+                <ul class="cabecera">
+                    <li class="primera_fila">SHARPE RATIO</li>
+                    <li>3 years</li>
+                    <li>5 years*</li>
+                    <li>10 years*</li>
+                    <li class="ultima_fila">Since Inception*</li>
+                </ul>
+                <ul>
+                    <li class="primera_fila">Cartesio Equity</li>
+                    <li>@Model.Sharpe.cy_sharpe_365d%</li>
+                    <li>@Model.Sharpe.cy_sharpe_5anios%</li>
+                    <li>@Model.Sharpe.cy_sharpe_180d%</li>
+                    <li class="ultima_fila">@Model.Sharpe.cy_sharpe_desde_inicio%</li>
+                </ul>
+
+                <ul class="no_border">
+                    <li class="primera_fila">European Equities (MSPE)</li>
+                    <li>@Model.Sharpe.cy_sharpe_rfe_365d%</li>
+                    <li>@Model.Sharpe.cy_sharpe_rfe_5anios%</li>
+                    <li>@Model.Sharpe.cy_sharpe_rfe_180d%</li>
+                    <li class="ultima_fila">@Model.Sharpe.cy_sharpe_rfe_desde_inicio%</li>
+                </ul>
+            </div>
+        </div>
+        <!--FIN DE RENTABILIDAD Y RIESGO-->
+        <!--INICIO DE LOS VALORES LIQUIDATIVOS-->
+        <div id="valores_liquidativos">
+            <h2 class="tit_sec_fondo num3y">Net Asset Value</h2>
+            <h3>Download the daily Net Asset Value</h3>
+            <a class="pdf_descarga" href="#" onclick="window.open('chartdirector/exportcb59.xls?c=y', 'Excel')">Net Asset Value <span class="light_grey">|PDF| 100 MB </span></a>
+        </div>
+        <!--FIN DE LOS VALORES LIQUIDATIVOS-->
+        <!--INICIO SECCION OTROS FONDOS-->
+
+        <div id="otros_fondos">
+            <h2>Get to know the other Cartesio Funds</h2>
+            <div class="col_otro_fondo inicio">
+                <h3 class="titulo_fondo"><a href="/En/fondo_cartesio_equity"><img src="/images/titulos/cartesio_equity_med.png" alt="Acceso a Cartesio Equity" /></a></h3>
+                <h4>Investment Objetive</h4>
+                <p>Similar to Cartesio Y.Long term capital appreciation in real terms in Euros. Seeks higher risk adjusted returns (Sharpe ratio) than European Equities represented by the MSCI Pan Euro Index. Willingness to forego potential returns in order to give an adequate capital protection.</p>
+                <h5><a href="/En/fondo_cartesio_equity"><img src="/images/titulos/cartesio_equity_peq.png" alt="" /></a></h5>
+                <div class="premio equity"><img src="/images/premios/premio_cartesio_equity.jpg" alt="" /></div>
+                <div class="ver_mas"><a href="/En/fondo_cartesio_equity">View More</a></div>
+            </div>
+            <div class="col_otro_fondo centro">
+                <h3 class="titulo_fondo"><a href="/En/fondo_cartesio_x"><img src="/images/titulos/cartesio_x_med.png" alt="Acceso a Cartesio X" /></a></h3>
+                <h4>Investment Objetive</h4>
+                <p>Long term capital appreciation in real terms in Euros. Seeks higher risk adjusted returns (Sharpe ratio) than Euro government bonds (Bloomberg/EFFA Euro Gov 7-10 yr Index). Strong emphasis on capital protection.</p>
+                <h5><a href="/En/fondo_cartesio_x"><img src="/images/titulos/cartesio_x_peq.png" alt="" /></a></h5>
+                <div class="premio cartesio_x"><img src="/images/premios/premio_cartesio_x.jpg" alt="" /></div>
+                <div class="ver_mas"><a href="/En/fondo_cartesio_x">View More</a></div>
+            </div>
+            <div class="col_otro_fondo final">
+                <h3 class="titulo_fondo"><a href="/En/fondo_cartesio_income"><img src="/images/titulos/cartesio_income_med.png" alt="Acceso a Cartesio Income" /></a></h3>
+                <h4>Investment Objetive</h4>
+                <p>Similar to Cartesio X. Long term capital appreciation in real term sin Euros. Seeks higher risk adjusted returns (Sharpe ratio) the Euro government bonds (Bloomberg/EFFA Euro Gov 7-10 yr Index). Strong emphasis on capital protection.</p>
+                <h5><a href="/En/fondo_cartesio_income"><img src="/images/titulos/cartesio_income_peq.png" alt="" /></a></h5>
+                <div class="premio income"><img src="/images/premios/premio_cartesio_income.jpg" alt="" /></div>
+                <div class="ver_mas"><a href="/En/fondo_cartesio_income">View More</a></div>
+            </div>
+
+        </div>
+
+        <!--FIN SECCION OTROS FONDOS-->
+
+    </div>
+</div>	
+@section scripts{
+
+    <script src="~/Scripts/grafica/highstock.js"></script>
+    <script src="~/Scripts/grafica/exporting.js"></script>
+    <script>
+
+        var mes_seleccionado;
+        var anio_seleccionado;
+
+        function mes(valor) {
+            switch (valor) {
+                case "january":
+                    resultado = "01";
+                    break;
+                case "february":
+                    resultado = "02";
+                    break;
+                case "march":
+                    resultado = "03";
+                    break;
+                case "april":
+                    resultado = "04";
+                    break;
+                case "may":
+                    resultado = "05";
+                    break;
+                case "june":
+                    resultado = "06";
+                    break;
+                case "july":
+                    resultado = "07";
+                    break;
+                case "august":
+                    resultado = "08";
+                    break;
+                case "september":
+                    resultado = "09";
+                    break;
+                case "october":
+                    resultado = "10";
+                    break;
+                case "november":
+                    resultado = "11";
+                    break;
+                case "december":
+                    resultado = "12";
+                    break;
+                default:
+                    resultado = "12";
+            }
+
+
+            mes_seleccionado = resultado;
+
+        }
+
+        function anio(valor) {
+            anio_seleccionado = valor;
+        }
+
+		function reset(){
+			var elemento = document.getElementById("select_mes");
+			elemento.selectedIndex = 0;
+			elemento = document.getElementById("select_anio");
+			elemento.selectedIndex = 0;
+
+		}
+
+		function descargar() {
+		    reset();
+		    var temp = "";
+		    temp = anio_seleccionado.substring(2, 4);
+		    var cadena = mes_seleccionado + temp;
+		    if (cadena == "0504" || cadena == "0404" || cadena == "0304" || cadena == "0204" || cadena == "0104") {
+		        alert("La consulta de los documentos debe ser como mínimo Junio de 2004.");
+		    } else {
+
+		        window.open("../docs/historicos/espana/" + anio_seleccionado + "/" + mes_seleccionado + temp + " - Cartesio Y.pdf");
+		    }
+		}
+
+
+
+
+        verGrafico("_grafica_cartesio_y", null, null);
+
+            function verGrafico(urlbtn, fechaIni, fechaFin) {
+
+                var url = "/Graficos/" + urlbtn + "?_=" + $.now() +"&fechaIni=" + fechaIni + "&fechaFin=" + fechaFin + "&vista=admin";
+
+                $.ajax({
+                    cache: false,
+                    url: url,
+                    type: "get",
+                    success: function (data) {
+                        $("#vistaGrafico").html(data);
+                        $(".datepicker").datepicker("option", "dateFormat", "dd/mm/yy");
+
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+
+                    }
+                });
+            }
+
+            $("#historico").click(function () {
+                $("#informes_anteriores").toggle('fade', 500);
+            });
+            $(function () {
+                $('#menu').data('size', 'big');
+            });
+            $(document.body).mousedown(function (event) {
+                var target = $(event.target);
+                if (!target.parents().andSelf().is('#informes_anteriores')) { // Clicked outside
+                    $('#informes_anteriores').fadeOut(500);
+                }
+            });
+
+    </script>
+}
+
+
+
+

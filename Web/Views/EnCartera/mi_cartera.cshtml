@@ -1,0 +1,193 @@
+﻿
+@model CartersioLibreria.Models.MiCarteraModels
+@using System.Globalization
+
+@{
+
+    Layout = "~/Views/Shared/_LayoutCarteraEn.cshtml";
+}
+
+
+
+<div id="mi_cartera" class="mov_fond wrapper">
+
+    @{
+        if (Model.getDatosClientes.Count() > 0)
+
+        {
+            int contador = 1;
+            foreach (var a in Model.getDatosClientes)
+            {
+
+                double vlcodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.valor_liquidativo).FirstOrDefault() ?? 0;
+                double vlcodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.valor_liquidativo).FirstOrDefault() ?? 0;
+                double vlcodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.valor_liquidativo).FirstOrDefault() ?? 0;
+                double vlcodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.valor_liquidativo).FirstOrDefault() ?? 0;
+
+                double vacodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.total_valoracion).FirstOrDefault() ?? 0;
+                double vacodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.total_valoracion).FirstOrDefault() ?? 0;
+                double vacodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.total_valoracion).FirstOrDefault() ?? 0;
+                double vacodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.total_valoracion).FirstOrDefault() ?? 0;
+
+                double pvcodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.pyg_no_realizadas).FirstOrDefault() ?? 0;
+                double pvcodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.pyg_no_realizadas).FirstOrDefault() ?? 0;
+                double pvcodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.pyg_no_realizadas).FirstOrDefault() ?? 0;
+                double pvcodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.pyg_no_realizadas).FirstOrDefault() ?? 0;
+
+                double taecodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.tae_media_inversion).FirstOrDefault() ?? 0;
+                double taecodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.tae_media_inversion).FirstOrDefault() ?? 0;
+                double taecodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.tae_media_inversion).FirstOrDefault() ?? 0;
+                double taecodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.tae_media_inversion).FirstOrDefault() ?? 0;
+
+                double pcodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.saldo_actual).FirstOrDefault() ?? 0;
+                double pcodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.saldo_actual).FirstOrDefault() ?? 0;
+                double pcodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.saldo_actual).FirstOrDefault() ?? 0;
+                double pcodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.saldo_actual).FirstOrDefault() ?? 0;
+
+                double recodigo_cuenta_x = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_x && x.codigo_fondo == 501).Select(x => x.rtbdad_bruta_inversion).FirstOrDefault() ?? 0;
+                double recodigo_cuenta_y = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_y && x.codigo_fondo == 500).Select(x => x.rtbdad_bruta_inversion).FirstOrDefault() ?? 0;
+                double recodigo_cuenta_bruselas = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_bruselas && x.codigo_fondo == 510).Select(x => x.rtbdad_bruta_inversion).FirstOrDefault() ?? 0;
+                double recodigo_cuenta_income = Model.getDatosCuenta.Where(x => x.codigo_cuenta == a.codigo_cuenta_income && x.codigo_fondo == 511).Select(x => x.rtbdad_bruta_inversion).FirstOrDefault() ?? 0;
+
+                TextInfo myTI = new CultureInfo("es", false).TextInfo;
+
+                <div class="cartera">
+                    <h1>Account @contador</h1>
+                    <div class="content">
+                        <div class="top">
+
+                            <strong>@(myTI.ToTitleCase((a.C1NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C1APELLIDOS).ToLower()))</strong>
+
+                            <span>@(string.IsNullOrEmpty(a.C3NOMBRE) ? (string.IsNullOrEmpty(a.C2NOMBRE) ? "" : "and") : ",")</span>
+
+                            @(myTI.ToTitleCase((a.C2NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C2APELLIDOS).ToLower()))
+
+                            <span>@(string.IsNullOrEmpty(a.C4NOMBRE) ? (string.IsNullOrEmpty(a.C3NOMBRE) ? "" : "and") : ",")</span>
+
+                            @(myTI.ToTitleCase((a.C3NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C3APELLIDOS).ToLower()))
+
+                            <span>@(string.IsNullOrEmpty(a.C5NOMBRE) ? (string.IsNullOrEmpty(a.C4NOMBRE) ? "" : "and") : ",")</span>
+
+                            @(myTI.ToTitleCase((a.C4NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C4APELLIDOS).ToLower()))
+
+                            <span>@(string.IsNullOrEmpty(a.C6NOMBRE) ? (string.IsNullOrEmpty(a.C5NOMBRE) ? "" : "and") : ",")</span>
+
+                            @(myTI.ToTitleCase((a.C5NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C5APELLIDOS).ToLower()))
+
+                            <span>@(string.IsNullOrEmpty(a.C6NOMBRE) ? "" : "and")</span>
+
+                            @(myTI.ToTitleCase((a.C6NOMBRE).ToLower())) @(myTI.ToTitleCase((a.C6APELLIDOS).ToLower()))
+
+                        </div>
+
+                        <!-- Si es estado del fichero es 1 mostramos aviso -->
+
+                        <ul class="info_micartera">
+                            <h3>Total</h3>
+
+                            <li class="inicio">Valoración actual<br><span class=""> @((vacodigo_cuenta_x + vacodigo_cuenta_y + vacodigo_cuenta_income + vacodigo_cuenta_bruselas).ToString("#,0.00")) €</span></li>
+                            <li>Plusvalía<br><span class="">@((pvcodigo_cuenta_x + pvcodigo_cuenta_y + pvcodigo_cuenta_income + pvcodigo_cuenta_bruselas).ToString("#,0.00"))</span></li>
+                            <li>Fecha<br><span class="">@(Model.fecha)</span></li>
+
+                        </ul>
+
+                        <div class="tabla_fondo">
+
+                            <!--CABECERA DE LA TABLA-->
+
+                            <ul class="cabecera">
+                                <li class="inicio">Participación</li>
+                                <li>V. Liquidativo</li>
+                                <li>Val. Actual</li>
+                                <li>Plusvalía (1)</li>
+                                <li>TAE (2)</li>
+                                <li>Rent. Año</li>
+                            </ul>
+
+                            <!--FIN DE CABECERA DE LA TABLA-->
+                            <!-- CARTESIO X -->
+                            <h5>Cartesio X</h5>
+                            <ul>
+                                <li class="first"><a href="/EnCartera/mi_cartera">Cartesio X</a></li>
+                                <li><span class="title_tabla">Participación:</span>@((pcodigo_cuenta_x).ToString("#,0.00"))</li>
+                                <li><span class="title_tabla">V. Liquidativo:</span>@((vlcodigo_cuenta_x).ToString("#,0.00")) € </li>
+                                <li><span class="title_tabla">Val. Actual:</span>@((vacodigo_cuenta_x).ToString("#,0.00")) €</li>
+                                <li><span class="title_tabla">Plusvalía (1):</span>@((pvcodigo_cuenta_x).ToString("#,0.00"))</li>
+                                <li><span class="title_tabla">TAE (2):</span>@((taecodigo_cuenta_x).ToString("0.00")) %</li>
+                                <li><span class="title_tabla">Rent. Año:</span>@((recodigo_cuenta_x).ToString("0.00")) %</li>
+
+                                <li class="ultima_fila"><a href="/EnCartera/zona_clientes_cx/@(a.codigo_cuenta_x)">See movements</a></li>
+
+                            </ul>
+
+                            <!-- CARTESIO Y -->
+                            <h5>Cartesio Y</h5>
+                            <ul class="bg_grey">
+                                <li class="first"><a href="/EnCartera/mi_cartera">Cartesio Y</a></li>
+                                <li><span class="title_tabla">Participación:</span>@((pcodigo_cuenta_y).ToString("#,0.00"))</li>
+                                <li><span class="title_tabla">V. Liquidativo:</span>@((vlcodigo_cuenta_y).ToString("#,0.00")) € </li>
+                                <li><span class="title_tabla">Val. Actual:</span>@((vacodigo_cuenta_y).ToString("#,0.00")) €</li>
+                                <li><span class="title_tabla">Plusvalía (1):</span>@((pvcodigo_cuenta_y).ToString("#,0.00"))</li>
+                                <li><span class="title_tabla">TAE (2):</span>@((taecodigo_cuenta_y).ToString("0.00")) %</li>
+                                <li><span class="title_tabla">Rent. Año:</span>@((recodigo_cuenta_y).ToString("0.00")) %</li>
+
+                                <li class="ultima_fila"><a href="/EnCartera/zona_clientes_cy/@(a.codigo_cuenta_y)">See movements</a></li>
+
+                            </ul>
+
+                            <!-- CARTESIO Equity -->
+                            <h5>P.Equity</h5>
+                            <ul>
+                                <li class="first"><a href="/EnCartera/mi_cartera">P.Equity</a></li>
+                                <li><span class="title_tabla">Participación:</span>@((pcodigo_cuenta_bruselas).ToString("#,0.00"))</li>
+                                <li><span class="title_tabla">V. Liquidativo:</span>@((vlcodigo_cuenta_bruselas).ToString("#,0.00")) € </li>
+                                <li><span class="title_tabla">Val. Actual:</span>@((vacodigo_cuenta_bruselas).ToString("#,0.00")) €</li>
+                                <li><span class="title_tabla">Plusvalía (1):</span>@((pvcodigo_cuenta_bruselas).ToString("#,0.00"))</li>
+                                <li><span class="title_tabla">TAE (2):</span>@((taecodigo_cuenta_bruselas).ToString("0.00")) %</li>
+                                <li><span class="title_tabla">Rent. Año:</span>@((recodigo_cuenta_bruselas).ToString("0.00")) %</li>
+
+                                <li class="ultima_fila"><a href="/EnCartera/zona_clientes_cequity/@(a.codigo_cuenta_bruselas)">See movements</a></li>
+
+                            </ul>
+
+                            <!-- CARTESIO Income -->
+                            <h5>P.Income</h5>
+                            <ul class="bg_grey">
+                                <li class="first"><a href="/EnCartera/mi_cartera">P.Income</a></li>
+                                <li><span class="title_tabla">Participación:</span>@((pcodigo_cuenta_income).ToString("#,0.00"))</li>
+                                <li><span class="title_tabla">V. Liquidativo:</span>@((vlcodigo_cuenta_income).ToString("#,0.00")) € </li>
+                                <li><span class="title_tabla">Val. Actual:</span>@((vacodigo_cuenta_income).ToString("#,0.00")) €</li>
+                                <li><span class="title_tabla">Plusvalía (1):</span>@((pvcodigo_cuenta_income).ToString("#,0.00"))</li>
+                                <li><span class="title_tabla">TAE (2):</span>@((taecodigo_cuenta_income).ToString("0.00")) %</li>
+                                <li><span class="title_tabla">Rent. Año:</span>@((recodigo_cuenta_income).ToString("0.00")) %</li>
+
+                                <li class="ultima_fila"><a href="/EnCartera/zona_clientes_cincome/@(a.codigo_cuenta_income)">See movements</a></li>
+
+                            </ul>
+
+                        </div><!-- FIN TABLA FONDO -->
+
+                        <div class="clear">
+                            <a class="imprimir" href="/EnCartera/_imprimir_mi_cartera" target="_self">Print</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                contador++;
+            }
+        }
+
+    }
+
+
+
+
+    <div class="def_cartera center">
+
+        <p>(1) Las plusvalías/minusvalías mostradas no incluyen las históricas asociadas a traspasos/ventas de otros fondos </p>
+        <p>(2) TAE desde inicio</p>
+    </div>
+
+</div>

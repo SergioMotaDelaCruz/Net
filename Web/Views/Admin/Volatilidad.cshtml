@@ -1,0 +1,832 @@
+﻿@model CartersioLibreria.Models.VolatilidadShapeRentabilidadModel
+@{
+    ViewBag.Title = "Volatilidad";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Volatilidad, Sharpe y Rentabilidad</h1>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+
+    @using( Ajax.BeginForm("VolatilidadPOST" , new AjaxOptions { HttpMethod = "POST" , InsertionMode = InsertionMode.Replace , UpdateTargetId = "result" }) )
+        {
+        @Html.AntiForgeryToken()
+
+
+        <h1>Volatilidad</h1>
+
+        <div class="row-grupo">
+            
+         
+            <div class="row">
+
+
+
+
+                <div class="col-md-3">
+                    <div class="titulo-odm">
+                        <h2 class="verde">Cartesio X</h2>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cx_fecha_calculo">Fecha de cálculo:</label>
+                        @Html.TextBox("cx_fecha_calculo" , Model.Volatilidad.cx_fecha_calculo.Value.ToString("dd/MM/yyyy") , new { @class = "form-control datepicker" , @placeholder = "dd/mm/yyyy" })
+                        @*@Html.EditorFor(model => model.cx_fecha_calculo.Value.ToShortDateString() , new { htmlAttributes = new { @class = "form-control datepicker" , @placeholder = "dd/mm/yyyy" } })*@
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cx_vol_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="Valor">5 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cx_vol_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cx_vol_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Volatilidad.cx_vol_historica , new { htmlAttributes = new { @class = "form-control   " } })
+                    </div>
+                    <div class="form-group">
+                        <b> <label>Renta Fija Europea</label></b>
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cx_vol_rfe_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cx_vol_rfe_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cx_vol_rfe_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Volatilidad.cx_vol_rfe_historica , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+
+
+                </div>
+                <div class="col-md-3">
+                    <div class="titulo-odm">
+                        <h2 class="verde">Pareturn Cartesio Income</h2>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cincome_fecha_calculo">Fecha de cálculo:</label>
+                        @Html.TextBox("cincome_fecha_calculo" , Model.Volatilidad.cincome_fecha_calculo.Value.ToString("dd/MM/yyyy") , new { @class = "form-control datepicker cajasombra" , @placeholder = "dd/mm/yyyy" })
+                        @*@Html.EditorFor(model => model.cincome_fecha_calculo , new { htmlAttributes = new { @class = "form-control datepicker" , @placeholder = "dd/mm/yyyy" } })*@
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cincome_vol_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cincome_vol_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cincome_vol_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cincome_vol_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cincome_vol_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cincome_vol_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Volatilidad.cincome_vol_historica , new { htmlAttributes = new { @class = "form-control   " } })
+                    </div>
+                    <div class="form-group">
+                        <b> <label>Renta Fija Europea</label></b>
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cincome_vol_rfe_365d , new { htmlAttributes = new { @class = "form-control cajasombra " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cincome_vol_rfe_5anios , new { htmlAttributes = new { @class = "form-control cajasombra " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cincome_vol_rfe_180d , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Volatilidad.cincome_vol_rfe_historica , new { htmlAttributes = new { @class = "form-control cajasombra " } })
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-md-3">
+
+                    <div class="titulo-odm">
+                        <h2 class="naranja">Cartesio Y</h2>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cy_fecha_calculo">Fecha de cálculo:</label>
+                        @Html.TextBox("cy_fecha_calculo" , Model.Volatilidad.cy_fecha_calculo.Value.ToString("dd/MM/yyyy") , new { @class = "form-control datepicker cajasombra" , @placeholder = "dd/mm/yyyy" })
+                        @*@Html.EditorFor(model => model.cy_fecha_calculo , new { htmlAttributes = new { @class = "form-control datepicker" , @placeholder = "dd/mm/yyyy" } })*@
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cy_vol_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cy_vol_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cy_vol_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Volatilidad.cy_vol_historica , new { htmlAttributes = new { @class = "form-control   " } })
+                    </div>
+                    <div class="form-group">
+                        <b> <label>Renta Variable Europea (MSPE)</label></b>
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_rfe_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cy_vol_rfe_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_rfe_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cy_vol_rfe_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_rfe_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cy_vol_rfe_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_rfe_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Volatilidad.cy_vol_rfe_historica , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="titulo-odm">
+                        <h2 class="naranja">Pareturn Cartesio Equity</h2>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cequity_fecha_calculo">Fecha de cálculo:</label>
+                        @Html.TextBox("cequity_fecha_calculo" , Model.Volatilidad.cequity_fecha_calculo.Value.ToString("dd/MM/yyyy") , new { @class = "form-control datepicker cajasombra" , @placeholder = "dd/mm/yyyy" })
+                        @*@Html.EditorFor(model => model.cequity_fecha_calculo , new { htmlAttributes = new { @class = "form-control datepicker" , @placeholder = "dd/mm/yyyy" } })*@
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cequity_vol_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="Valor">5 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cequity_vol_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cequity_vol_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Volatilidad.cequity_vol_historica , new { htmlAttributes = new { @class = "form-control   " } })
+                    </div>
+                    <div class="form-group">
+                        <b> <label>Renta Variable Europea (MSPE)</label></b>
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cequity_vol_rfe_365d , new { htmlAttributes = new { @class = "form-control cajasombra " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cequity_vol_rfe_5anios , new { htmlAttributes = new { @class = "form-control cajasombra " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Volatilidad.cequity_vol_rfe_180d , new { htmlAttributes = new { @class = "form-control cajasombra " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Volatilidad.cequity_vol_rfe_historica , new { htmlAttributes = new { @class = "form-control cajasombra " } })
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-danger verde" value="Guardar" />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        }
+    @using( Ajax.BeginForm("Sharpe" , new AjaxOptions { HttpMethod = "POST" , InsertionMode = InsertionMode.Replace , UpdateTargetId = "Sharpe" }) )
+        {
+        @Html.AntiForgeryToken()
+
+
+        <h1 >Sharpe</h1>
+
+        <div class="row-grupo ">
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <p>  Pueden emplearse expresiones del tipo "&lt0" pues el dato se almacena internamente como un texto.</p>
+                    </div>
+                </div>
+            </div>
+
+                <div class="row">
+
+
+
+
+                    <div class="col-md-3">
+                        <div class="titulo-odm">
+                            <h2 class="verde">Cartesio X</h2>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="cx_vol_365d">3 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cx_sharpe_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="Valor">5 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cx_sharpe_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_180d">10 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cx_sharpe_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_historica">Desde inicio</label>
+                            @Html.EditorFor(model => model.Sharpe.cx_sharpe_desde_inicio , new { htmlAttributes = new { @class = "form-control   " } })
+                        </div>
+                        <div class="form-group">
+                            <b> <label>Renta Fija Europea</label></b>
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_365d">3 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cx_sharpe_rfe_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_5anios">5 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cx_sharpe_rfe_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_180d">10 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cx_sharpe_rfe_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_historica">Desde inicio</label>
+                            @Html.EditorFor(model => model.Sharpe.cx_sharpe_rfe_desde_inicio , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="titulo-odm">
+                            <h2 class="verde">Pareturn Cartesio Income</h2>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="cx_vol_365d">3 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cincome_sharpe_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cincome_vol_5anios">5 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cincome_sharpe_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cincome_vol_180d">10 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cincome_sharpe_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cincome_vol_historica">Desde inicio</label>
+                            @Html.EditorFor(model => model.Sharpe.cincome_sharpe_desde_inicio , new { htmlAttributes = new { @class = "form-control   " } })
+                        </div>
+                        <div class="form-group">
+                            <b> <label>Renta Fija Europea</label></b>
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_365d">3 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cincome_sharpe_rfe_365d , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_5anios">5 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cincome_sharpe_rfe_5anios , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_180d">10 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cincome_sharpe_rfe_180d , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_historica">Desde inicio</label>
+                            @Html.EditorFor(model => model.Sharpe.cincome_sharpe_rfe_desde_inicio , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="col-md-3">
+
+                        <div class="titulo-odm">
+                            <h2 class="naranja">Cartesio Y</h2>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="cy_vol_365d">3 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cy_sharpe_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cy_vol_5anios">5 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cy_sharpe_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cy_vol_180d">10 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cy_sharpe_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cy_vol_historica">Desde inicio</label>
+                            @Html.EditorFor(model => model.Sharpe.cy_sharpe_desde_inicio , new { htmlAttributes = new { @class = "form-control   " } })
+                        </div>
+                        <div class="form-group">
+                            <b> <label>Renta Variable Europea (MSPE)</label></b>
+                        </div>
+                        <div class="form-group">
+                            <label for="cy_vol_rfe_365d">3 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cy_sharpe_rfe_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cy_vol_rfe_5anios">5 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cy_sharpe_rfe_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cy_vol_rfe_180d">10 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cy_sharpe_rfe_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cy_vol_rfe_historica">Desde inicio</label>
+                            @Html.EditorFor(model => model.Sharpe.cy_sharpe_rfe_desde_inicio , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="titulo-odm">
+                            <h2 class="naranja">Pareturn Cartesio Equity</h2>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="cx_vol_365d">3 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cequity_sharpe_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="Valor">5 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cequity_sharpe_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_180d">10 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cequity_sharpe_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_historica">Desde inicio</label>
+                            @Html.EditorFor(model => model.Sharpe.cequity_sharpe_desde_inicio , new { htmlAttributes = new { @class = "form-control   " } })
+                        </div>
+                        <div class="form-group">
+                            <b> <label>Renta Variable Europea (MSPE)</label></b>
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_365d">3 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cequity_sharpe_rfe_365d , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_5anios">5 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cequity_sharpe_rfe_5anios , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_180d">10 Años</label>
+                            @Html.EditorFor(model => model.Sharpe.cequity_sharpe_rfe_180d , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                        </div>
+                        <div class="form-group">
+                            <label for="cx_vol_rfe_historica">Desde inicio</label>
+                            @Html.EditorFor(model => model.Sharpe.cequity_sharpe_rfe_desde_inicio , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-danger verde" value="Guardar" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        }
+
+
+    @using( Ajax.BeginForm("Rentabilidad" , new AjaxOptions { HttpMethod = "POST" , InsertionMode = InsertionMode.Replace , UpdateTargetId = "Sharpe" }) )
+        {
+        @Html.AntiForgeryToken()
+
+
+        <h1>Rentabilidad</h1>
+
+        <div class="row-grupo ">
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <p>  Pueden emplearse expresiones del tipo "&lt0" pues el dato se almacena internamente como un texto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+
+
+
+                <div class="col-md-3">
+                    <div class="titulo-odm">
+                        <h2 class="verde">Cartesio X</h2>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="cx_vol_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cx_rentabilidad_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="Valor">5 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cx_rentabilidad_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cx_rentabilidad_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cx_rentabilidad_desde_inicio , new { htmlAttributes = new { @class = "form-control   " } })
+                    </div>
+                    <div class="form-group">
+                        <b> <label>Renta Fija Europea</label></b>
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cx_rentabilidad_rfe_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cx_rentabilidad_rfe_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cx_rentabilidad_rfe_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cx_rentabilidad_rfe_desde_inicio , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+
+
+                </div>
+                <div class="col-md-3">
+                    <div class="titulo-odm">
+                        <h2 class="verde">Pareturn Cartesio Income</h2>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="cx_vol_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cincome_rentabilidad_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cincome_vol_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cincome_rentabilidad_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cincome_vol_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cincome_rentabilidad_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cincome_vol_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cincome_rentabilidad_desde_inicio , new { htmlAttributes = new { @class = "form-control   " } })
+                    </div>
+                    <div class="form-group">
+                        <b> <label>Renta Fija Europea</label></b>
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cincome_rentabilidad_rfe_365d , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cincome_rentabilidad_rfe_5anios , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cincome_rentabilidad_rfe_180d , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cincome_rentabilidad_rfe_desde_inicio , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-md-3">
+
+                    <div class="titulo-odm">
+                        <h2 class="naranja">Cartesio Y</h2>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="cy_vol_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cy_rentabilidad_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cy_rentabilidad_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cy_rentabilidad_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cy_rentabilidad_desde_inicio , new { htmlAttributes = new { @class = "form-control   " } })
+                    </div>
+                    <div class="form-group">
+                        <b> <label>Renta Variable Europea (MSPE)</label></b>
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_rfe_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cy_rentabilidad_rfe_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_rfe_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cy_rentabilidad_rfe_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_rfe_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cy_rentabilidad_rfe_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cy_vol_rfe_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cy_rentabilidad_rfe_desde_inicio , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="titulo-odm">
+                        <h2 class="naranja">Pareturn Cartesio Equity</h2>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="cx_vol_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cequity_rentabilidad_365d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="Valor">5 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cequity_rentabilidad_5anios , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cequity_rentabilidad_180d , new { htmlAttributes = new { @class = "form-control  " } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cequity_rentabilidad_desde_inicio , new { htmlAttributes = new { @class = "form-control   " } })
+                    </div>
+                    <div class="form-group">
+                        <b> <label>Renta Variable Europea (MSPE)</label></b>
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_365d">3 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cequity_rentabilidad_rfe_365d , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_5anios">5 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cequity_rentabilidad_rfe_5anios , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_180d">10 Años</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cequity_rentabilidad_rfe_180d , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="cx_vol_rfe_historica">Desde inicio</label>
+                        @Html.EditorFor(model => model.Rentabilidad.cequity_rentabilidad_rfe_desde_inicio , new { htmlAttributes = new { @class = "form-control  cajasombra" } })
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-danger verde" value="Guardar" />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        }
+</div>
+
+
+
+@section scripts{
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script>
+    //\\\\\\\ JS  retrun message SucccessPost or FailPost
+    function SuccessMessage() {
+        alert("Succcess Post");
+    }
+    function FailMessage() {
+        alert("Fail Post");
+    }
+</script>
+    <script>
+
+        $('#Volatilidad').addClass("active");
+        $('.datepicker').datepicker({
+            format: 'dd/mm/yyyy',
+            language: 'es'
+        });
+        $('#cx_fecha_calculo').on('change', function (ev) {
+            ev.preventDefault();
+            $('.datepicker').val(this.value);
+        });
+        //RENTA FIJA EUROPA VOLATILIDAD
+        $('#Volatilidad_cx_vol_rfe_365d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Volatilidad_cincome_vol_rfe_365d').val(this.value);
+        });
+        $('#Volatilidad_cx_vol_rfe_5anios').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Volatilidad_cincome_vol_rfe_5anios').val(this.value);
+        });
+        $('#Volatilidad_cx_vol_rfe_180d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Volatilidad_cincome_vol_rfe_180d').val(this.value);
+        });
+        $('#Volatilidad_cx_vol_rfe_historica').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Volatilidad_cincome_vol_rfe_historica').val(this.value);
+        });
+        //FIN RENTA FIJA EUROPA VOLATILIDAD
+
+        //RENTA VARIABLE EUROPEA VOLATILIDAD
+        $('#Volatilidad_cy_vol_rfe_365d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Volatilidad_cequity_vol_rfe_365d').val(this.value);
+        });
+        $('#Volatilidad_cy_vol_rfe_5anios').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Volatilidad_cequity_vol_rfe_5anios').val(this.value);
+        });
+        $('#Volatilidad_cy_vol_rfe_180d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Volatilidad_cequity_vol_rfe_180d').val(this.value);
+        });
+        $('#Volatilidad_cy_vol_rfe_historica').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Volatilidad_cequity_vol_rfe_historica').val(this.value);
+        });
+        //FIN RENTA VARIABLE EUROPEA VOLATILIDAD
+    </script>
+
+<script>
+
+       
+        //RENTA FIJA EUROPA SHARPE
+    $('#Sharpe_cx_sharpe_rfe_365d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Sharpe_cincome_sharpe_rfe_365d').val(this.value);
+        });
+    $('#Sharpe_cx_sharpe_rfe_5anios').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Sharpe_cincome_sharpe_rfe_5anios').val(this.value);
+        });
+    $('#Sharpe_cx_sharpe_rfe_180d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Sharpe_cincome_sharpe_rfe_180d').val(this.value);
+        });
+    $('#Sharpe_cx_sharpe_rfe_desde_inicio').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Sharpe_cincome_sharpe_rfe_desde_inicio').val(this.value);
+        });
+        //FIN RENTA FIJA EUROPA SHARPE
+
+        //RENTA VARIABLE EUROPEA SHARPE
+    $('#Sharpe_cy_sharpe_rfe_365d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Sharpe_cequity_sharpe_rfe_365d').val(this.value);
+        });
+    $('#Sharpe_cy_sharpe_rfe_5anios').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Sharpe_cequity_sharpe_rfe_5anios').val(this.value);
+        });
+    $('#Sharpe_cy_sharpe_rfe_180d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Sharpe_cequity_sharpe_rfe_180d').val(this.value);
+        });
+    $('#Sharpe_cy_sharpe_rfe_desde_inicio').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Sharpe_cequity_sharpe_rfe_desde_inicio').val(this.value);
+        });
+        //FIN RENTA VARIABLE EUROPEA SHARPE
+</script>
+<script>
+
+
+        //RENTA FIJA EUROPA RENTABILIDAD
+    $('#Rentabilidad_cx_rentabilidad_rfe_365d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Rentabilidad_cincome_rentabilidad_rfe_365d').val(this.value);
+        });
+    $('#Rentabilidad_cx_rentabilidad_rfe_5anios').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Rentabilidad_cincome_rentabilidad_rfe_5anios').val(this.value);
+        });
+    $('#Rentabilidad_cx_rentabilidad_rfe_180d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Rentabilidad_cincome_rentabilidad_rfe_180d').val(this.value);
+        });
+    $('#Rentabilidad_cx_rentabilidad_rfe_desde_inicio').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Rentabilidad_cincome_rentabilidad_rfe_desde_inicio').val(this.value);
+        });
+    //FIN RENTA FIJA EUROPA RENTABILIDAD
+
+    //RENTA VARIABLE EUROPEA RENTABILIDAD
+    $('#Rentabilidad_cy_rentabilidad_rfe_365d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Rentabilidad_cequity_rentabilidad_rfe_365d').val(this.value);
+        });
+    $('#Rentabilidad_cy_rentabilidad_rfe_5anios').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Rentabilidad_cequity_rentabilidad_rfe_5anios').val(this.value);
+        });
+    $('#Rentabilidad_cy_rentabilidad_rfe_180d').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Rentabilidad_cequity_rentabilidad_rfe_180d').val(this.value);
+        });
+    $('#Rentabilidad_cy_rentabilidad_rfe_desde_inicio').on('blur', function (ev) {
+            ev.preventDefault();
+            $('#Rentabilidad_cequity_rentabilidad_rfe_desde_inicio').val(this.value);
+        });
+    //FIN RENTA VARIABLE EUROPEA RENTABILIDAD
+</script>
+
+}
